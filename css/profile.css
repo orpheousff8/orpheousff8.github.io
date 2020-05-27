@@ -1,37 +1,41 @@
+:root {
+    --master-width: 60%
+}
 body {
     font-family: "Roboto";
 }
 .container {
     display: block; 
     background-color: #caa;
-    width: 50vw;
+    width: 60vw;
     margin: auto;
 }
-    .image {
+    .avatar {
         display: block; 
-        width: 50%;
+        /* width: 60%; */
+        width: var(--master-width);
         margin: auto;
         padding: 0.1rem 0rem 0rem 0rem;
         
     }
-        .image > img {
+        .avatar > img {
             width: 100%;
         }
-    /* .bio {
+    /* .about#bio {
         display: inline-block; 
         text-align: center; 
         width: 100%;
         font-size: 2vh;
         background-color: brown;
     } */
-        .bio p {
-            /* display: block;
-            text-align: left; */
-        }
+        /* .about#bio p {
+            
+        } */
 /* .motto {
     text-align: center;
     font-size: 6vh;
 } */
+
 .pagination {
     display: block;
     width: fit-content;
@@ -54,25 +58,40 @@ body {
             .pagination .breadcrumb li a {
                 color: #616161;
             }
+
 .a {
     display: inline-block;
     margin-right: -4px;
 }
 .a#x {
     text-align: center; 
-    width: 25%;
+    /* width: 25%; */
+    width: calc((100% - var(--master-width))/2);
     font-size: 2vh;
     background-color: red;
 }
 .a#y {
     text-align: left; 
-    width: 50%;
+    /* width: 50%; */
+    width: var(--master-width);
     font-size: 2vh;
     background-color: green;
 }
 .a#z {
     text-align: center; 
-    width: 25%;
+    /* width: 25%; */
+    width: calc((100% - var(--master-width))/2);
     font-size: 2vh;
     background-color: blue;
 }
+
+.image {
+    display: block; 
+    width: 70%;
+    margin: auto;
+    /* padding: 0.1rem 0rem 0rem 0rem; */
+    
+}
+    .image > img {
+        width: 100%;
+    }
