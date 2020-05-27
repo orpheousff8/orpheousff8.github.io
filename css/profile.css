@@ -1,0 +1,78 @@
+body {
+    font-family: "Roboto";
+}
+.container {
+    display: block; 
+    background-color: #caa;
+    width: 50vw;
+    margin: auto;
+}
+    .image {
+        display: block; 
+        width: 50%;
+        margin: auto;
+        padding: 0.1rem 0rem 0rem 0rem;
+        
+    }
+        .image > img {
+            width: 100%;
+        }
+    /* .bio {
+        display: inline-block; 
+        text-align: center; 
+        width: 100%;
+        font-size: 2vh;
+        background-color: brown;
+    } */
+        .bio p {
+            /* display: block;
+            text-align: left; */
+        }
+/* .motto {
+    text-align: center;
+    font-size: 6vh;
+} */
+.pagination {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    padding: 1rem 0rem 0rem 0rem;
+}
+    .pagination .breadcrumb {
+        padding: 8px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+        .pagination .breadcrumb li {
+            display: inline;
+        }
+        .pagination .breadcrumb li+li:before {
+            padding: 8px;
+            color: black;
+            content: "/\00a0";
+        }
+            .pagination .breadcrumb li a {
+                color: #616161;
+            }
+.a {
+    display: inline-block;
+    margin-right: -4px;
+}
+.a#x {
+    text-align: center; 
+    width: 25%;
+    font-size: 2vh;
+    background-color: red;
+}
+.a#y {
+    text-align: left; 
+    width: 50%;
+    font-size: 2vh;
+    background-color: green;
+}
+.a#z {
+    text-align: center; 
+    width: 25%;
+    font-size: 2vh;
+    background-color: blue;
+}
