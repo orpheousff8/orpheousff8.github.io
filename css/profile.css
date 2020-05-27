@@ -1,12 +1,17 @@
 :root {
-    --master-width: 60%
+    --master-width: 60%;
+    --image-width: 70%;
 }
 body {
     font-family: "Roboto";
 }
+strong {
+    font-weight: bold;
+    color: #616161;
+}
 .container {
     display: block; 
-    background-color: #caa;
+    /* background-color: #caa; */
     width: 60vw;
     margin: auto;
 }
@@ -21,20 +26,62 @@ body {
         .avatar > img {
             width: 100%;
         }
-    /* .about#bio {
-        display: inline-block; 
-        text-align: center; 
-        width: 100%;
+    .about {
         font-size: 2vh;
-        background-color: brown;
-    } */
-        /* .about#bio p {
-            
-        } */
-/* .motto {
-    text-align: center;
-    font-size: 6vh;
-} */
+    }
+
+.subContainer {
+    display: inline-block;
+    margin-right: -4px;
+}
+.subContainer#left1 {
+    text-align: center; 
+    width: calc((100% - var(--master-width))/2);
+    /* font-size: 2vh; */
+    /* background-color: red; */
+}
+.subContainer#centre1 {
+    text-align: left; 
+    width: var(--master-width);
+    /* font-size: 2vh; */
+    /* background-color: green; */
+}
+.subContainer#right1 {
+    text-align: center; 
+    width: calc((100% - var(--master-width))/2);
+    /* font-size: 2vh; */
+    /* background-color: blue; */
+}
+.subContainer#left2 {
+    /* width: 15%; */
+    width: calc((100% - var(--image-width))/2)
+}
+.subContainer#centre2 {
+    text-align: center; 
+    /* width: 70%; */
+    width: var(--image-width);
+}
+.subContainer#right2 {
+    /* width: 15%; */
+    width: calc((100% - var(--image-width))/2)
+}
+
+.image {
+    display: block; 
+    width: 100%;
+    margin: auto;
+    /* padding: 0.1rem 0rem 0rem 0rem; */
+}
+    .image > img {
+        width: 100%;
+    }
+
+.credit {
+    display: inline-block; 
+    text-align: right; 
+    width: 100%;
+    font-size: 1vh;
+}
 
 .pagination {
     display: block;
@@ -58,40 +105,3 @@ body {
             .pagination .breadcrumb li a {
                 color: #616161;
             }
-
-.a {
-    display: inline-block;
-    margin-right: -4px;
-}
-.a#x {
-    text-align: center; 
-    /* width: 25%; */
-    width: calc((100% - var(--master-width))/2);
-    font-size: 2vh;
-    background-color: red;
-}
-.a#y {
-    text-align: left; 
-    /* width: 50%; */
-    width: var(--master-width);
-    font-size: 2vh;
-    background-color: green;
-}
-.a#z {
-    text-align: center; 
-    /* width: 25%; */
-    width: calc((100% - var(--master-width))/2);
-    font-size: 2vh;
-    background-color: blue;
-}
-
-.image {
-    display: block; 
-    width: 70%;
-    margin: auto;
-    /* padding: 0.1rem 0rem 0rem 0rem; */
-    
-}
-    .image > img {
-        width: 100%;
-    }
