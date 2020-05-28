@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/booking.css">
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    </head>
+    <body>
+        <div class="container">
+            <form id="booking" action="#" method="POST">
+                <div class="formContainer">
+                    <div class="from">
+                        <span>Flying from</span><br/>
+                        <span>
+                            <select name="form" id="from">
+                                <option value="option1">Donmueng, Thailand</option>
+                                <option value="option2">Suvannabhumi, Thailand</option>
+                                <option value="option3">Chaing Mai, Thailand</option>
+                                <option value="option4">Phuket, Thailand</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="to">
+                        <span>To</span><br/>
+                        <span>
+                            <select name="form" id="to">
+                                <option value="option1">Donmueng, Thailand</option>
+                                <option value="option2">Suvannabhumi, Thailand</option>
+                                <option value="option3">Chaing Mai, Thailand</option>
+                                <option value="option4">Phuket, Thailand</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="depart">
+                        <span>Departing</span><br/>
+                        <span>
+                            <input type="date" id="depart" name="depart"/>
+                        </span>
+                    </div>
+                    <div class="return">
+                        <span>Returning</span><br/>
+                        <span>
+                            <input type="date" id="return" name="return"/>
+                        </span>
+                    </div>
+                    <div class="adult">
+                        <span>
+                            <label for="adult">Adult</label><br/>
+                            <input type="number" id="adult" name="adult" min="1" max="20"/>
+                        </span>
+                    </div>
+                    <div class="child">
+                        <span>
+                            <label for="child">Child</label><br/>
+                            <input type="number" id="child" name="child" min="0" max="20"/>
+                        </span>
+                    </div>
+                    <div class="infant">
+                        <span>
+                            <label for="infant">Infant</label><br/>
+                            <input type="number" id="infant" name="infant" min="0" max="20"/>
+                        </span>
+                    </div>
+                    <div class="currency">
+                        <span>Currency</span><br/>
+                        <span>
+                            <select name="form" id="currency">
+                                <option value="currency1">USD</option>
+                                <option value="currency2">THB</option>
+                                <option value="currency3">JPY</option>
+                                <option value="currency4">EUR</option>
+                            </select>
+                        </span>
+                    </div>
+                    <!-- <div class="submit">
+                        <span><input class="submitBtn" type="submit"/></span>
+                    </div>     -->
+                </div>
+                <div class="submit">
+                    <span><input class="submitBtn" type="submit"/></span>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

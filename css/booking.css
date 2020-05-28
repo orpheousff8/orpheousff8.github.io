@@ -1,0 +1,62 @@
+:root {
+    --form-width: 30vw;
+    --form-min-width: 400px;
+    --form-padding: 10px;
+}
+
+body {
+    font-family: "Roboto", "Prompt", sans-serif;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+.formContainer {
+    width: var(--form-width);
+    min-width: var(--form-min-width);
+    display: grid;
+    grid-template-areas:
+    'from from to to'
+    'depart depart return return'
+    'adult child infant currency';
+    grid-gap: 10px;
+    background-color: #f3f0f0;
+    padding: var(--form-padding);
+}
+    .formContainer > div {
+        /* background-color: rgba(255, 255, 255, 0.8); */
+        text-align: left;
+        padding: 2px 2px 2px 2px;
+        /* font-size: 30px; */
+    }
+
+.from { grid-area: from; }
+.to { grid-area: to; }
+.depart { grid-area: depart; }
+.return { grid-area: return; }
+.adult { grid-area: adult; }
+.child { grid-area: child; }
+.infant { grid-area: infant; }
+.currency { 
+    grid-area: currency; 
+    color: coral;
+}
+.submit { 
+    /* grid-area: submit; */
+    background-color: #e4e4e4;
+    width: var(--form-width);
+    min-width: var(--form-min-width);
+    padding: var(--form-padding);
+}
+
+.submitBtn
+{
+    background-color: coral;
+    border-radius: 2px;
+    border: none;
+    color: white;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
