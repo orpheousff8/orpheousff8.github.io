@@ -9,6 +9,9 @@ strong {
     font-weight: bold;
     color: #616161;
 }
+a {
+    color: #616161;
+}
 .container {
     display: block; 
     /* background-color: #caa; */
@@ -102,6 +105,3 @@ strong {
             color: black;
             content: "/\00a0";
         }
-            .pagination .breadcrumb li a {
-                color: #616161;
-            }

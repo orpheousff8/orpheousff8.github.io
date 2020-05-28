@@ -1,0 +1,79 @@
+:root {
+    --master-width: 80%;
+    --offset: 5%;
+}
+body {
+    font-family: "Roboto", "Prompt", sans-serif;
+}
+strong {
+    font-weight: bold;
+    color: #616161;
+}
+a {
+    color: #616161;
+}
+.container {
+    display: block; 
+    /* background-color: #caa; */
+    /* width: 80vw */
+    margin: auto;
+}
+    .subContainer {
+        display: inline-block;
+        margin-right: -4px;
+    }
+    .subContainer#left1 {
+        text-align: center; 
+        width: calc((100% - var(--master-width))/2 + var(--offset));
+        /* font-size: 2vh; */
+        /* background-color: red; */
+    }
+    .subContainer#centre1 {
+        text-align: left; 
+        width: var(--master-width);
+        /* font-size: 2vh; */
+        /* background-color: green; */
+    }
+    .subContainer#right1 {
+        text-align: center; 
+        width: calc((100% - var(--master-width))/2 - var(--offset));
+        /* font-size: 2vh; */
+        /* background-color: blue; */
+    }
+        .friends {
+            display: flex;
+            flex-wrap: wrap;
+            /* background: blue; */
+            /* margin: 10px; */
+            justify-content: center;
+            font-size: 1vw;
+        }
+            .friends > p {
+                width: 23vw;
+                height: 120px;
+                /* must disable or the last flex will expand */
+                /* flex-grow: 1; */
+                /* background: red; */
+                margin: 0.1vw;
+                padding-top: 10px;
+            }
+
+.pagination {
+    display: block;
+    width: fit-content;
+    margin: auto;
+    padding: 1rem 0rem 0rem 0rem;
+}
+    .pagination .breadcrumb {
+        padding: 8px 16px;
+        list-style: none;
+        background-color: #eee;
+    }
+        .pagination .breadcrumb li {
+            display: inline;
+        }
+        .pagination .breadcrumb li+li:before {
+            padding: 8px;
+            color: black;
+            content: "/\00a0";
+        }
