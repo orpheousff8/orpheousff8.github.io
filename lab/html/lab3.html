@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- <link rel="stylesheet" href="css/booking.css"> -->
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <style>
+            :root {
+                --form-width: 30vw;
+                --form-min-width: 400px;
+                --form-padding: 10px;
+            }
+
+            body {
+                font-family: "Roboto", sans-serif;
+                font-size: x-small;
+                font-weight: bold;
+            }
+
+            .formContainer {
+                width: var(--form-width);
+                min-width: var(--form-min-width);
+                display: grid;
+                grid-template-areas:
+                'labTop labTop labTop'
+                'labName name name'
+                'labTopping topping topping'
+                'labSauce sauce sauce'
+                'labEx ex1 ex2'
+                'ins ins ins'
+                'submit submit submit';
+                /* grid-gap: 10px; */
+                background-color: #f3f0f0;
+                padding: 2px;
+                /* padding: var(--form-padding); */
+            }
+                .formContainer > div {
+                    /* background-color: rgba(255, 255, 255, 0.8); */
+                    text-align: left;
+                    padding: 1px 1px 1px 1px;
+                    /* font-size: 30px; */
+                    /* border: 1px double black;*/
+                    border-style: groove;
+                }
+
+            /* .lapธop เฉย ๆ overide .formContainer > div ไม่ได้ */
+            div.labTop { 
+                grid-area: labTop;
+                text-align: center;
+                font-weight: bolder;
+                font-size: large;
+            }
+            .labName { grid-area: labName; }
+            .name { grid-area: name; }
+            .labTopping { grid-area: labTopping; }
+            .topping { grid-area: topping; }
+            .labSauce { grid-area: labSauce; }
+            .sauce { grid-area: sauce; }
+            .labEx { grid-area: labEx; }
+            .ex1 { grid-area: ex1;}
+            .ex2 { grid-area: ex2;}
+            .ins { grid-area: ins;}
+            .submit { grid-area: submit;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <form id="booking" action="#" method="POST">
+                <div class="formContainer">
+                    <div class="labTop">Pizza Shop 2.0</div>
+                    <div class="labName">Name</div>
+                    <div class="name">
+                        <input type="text" name="name"></input>
+                    </div>
+                    <div class="labTopping">Pizza Topping</div>
+                    <div class="topping">
+                        <input type="radio" name="topping" value="supreme" checked>Supreme</input><br>
+                        <input type="radio" name="topping" value="vegetarian">Vegetarian</input><br>
+                        <input type="radio" name="topping" value="hawaiian">Hawaiian</input>
+                    </div>
+                    <div class="labSauce">Pizza Sauce</div>
+                    <div class="sauce">
+                        <select name="sauce">
+                            <option value="tomato">Tomato</option>
+                            <option value="barbeque">Barbeque</option>
+                            <option value="mayonnaise">Mayonnaise</option>
+                            <option selected="selected" value="secret">Secret Sauce</option>
+                        </select>
+                    </div>
+                    <div class="labEx">Optional Extras</div>
+                    <div class="ex1">
+                        <input type="checkbox" name="extras" value="extra_cheese">Extra Cheese</input>
+                    </div>
+                    <div class="ex2">
+                        <input type="checkbox" name="extras" value="gluten_free">Gluten Free Base</input>
+                    </div>
+                    <div class="ins">
+                        Delivery Instructions:<br>
+                        <textarea name="delivery" cols="50" rows="4"></textarea>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Send my Order">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

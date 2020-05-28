@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 2</title>
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap">
+        <style>
+            body {
+                font-family: "Roboto", "Prompt", sans-serif;
+            }
+            div {
+                display: block;
+            }
+            .container {
+                width: 90vw;
+                margin: auto;
+            }
+            .ex {
+                /* font-style: oblique; */
+            }
+            .credit {
+                font-size: xx-small;
+            }
+            .w3-code {
+                width: auto;
+                font-size: 15px;
+                font-family: Consolas,"courier new";
+                padding: 8px 12px;
+                word-wrap: break-word;
+            }
+            .w3-light-grey, .w3-hover-light-grey:hover, .w3-light-gray, .w3-hover-light-gray:hover {
+                color: #000!important;
+                background-color: #f1f1f1!important;
+            }
+            .w3-border {
+                border: 1px solid #ccc!important;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Lab 2</h1>
+        <h2>1. ค้นหาข้อมูลว่าแท็ก &lt;!doctype&gt; มีหน้าที่อะไร?</h2>
+        <div class="container">
+            <p>
+                <strong>DOCTYPE</strong> คือ การประกาศว่าเอกสารเว็บเพจนั้นสร้างขึ้นมาโดยยึดหลักตามมาตราฐานใด ซึ่งมาตราฐานที่เราใช้กันทุกวันนี้กับการแสดงผลเว็บเพจ จะมีที่ใช้กันอยู่ 3 มาตราฐาน คือ<br>
+                - HTML<br>- XHTML<br>- HTML 5<br>
+            </p>
+            <p class="ex">ตัวอย่าง HTML5:</p>
+            <div class="w3-code w3-border w3-light-grey notranslate htmlHigh">
+                <div>
+                    <span class="tagnamecolor" style="color:brown">
+                        <span class="tagcolor" style="color:mediumblue">&lt;</span>
+                        !DOCTYPE<span class="attributecolor" style="color:red"> html</span>
+                        <span class="tagcolor" style="color:mediumblue">&gt;</span>
+                    </span>
+                </div>
+            </div>
+            <p class="ex">ตัวอย่าง HTML 4.01:</p>
+            <div class="w3-code w3-border w3-light-grey notranslate htmlHigh">
+                <div>
+                    <span class="tagnamecolor" style="color:brown">
+                        <span class="tagcolor" style="color:mediumblue">&lt;</span>
+                        !DOCTYPE<span class="attributecolor" style="color:red"> HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"</span>
+                        <span class="tagcolor" style="color:mediumblue">&gt;</span>
+                    </span>
+                </div>
+            </div>
+            <p class="ex">ตัวอย่าง XHTML 1.1:</p>
+            <div class="w3-code w3-border w3-light-grey notranslate htmlHigh">
+                <div>
+                    <span class="tagnamecolor" style="color:brown">
+                        <span class="tagcolor" style="color:mediumblue">&lt;</span>
+                        !DOCTYPE<span class="attributecolor" style="color:red"> html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"</span>
+                        <span class="tagcolor" style="color:mediumblue">&gt;</span>
+                    </span>
+                </div>
+            </div>
+            <br>
+            <p>
+                ทั้ง 3 มาตราฐาน จะมีการแบ่งกฎในการพัฒนาแตกต่างกันออกไปอีก 3 ประเภท คือ<br>
+                - Transitional<br>- Strict<br>- Frameset<br>
+            </p>
+            <p class="ex">ตัวอย่าง XHTML 1.1 กฎ Transitional:</p>
+            <div class="w3-code w3-border w3-light-grey notranslate htmlHigh">
+                <div>
+                    <span class="tagnamecolor" style="color:brown">
+                        <span class="tagcolor" style="color:mediumblue">&lt;</span>
+                        !DOCTYPE<span class="attributecolor" style="color:red"> html PUBLIC "-//W3C//DTD XHTML 1.1 Transitional//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11-transitional.dtd"</span>
+                        <span class="tagcolor" style="color:mediumblue">&gt;</span>
+                    </span>
+                </div>
+            </div>
+            <p>กฏในแบบ Transitional ผู้พัฒนา XHTML ยังคงสามารถใช่งาน TAG หรือ Attribute ของ HTML แทรกลงไปในโค้ดได้</p>
+            <p class="ex">ตัวอย่าง XHTML 1.1 กฎ Strict:</p>
+            <div class="w3-code w3-border w3-light-grey notranslate htmlHigh">
+                <div>
+                    <span class="tagnamecolor" style="color:brown">
+                        <span class="tagcolor" style="color:mediumblue">&lt;</span>
+                        !DOCTYPE<span class="attributecolor" style="color:red"> html PUBLIC "-//W3C//DTD XHTML 1.1 Strict//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11-strict.dtd"</span>
+                        <span class="tagcolor" style="color:mediumblue">&gt;</span>
+                    </span>
+                </div>
+            </div>
+            <p>
+                กฏในแบบ Strict จะเข้มงวดกับไวยากรณ์ของภาษา ถ้าเราใช้ Strict กับเอกสารเว็บเพจเรา เราจะไม่สามารถแทรก Attribute ใด ๆ ได้เลยกับเว็บเพจของเรา <br>
+                เนื่องจาก Strict จะมองในส่วนของ TAG ที่ใช้กำกับ กับ ส่วนโค้ดที่ใช้ในการแสดงผลแยกออกจากกัน <br>
+                นั้นคือ TAG ของ XHTML เป็นเพียงตัวบอกว่าเอกสารนั้นเมื่อมี TAG นี้กำกับอยู่จะให้ทำอะไร เช่น ขึ้นบรรทัดใหม่ Paragraph ใหม่ เป็นต้น <br>
+                แต่ถ้าต้องการระบุคุณสมบัติ เช่น ทำข้อความไว้กึ่งกลางหน้าเว็บเพจ หรือใส่สีสันให้ข้อความ ต้องกระทำผ่าน CSS เท่านั้น <br>
+                สรุปง่าย ๆ ถ้าเราใช้ Strict กับเว็บเพจ เราต้องใช้ XHTML กับ CSS อย่างแท้จริงเท่านั้น !
+            </p>
+            <p class="ex">ตัวอย่าง XHTML 1.1 กฎ Frameset:</p>
+            <div class="w3-code w3-border w3-light-grey notranslate htmlHigh">
+                <div>
+                    <span class="tagnamecolor" style="color:brown">
+                        <span class="tagcolor" style="color:mediumblue">&lt;</span>
+                        !DOCTYPE<span class="attributecolor" style="color:red"> html PUBLIC "-//W3C//DTD XHTML 1.1 Frameset//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11-frameset.dtd"</span>
+                        <span class="tagcolor" style="color:mediumblue">&gt;</span>
+                    </span>
+                </div>
+            </div>
+            <p>ใช้ในกรณีที่เรามีการออกแบบโดยมีการใช้ Frame ในการแบ่งจอของ Browser</p>
+            <br><br>
+            <p class="credit">
+                Source: https://www.dwthai.com/dwarticle/?t=4&aid=188&atitle=%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87+%21DOCTYPE+%E0%B9%83%E0%B8%99%E0%B9%80%E0%B8%A7%E0%B9%87%E0%B8%9A%E0%B9%80%E0%B8%9E%E0%B8%88
+                &copy;DwThai.Com
+                <br>
+                Source: https://www.w3schools.com/tags/tag_doctype.asp
+            </p>
+        </div>
+        <h2>2. ถ้าอยากให้มี tooltip ใน tag นั้นต้องใช้ attribute ใด?</h2>
+        <div class="container">
+            <p>title</p>
+        </div>
+        <h2>3. แท็ก &lt;b&gt;, &lt;i&gt; ต่างจาก &lt;strong&gt;, &lt;em&gt; หรือไม่ อย่างไร?</h2>
+        <div class="container">
+            <p>
+                &lt;b&gt; กับ &lt;strong&gt; แสดงผลเป็นตัวหนาเหมือนกัน<br>
+                ส่วน &lt;i&gt; กับ &lt;em&gt; แสดงผลเป็นตัวเอียงเหมือนกัน<br>
+                แต่นิยามของ &lt;strong&gt; และ &lt;em&gt; จะมีความสำคัญในเชิงภาษาด้วย
+            </p>
+        </div>
+        <h2>4. หา tag ที่สามารถแสดงข้อความกลับหลังได้</h2>
+        <div class="container">
+            <p>&lt;bdo dir="rtl"&gt;</p>
+        </div>
+    </body>
+</html>
