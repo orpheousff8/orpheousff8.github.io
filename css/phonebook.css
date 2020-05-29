@@ -1,0 +1,47 @@
+/* * {
+    box-sizing: border-box;
+  } */
+  
+
+html {
+    font-family: "Roboto", "Prompt", sans-serif;
+  }
+
+/* For mobile phones: */
+
+table {
+    margin: auto;
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+    width: 90%;
+}
+tr:hover, tr:nth-child(even):hover {
+    background-color: #616161;
+    color: white;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #616161;
+    color: white;
+}
+
+@media only screen and (min-width: 600px) {
+/* For tablets: */
+table {
+    min-width: 600px;
+    max-width: 600px;
+}
+}
+@media only screen and (min-width: 768px) {
+/* For desktop: */
+table {
+    min-width: 768px;
+    max-width: 768px;
+}
+}
