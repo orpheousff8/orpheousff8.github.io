@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{
+                border-collapse: collapse;
+            }
+            table, th, td{
+                border: 1px solid black;
+            }
+                td.number{
+                    vertical-align: top;
+                    font-weight: bold;
+                }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <th colspan="2">ข้อ</th>
+                <th>คำถาม</th>
+                <th>คำตอบ</th>
+            </tr>
+            <tr>
+                <td rowspan="4" class="number">1</td>
+                <td>1.1</td>
+                <td>CSS syntax ประกอบด้วยอะไรบ้าง </td>
+                <td>
+                    <ol>
+                        <li>Selector คือ ส่วน HTML tag ที่เราต้องการจะให้แสดงผล เช่น &lt;table&gt; ก็จะแสดงผลในส่วนของตาราง</li>
+                        <li>Property คือ ส่วนของคุณสมบัติที่เราต้องการให้แสดง เช่น สีตัวอักษร , ชนิดตัวอักษร , ขนาดตัวอักษร</li>
+                        <li>Value คือ ค่าที่เราต้องการให้แสดง เช่น ตัวอักษรสีแดง , ตัวอักษรแบบ tahoma , ตัวอักษรขนาด 12 pt</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>1.2</td>
+                <td>การเขียน CSS มีกี่แบบอะไรบ้าง</td>
+                <td>
+                    3 แบบ
+                    <ol>
+                        <li>Inline คือการเขียน CSS แทรกลงไปในบรรทัดนั้นๆ ของ tag HTML เลย</li>
+                        <li>Internal คือการเขียนแยก CSS ออกจาก tag HTML แต่อยู่ในหน้าเดียวกัน โดยแทรกเอาไว้ที่ &lt;head&gt;&lt;/head&gt;</li>
+                        <li>External คือการเขียนแยก CSS ออกมาเป็นไฟล์ .css ต่างหาก แล้วนำเข้าไปใช้โดยแทรก <br> &lt;link rel="stylesheet" href="CSS.css" type="text/css"&gt; ไว้ที่ส่วน &lt;head&gt;&lt;/head&gt; ของหน้าเว็บ</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td>1.3</td>
+                <td>selector มีกี่แบบอะไรบ้าง</td>
+                <td>
+                    <ol>
+                        12 แบบ
+                        <li>X เลือก tag &lt;X&gt; ทุกตัว</li>
+                        <li>* เลือก ทุกๆ element</li>
+                        <li>#X เลือก โดยใช้ id</li>
+                        <li>.X เลือก โดยใช้ class</li>
+                        <li>X[abc] เลือก &lt;X&gt; ทุกตัว ที่มี attribute abc</li>
+                        <li>X[abc="xyz"] เลือก &lt;X&gt; ทุกตัว ที่มี attribute abc ที่มีค่าเป็น xyz เป๊ ๆ</li>
+                        <li>X[abc*="xyz"] เลือก &lt;X&gt; ทุกตัว ที่มี attribute abc ที่มีค่า xyz อยู่ในนั้น</li>
+                        <li>X[abc^="xyz"] เลือก &lt;X&gt; ทุกตัว ที่มี attribute abc ที่มีค่าขึ้นต้นด้วย xyz</li>
+                        <li>X[abc$="xyz"] เลือก &lt;X&gt; ทุกตัว ที่มี attribute abc ที่มีค่าลงท้ายด้วย xyz</li>
+                        <li>X[abc~="xyz"] เลือก &lt;X&gt; ทุกตัว ที่มี attribute abc ที่มีค่า xyz ที่มีช่องว่างนำหน้า หรือตามหลัง</li>
+                        <li>Pseudo Classes เช่น X:first-child ใช้เลือก &lt;X&gt; ทุกตัว ที่เป็น child ตัวแรกของ parent ใด ๆ</li>
+                        <li>Pseudo Elements เช่น X::before ใช้แทรกคอนเทนต์หน้า &lt;X&gt; ทุกตัว</li>
+                    </ol>
+                    <a href="https://www.w3schools.com/css/css_pseudo_classes.asp"> รายชื่อและตัวอย่าง Pseudo Classes, Pseudo Elements ทั้งหมด</a>
+                </td>
+            </tr>
+            <tr>
+                <td>1.4</td>
+                <td>combinator มีกี่แบบอะไรบ้าง </td>
+                <td>
+                    6 แบบ
+                    <ol>
+                        <li>X, Y select ทั้ง X และ Y ทุกตัว</li>
+                        <li>X + Y เลือก เฉพาะ Y ที่อยู่ระดับเดียวกัน และชิดถัดจาก X เท่านั้น</li>
+                        <li>X ~ Y เลือก Y ที่อยู่ระดับเดียวกัน และถัดจาก X ทุกตัว</li>
+                        <li>X Y เลือก Y ที่เป็น descendant ของ X ทุกตัว</li>
+                        <li>X &gt; Y เลือก เฉพาะ Y ที่เป็น child ของ X ลงไป 1 ขั้น เท่านั้น</li>
+                        <li>[abc][def] เลือก HTML tag ใด ๆ ที่มี attribute ทั้ง abc และ xyz</li>
+                    </ol>
+                </td>
+            </tr>
+            <tr>
+                <td rowspan="3" class="number">2</td>
+                <td>2.1</td>
+                <td>property และ value คืออะไรแตกต่างกันอย่างไร</td>
+                <td>property คือตัวระบุคุณสมบัติที่เราอยากเปลี่ยนหรือกำหนดค่าให้มัน<br> value คือค่าที่กำหนดให้แก่ property <br>โดยต้องคั่นระหว่างกันด้วย :</td>
+            </tr>
+            <tr>
+                <td>2.2</td>
+                <td>property ที่สอนใน precamp มีกี่กลุ่มอะไรบ้าง</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>2.3</td>
+                <td>value unit มีกี่ประเภทอะไรบ้างแต่ละ ประเภทคืออะไร</td>
+                <td>
+                    มี 2 ประเภท แบบสัมบูรณ์กับแบบสัมพัทธ์
+                    <ol>
+                        <li>
+                            แบบสัมบูรณ์
+                            <ul>
+                                <li>cm เซ็นติเมตร</li>
+                                <li>mm มิลลิเมตร</li>
+                                <li>in นิ้ว โดย 1in = 2.54cm</li>
+                                <li>px พิกเซล โดย 1px = 1/96in</li>
+                                <li>pt พอยต์ โดย 1pt = 1/72in</li>
+                                <li>pc พิคาส โดย 1pc = 12pt = 1/6in</li>
+                            </ul>
+                        </li>
+                        <li>
+                            แบบสัมพัทธ์
+                            <ul>
+                                <li>em จำนวนเท่าของขนาดฟอนต์ของ element นั้น ๆ (หรือของ parent element)</li>
+                                <li>ex จำนวนเท่าของขนาดความสูงฟอนต์ของ element นั้น ๆ (หรือของ parent element)</li>
+                                <li>ch จำนวนเท่าของขนาดเลข 0</li>
+                                <li>rem จำนวนเท่าของขนาดฟอนต์ของ root element</li>
+                                <li>vw จำนวน % ของความกว้างของ viewport</li>
+                                <li>vh จำนวน % ของความสูงของ viewport</li>
+                                <li>vmin จำนวน % ของความกว้าง หรือความสูงของ viewport ขึ้นอยู่กับว่าอย่างไหนน้อยกว่ากัน</li>
+                                <li>vmax จำนวน % ของความกว้าง หรือความสูงของ viewport ขึ้นอยู่กับว่าอย่างไหนมากกว่ากัน</li>
+                                <li>% จำนวน % ของ parent element</li>
+                                Viewport คือขนาดหน้าต่างของเบราว์เซอร์
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                </td>
+            </tr>
+        </table>
+        <strong>3</strong>
+        <form action=""></form>
+        <table>
+            <tr>
+                <th colspan="2">ข้อ</th>
+                <th>คำถาม</th>
+                <th>คำตอบ</th>
+            </tr>
+            <tr>
+                <td rowspan="3" class="number">4</td>
+                <td>4.1</td>
+                <td>value ใน display property มีอะไรบ้าง</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4.2</td>
+                <td>grid และ flex แตกต่างกันอย่างไร</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>4.3</td>
+                <td> justify and align แตกต่างกันอย่างไร</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan="2" class="number">5</td>
+                <td>5.1</td>
+                <td>position คืออะไร และ อะไรบ้าง</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>5.2</td>
+                <td>z-index คืออะไรใช้อย่างไร</td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+</html>
