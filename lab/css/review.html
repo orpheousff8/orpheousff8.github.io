@@ -91,7 +91,40 @@
             <tr>
                 <td>2.2</td>
                 <td>property ที่สอนใน precamp มีกี่กลุ่มอะไรบ้าง</td>
-                <td></td>
+                <td>
+                    <ol>
+                        <li>จัดรูปแบบข้อความ
+                            <ul>
+                                <li>ชนิด/ขนาดฟอนต์</li>
+                                <li>รูปแบบฟอนต์</li>
+                                <li>ตกแต่งข้อความ</li>
+                                <li>แนวข้อความ</li>
+                                <li>ลักษณะตัวพิมพ์</li>
+                            </ul>
+                        </li>
+                        <li>ปรับแต่ง list</li>
+                        <li>กำหนดลักษณะเส้นขอบ
+                            <ul>
+                                <li>รูปแบบเส้นขอบ</li>
+                                <li>ขนาดเส้นขอบ</li>
+                                <li>สีเส้นขอบ</li>
+                                <li>รัศมีเส้นขอบ</li>
+                            </ul>
+                        </li>
+                        <li>กำหนด Padding</li>
+                        <li>กำหนด Margin</li>
+                        <li>กำหนด element
+                            <ul>
+                                <li>ขนาด</li>
+                                <li>การแสดงเนื้อหาที่เกินขนาดของ element</li>
+                                <li>การจัดวางแบบ float</li>
+                                <li>ซ่อน/แสดง</li>
+                                <li>ตำแหน่ง</li>
+                                <li>ลำดับ</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </td>
             </tr>
             <tr>
                 <td>2.3</td>
@@ -142,28 +175,131 @@
                 <td rowspan="3" class="number">4</td>
                 <td>4.1</td>
                 <td>value ใน display property มีอะไรบ้าง</td>
-                <td></td>
+                <td>
+                    <ol>
+                        <li>inline - แสดง element เหมือน &lt;span&gt; โดยอยู่บรรทัดเดิม ส่วน property height กับ width จะไม่มีผล</li>
+                        <li>block - แสดง element เหมือน &lt;p&gt; โดยจะเริ่มบนบรรทัดใหม่ และใช้ความกว้าง container จนเต็ม</li>
+                        <li>contents - ทำให้ container หายไป</li>
+                        <li>flex - แสดง element แบบ flex โดยตัว container จะเป็นแบบ block</li>
+                        <li>grid - แสดง element แบบ grid โดยตัว container จะเป็นแบบ block</li>
+                        <li>inline-block - แสดง element อยู่ใน block container โดยปรับแต่ง property height กับ width ได้ แต่จะอยู่ในบรรทัดเดิมแบบ inline</li>
+                        <li>inline-flex - แสดง element แบบ flex โดยตัว container จะเป็นแบบ inline</li>
+                        <li>inline-grid - แสดง element แบบ grid โดยตัว container จะเป็นแบบ inline</li>
+                        <li>inline-table - แสดง element แบบ table โดยตัว container จะเป็นแบบ inline</li>
+                        <li>list-item - ให้ element มีพฤติกรรมเหมือน &lt;li&gt;</li>
+                        <li>run-in - แสดง element แบบ block หรือ inline ขึ้นกับเนื้อหา</li>
+                        <li>table - ให้ element มีพฤติกรรมเหมือน &lt;table&gt;</li>
+                        <li>table-caption - ให้ element มีพฤติกรรมเหมือน &lt;caption&gt;</li>
+                        <li>table-column-group - ให้ element มีพฤติกรรมเหมือน &lt;colgroup&gt;</li>
+                        <li>table-header-group - ให้ element มีพฤติกรรมเหมือน &lt;thead&gt;</li>
+                        <li>table-footer-group - ให้ element มีพฤติกรรมเหมือน &lt;tfoot&gt;</li>
+                        <li>table-row-group - ให้ element มีพฤติกรรมเหมือน &lt;tbody&gt;</li>
+                        <li>table-cell - ให้ element มีพฤติกรรมเหมือน &lt;td&gt;</li>
+                        <li>table-column - ให้ element มีพฤติกรรมเหมือน &lt;col&gt;</li>
+                        <li>table-row - ให้ element มีพฤติกรรมเหมือน &lt;tr&gt;</li>
+                        <li>none - 	ลบ element ออกไป</li>
+                        <li>initial - กำหนด property เป็นค่า default</li>
+                        <li>inherit - ให้ใช้ property ของ parent element</li>
+                    </ol>
+                </td>
             </tr>
             <tr>
                 <td>4.2</td>
                 <td>grid และ flex แตกต่างกันอย่างไร</td>
-                <td></td>
+                <td>Flex ใช้เพื่อจัดการ layout 1 มิติ ส่วน Grid ใช้เพื่อจัดการ layout 2 มิติ<br>
+                    Flex เราสามารถจัดวางของต่างๆภายใน layout 1 แถว อาจจะเป็นแนวตั้งหรือแนวนอน<br>
+                    Grid เราสามารถจัดของไว้ตรงไหนก็ได้ใน grid layout เช่นให้ layout ของ header เต็ม row แรก 10 columns<br>
+                    บรรทัดต่อมาให้ menu เป็น 2 columns content เป็น 8 columns
+                </td>
             </tr>
             <tr>
                 <td>4.3</td>
                 <td> justify and align แตกต่างกันอย่างไร</td>
-                <td></td>
+                <td> 
+                    justify-content เป็นการจัดตำแหน่งของ Flex Item ภายใน Flex Container
+                    <ul>
+                        <li>flex-start: จัด Flex Item ชิดตำแหน่งต้น*</li>
+                        <li>flex-end: จัด Flex Item ชิดตำแหน่งท้าย*</li>
+                        <li>center: จัด Flex Item อยู่ตรงกลาง</li>
+                        <li>space-between: จัด Flex Item ให้มี margin ระหว่างแต่ละ item เท่า ๆ กัน</li>
+                        <li>space-around: จัด Flex Item ให้มี margin ระหว่าง container หรือ item เท่า ๆ กัน</li>
+                        *ตำแหน่ง ต้น/ท้าย ขึ้นอยู่กับ flex-direction โดย
+                        <ul>
+                            <li>row: เรียงเป็นแถวแนวนอน จากซ้ายไปขวา</li>
+                            <li>row-reverse: เรียงเป็นแถวแนวนอน จากขวาไปซ้าย</li>
+                            <li>column: เรียงเป็นแถวแนวตั้ง จากบนลงล่าง</li>
+                            <li>column-reverse: เรียงเป็นแถวแนวตั้ง จากล่างขึ้นบน</li>
+                        </ul>
+                    </ul>
+                    align-items เป็นการจัดตำแหน่งของ Flex Item ในแกนตั้งฉากกับ flex-direction ภายใน Flex Container
+                    <ul>
+                        <li>flex-start: จัด Flex Item ให้อยู่บนสุดของแกน</li>
+                        <li>center: จัด Flex Item ให้อยู่ตรงกลางของแกน</li>
+                        <li>flex-end: จัด Flex Item ให้อยู่ล่างสุดของแกน</li>
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td rowspan="2" class="number">5</td>
                 <td>5.1</td>
                 <td>position คืออะไร และ อะไรบ้าง</td>
-                <td></td>
+                <td>
+                    เป็นการกำหนดตำแหน่งของ element เมื่อเทียบกับ container
+                    <ul>
+                        <li>top, left, bottom, right เป็นการกำหนดระยะห่างจากขอบของ container กำหนดเป็นค่าติดลบได้
+                            <ul>
+                                <li>นิยมกำหนดเป็นคู่ top/left, top/right, bottom/left, bottom/right อย่างใดอย่างหนึ่ง</li>
+                                <li>ต้องใช้คู่กับ property position ที่ไม่ใช่ static จึงจะได้ผลลัพท์ตามต้องการ</li>
+                            </ul>
+                        </li>
+                        <li>position เป็นลักษณะการเทียบตำแหน่งกับ container
+                            <ul>
+                                <li>static (ค่าเริ่มต้น) จัดวางตำแหน่งตามที่กำหนดไว้ใน HTML</li>
+                                <li>absolute เทียบตำแหน่งกับ container โดยตรง ถ้า container ไม่ได้กำหนดตำแหน่งแบบ static
+                                    <ul>
+                                        <li>ถ้า container เป็น body จะเทียบตำแหน่งกับ body</li>
+                                        <li>ถ้า container ไม่ใช่ body container ต้องมี position แบบ absolute, relative หรือ sticky<br>
+                                            จึงจะเทียบตำแหน่งกับ container มิฉะนั้นการกำหนด top, left, bottom, right จะไม่มีผลใด ๆ
+                                        </li>
+                                        <li>ถ้ากำหนดตำแหน่งหลาย element พร้อมกันด้วยค่า top/left, bottom/right เดียวกัน มันจะทับกัน</li>
+                                    </ul>
+                                </li>
+                                <li>fixed ตรึง element อยู่กับที่ ไม่เลื่อนตามสกรอลล์บาร์ และไม่ขึ้นกับ container
+                                    <ul>
+                                        <li>ถ้ากำหนดตำแหน่งหลาย element พร้อมกันด้วยค่า top/left, bottom/right เดียวกัน มันจะทับกัน</li>
+                                    </ul>
+                                </li>
+                                <li>sticky ตรึง element อยู่กับที่ ไม่เลื่อนตามสกรอลล์บาร์ แต่จะเลื่อนลงมาสุดแค่ container ต้องกำหนดค่า top ด้วย (เป็น 0 ได้)
+                                    <ul>
+                                        <li>ถ้ากำหนดตำแหน่งหลาย element พร้อมกันด้วยค่า top/left, bottom/right เดียวกัน มันจะทับกัน</li>
+                                    </ul>
+                                </li>
+                                <li>relative เทียบกับตำแหน่งเดิมที่มันควรจะอยู่ จากโค้ด HTML แล้วเลื่อนไปตามระยะที่กำหนด
+                                    <ul>
+                                        <li>ปกติจะเทียบระยะด้วย top/left เป็นหลัก ถ้าจะใช้ bottom/right ให้ใส่ระยะเป็นลบ<br>
+                                            (bottom: -10px; right: -20px; มีค่าเท่ากับ top: 10px; left: 20px;)
+                                        </li>
+                                        <li>ถ้ากำหนดตำแหน่งหลาย element พร้อมกันด้วยค่า top/left, bottom/right เดียวกัน มันจะ<em>ไม่</em>ทับกัน<br>
+                                            เนื่องจากอ้างอิงตำแหน่งระหว่างกันด้วยโค้ด HTML
+                                        </li>
+                                    </ul>
+                                </li>
+                                
+                            </ul>
+                        </li>   
+                    </ul>
+                </td>
             </tr>
             <tr>
                 <td>5.2</td>
                 <td>z-index คืออะไรใช้อย่างไร</td>
-                <td></td>
+                <td>
+                    z-index คือลำดับของ element ในแกน z ของหน้าจอ (x แนวนอน, y แนวตั้ง)<br>
+                    เพราะฉะนั้นแกน z คือแนวลึกเข้าไปในจอ และออกนอกจอ<br>
+                    ค่าตั้งต้นของแต่ละ element คือ 0<br>
+                    ถ้า element มีค่า z-index เท่ากัน element ที่มาทีหลัง จะทับ element ที่มาก่อน<br>
+                    element ที่มีค่า z-index น้อยกว่า (เป็นจำนวนเต็มลบได้) จะอยู่ layer ล่างกว่า element ที่มีค่ามากกว่า
+                </td>
             </tr>
         </table>
     </body>
