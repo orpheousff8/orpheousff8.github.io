@@ -1,0 +1,124 @@
+:root {
+    --left-indent: 40px;
+    --right-indent: 40px;
+}
+.top {
+    display: grid;
+    grid-template-columns: 150px 100px auto;
+    position: relative;
+    padding: 5px;
+}
+    .top span {
+        padding: 10px;
+    }
+    .top img {
+        height: 20px;
+    }
+.top-left {
+    grid-column: 1 / 3;
+}
+.top-right {
+    grid-column: 3 / 4;
+    position: absolute;
+    right: 0;
+}
+.mid {
+    display: grid;
+    grid-template-columns: 200px auto 200px;
+    position: relative;
+}
+    .mid img {
+        height: 30px;
+    }
+.mid-logo {
+    grid-column: 1 / 2;
+    position: absolute;
+    left: 0;
+}
+.mid-menu {
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px 100px 5px 100px;
+    font-size: larger;
+}
+.mid-search {
+    grid-column: 3 / 4;
+    border: 1px solid gray;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+}
+    .mid-search > input {
+        border: none;
+        height: 30px;
+    }
+.covid {
+    position: relative;
+    text-align: center;
+    background-color: lightgray;
+    padding: 30px 0px 30px 0px;
+}
+.sticky {
+    position: sticky;
+    top: 0px;
+    padding: 20px 0px 20px 0px;
+    margin-top: 10px; 
+    background-color: white;
+}
+    .sticky-main {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        padding-left: var(--left-indent);
+        z-index: 1;
+    }
+    .sticky-menu {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+    }
+        .sticky-menu > span {
+            padding: 0px 20px 0px 20px;
+        }
+h3 {
+    padding-left: var(--left-indent);
+}
+div.container {
+    padding: 0 var(--right-indent) 0 var(--left-indent);
+    width: calc(100vw - --left-indent - --right-indent);
+}
+    div.container img {
+        width: 100%;
+    }
+    div.container.pic2 {
+        display: flex;
+        justify-content: center;
+    }
+        div.container.pic2 > span:first-child {
+            padding-left: 0px!important;
+        }
+        div.container.pic2 > span {
+            padding: 0px 7px 0px 7px;
+        }
+        div.container.pic2 > span:last-child {
+            padding-right: 0px!important;
+        }
+    div.container.pic3 {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+        div.container.pic3 > span:first-child {
+            padding-right: 7px;
+        }
+        div.container.pic3 > span:last-child {
+            padding-left: 7px;
+        }
+    div.container.pic5{
+        display: block;
+        width: 700px;
+        margin: auto;
+    }

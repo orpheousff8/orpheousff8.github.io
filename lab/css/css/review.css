@@ -1,0 +1,58 @@
+body {
+    padding: 1rem;
+}
+table{
+    border-collapse: collapse;
+}
+table, th, td{
+    border: 1px solid black;
+}
+    td.number{
+        vertical-align: top;
+        font-weight: bold;
+    }
+.wrapper {
+    border: 3px solid darkslategray;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    width: fit-content;
+    z-index: 1;
+}
+.hw3Form {
+    display: grid;
+    grid-template-columns: 150px 210px 200px;
+    grid-gap: 8px;
+    background-color: white;
+    border: 6px solid slategray;
+    /* border-radius: 10px; */
+    padding: 1rem;
+    width: 580px;
+}
+    .hw3Form > label {
+        grid-column: 1 / 2;
+    }
+    .hw3Form > span {
+        grid-column: 2 / 3;
+    }
+    .hw3Form > input[type="button"] {
+        grid-column: 3 / 4;
+        width: fit-content;
+    }
+    .hw3Form > .longSpan {
+        grid-column: 2 / 4;
+    }
+    .hw3Form > input, select {
+        width: 200px;
+    }
+    .hw3Form .urlInput {
+        width: 80px;
+    }
+.banner {
+    grid-column: 1 / 4;
+    color: snow;
+    background-color: slategray;
+    border-top: 1px solid darkslategray;
+}
+select.scoringTypeSelect {
+    width: fit-content;
+}
