@@ -9,7 +9,7 @@ a {
     /* width: 60%;  */
     /* min-width: 400px; */
     /* background-color: #caa; */
-    width: 50vw;
+    width: 40vw;
     margin: auto;
 }
     .image {
@@ -50,3 +50,27 @@ a {
             color: black;
             content: "/\00a0";
         }
+
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 70vw;
+    }
+    .pagination {
+        font-size: small;
+    }
+}
+@media only screen and (min-width: 600px) {
+    .container {
+        width: 70vw;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 60vw;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .container {
+        width: 50vw;
+    }
+}
