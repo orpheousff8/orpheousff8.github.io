@@ -2,78 +2,111 @@
     --left-indent: 40px;
     --right-indent: 40px;
 }
-.top {
+body {
+    /* border: 1px solid brown; */
+    width: 100%;
+    padding: 0 0 0 0!important;
+    margin: 0 0 0 0!important;
+}
+div.top {
     display: grid;
     grid-template-columns: 150px 100px auto;
     position: relative;
-    padding: 5px;
+    padding: 5px 5px 5px 5px;
+    border-bottom: 1px solid grey;
+    font-size: smaller;
 }
-    .top span {
-        padding: 10px;
+    div.top span {
+        padding: 0 10px 0 10px;
     }
-    .top img {
-        height: 20px;
+    div.top img {
+        height: 25px;
+        top: 5px;
+        position: relative;
+        /* align-self: center; */
     }
-.top-left {
+span.top-left {
     grid-column: 1 / 3;
 }
-.top-right {
+span.top-right {
     grid-column: 3 / 4;
     position: absolute;
     right: 0;
+    line-height: 30px;
 }
-.mid {
+    span.top-right > span {
+        /* border: 1px solid red; */
+    }
+
+div.mid {
     display: grid;
     grid-template-columns: 200px auto 200px;
     position: relative;
+    padding: 20px 5px 20px 5px;
+    border-bottom: 1px solid grey;
 }
-    .mid img {
+    div.mid img {
         height: 30px;
     }
-.mid-logo {
+span.mid-logo {
     grid-column: 1 / 2;
     position: absolute;
+    align-self: center;
     left: 0;
 }
-.mid-menu {
+span.mid-menu {
     grid-column: 2 / 3;
     display: flex;
     justify-content: space-evenly;
     padding: 5px 100px 5px 100px;
     font-size: larger;
 }
-.mid-search {
+span.mid-search {
     grid-column: 3 / 4;
     border: 1px solid gray;
     border-radius: 5px;
     position: absolute;
+    align-self: center;
     right: 0;
 }
-    .mid-search > input {
+    span.mid-search > input {
         border: none;
         height: 30px;
     }
-.covid {
+    span.mid-search > img {
+        height: 25px;
+        position: relative;
+        top: 5px;
+    }
+
+div.covid {
     position: relative;
     text-align: center;
     background-color: lightgray;
-    padding: 30px 0px 30px 0px;
+    padding: 20px 0px 20px 0px;
+    border-bottom: 1px solid grey;
 }
-.sticky {
+
+a {
+    color: grey;
+}
+
+div.sticky {
     position: sticky;
     top: 0px;
-    padding: 20px 0px 20px 0px;
+    padding: 30px 0px 30px 0px;
     margin-top: 10px; 
     background-color: white;
+    line-height: 60px;
 }
-    .sticky-main {
+    span.sticky-main {
         position: absolute;
         left: 0px;
         top: 0px;
         padding-left: var(--left-indent);
         z-index: 1;
     }
-    .sticky-menu {
+    span.sticky-menu {
         display: flex;
         justify-content: center;
         position: absolute;
@@ -81,7 +114,7 @@
         top: 0px;
         width: 100%;
     }
-        .sticky-menu > span {
+        span.sticky-menu > span {
             padding: 0px 20px 0px 20px;
         }
 h3 {
@@ -89,7 +122,7 @@ h3 {
 }
 div.container {
     padding: 0 var(--right-indent) 0 var(--left-indent);
-    width: calc(100vw - --left-indent - --right-indent);
+    width: calc(100% - --left-indent - --right-indent);
 }
     div.container img {
         width: 100%;
@@ -98,11 +131,11 @@ div.container {
         display: flex;
         justify-content: center;
     }
-        div.container.pic2 > span:first-child {
-            padding-left: 0px!important;
-        }
         div.container.pic2 > span {
             padding: 0px 7px 0px 7px;
+        }
+        div.container.pic2 > span:first-child {
+            padding-left: 0px!important;
         }
         div.container.pic2 > span:last-child {
             padding-right: 0px!important;
@@ -112,13 +145,110 @@ div.container {
         grid-template-columns: auto auto;
     }
         div.container.pic3 > span:first-child {
+            /* grid-column: 1 / 2; */
             padding-right: 7px;
         }
         div.container.pic3 > span:last-child {
+            /* grid-column: 2 / 3; */
             padding-left: 7px;
         }
     div.container.pic5{
         display: block;
         width: 700px;
         margin: auto;
+    }
+    div.container.pic6 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+        div.container.pic6 > span {
+            padding: 0px 7px 0px 7px;
+        }
+        div.container.pic6 > span:first-child {
+            /* grid-column: 1 / 2; */
+            padding-left: 0px!important;
+        }
+        div.container.pic6 > span:last-child {
+            /* grid-column: 3 / 4; */
+            padding-right: 0px!important;
+        }
+    div.links {
+        display: flex;
+        justify-content: center;
+        margin: 30px 0px 30px 0px;
+    }
+        div.links > span {
+            padding: 0 40px 0 40px;
+        }
+ul {
+    list-style-type: none;
+    padding: 0;
+    /* margin: 0; */
+}
+li {
+    margin: 15px 0 15px 0;
+}
+li:first-child{
+    margin: 30px 0 15px 0;
+}
+div.bottomBar {
+    color: snow;
+    background-color: black;
+    font-size: small;
+    position: absolute;
+    width: 100%;
+    padding: 30px 0px 10px 0px;
+}
+div.wrapper {
+    display: block;
+    width: 92%;
+    margin: auto;
+}
+div.wrapperer {
+    display: grid;
+    grid-template-columns: 15% 15% 15% auto;
+    position: relative;
+}
+    div.wrapperer > span {
+        padding: 0 25px 0 25px;
+    }
+    div.wrapperer > span:first-child {
+        padding-left: 0px!important;
+    }
+    div.wrapperer > span:last-child {
+        padding-right: 0px!important;
+    }
+span.bottomBar-right {
+    position: absolute;
+    right: 0;
+}
+    span.bottomBar-right img {
+        position: relative;
+        height: 40px;
+    }
+div.footer {
+    display: grid;
+    grid-template-columns: 5% 15% auto 35%;
+    position: relative;
+    font-size: smaller;
+    padding: 20px 0 0 0;
+}
+    div.footer > span {
+        line-height:30px;
+        padding: 0 5px 0 5px;
+    }
+    div.footer img {
+        height: 30px;
+    }
+span.footer-right {
+    position: absolute;
+    /* top: 20px; */
+    align-self: center;
+    right: 0;
+}
+    span.footer-right > span {
+        padding: 0 20px 0 20px;
+    }
+    span.footer-right > span:last-child {
+        padding: 0 5px 0 20px;
     }
