@@ -2,10 +2,122 @@
 <html>
     <head>
         <style>
-            
+            :root {
+                --MASTER-WIDTH: 80%;
+            }
+            img {
+                display: block;
+                width: var(--MASTER-WIDTH);
+                margin: auto;
+            }
+            div.container {
+                display: grid;
+                grid-template-columns: 33% 33% 33%;
+                gap: 20px;
+                width: var(--MASTER-WIDTH);
+                margin: auto;
+                padding: 20px 0px 10px 0px;
+            }
+                div.container > div {
+                    display: block;
+                    width: 90%;
+                    margin: auto;
+                }
+                    div > h4 {
+                        text-align: center;
+                    }
+            p {
+                text-indent: 2em;
+            }
+            div.div7 {
+                display: block;
+                width: var(--MASTER-WIDTH);
+                margin: auto;
+            }
+
+            /* Extra small devices (phones, 600px and down) */
+            @media only screen and (max-width: 600px) {
+                body {
+                    font-size: smaller;
+                }
+                div.container {
+                    grid-template-columns: 99%;
+                }
+                div.div7 {
+                    width: 72%;
+                }
+            }
+
+            /* Small devices (portrait tablets and large phones, 600px and up) */
+            @media only screen and (min-width: 600px) {
+                body {
+                    font-size: small;
+                }
+                div.container {
+                    grid-template-columns: 49% 49%;
+                }
+            }
+
+            /* Medium devices (landscape tablets, 768px and up) */
+            @media only screen and (min-width: 768px) {
+                body {
+                    font-size: unset;
+                }
+                div.container {
+                    grid-template-columns: 33% 33% 33%;
+                }
+            }
         </style>
     </head>
     <body>
-        
+        <img src="./img/pic4.JPG" alt="">
+
+        <div class="container">
+            <div class="div1">
+                <h4>Div1</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet corrupti ad voluptatibus beatae omnis consequatur deserunt blanditiis nisi nihil, rem laboriosam magnam pariatur praesentium voluptates sit eos facilis dignissimos atque velit cum. Vitae dolorum omnis quibusdam maiores hic dignissimos! Eius dolorem quam totam quae dolor nemo laudantium suscipit nisi.
+                </p>
+            </div>
+            <div class="div2">
+                <h4>Div2</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet corrupti ad voluptatibus beatae omnis consequatur deserunt blanditiis nisi nihil, rem laboriosam magnam pariatur praesentium voluptates sit eos facilis dignissimos atque velit cum. Vitae dolorum omnis quibusdam maiores hic dignissimos! Eius dolorem quam totam quae dolor nemo laudantium suscipit nisi.
+                </p>
+            </div>
+            <div class="div3">
+                <h4>Div3</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet corrupti ad voluptatibus beatae omnis consequatur deserunt blanditiis nisi nihil, rem laboriosam magnam pariatur praesentium voluptates sit eos facilis dignissimos atque velit cum. Vitae dolorum omnis quibusdam maiores hic dignissimos! Eius dolorem quam totam quae dolor nemo laudantium suscipit nisi.
+                </p>
+            </div>
+            <div class="div4">
+                <h4>Div4</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet corrupti ad voluptatibus beatae omnis consequatur deserunt blanditiis nisi nihil, rem laboriosam magnam pariatur praesentium voluptates sit eos facilis dignissimos atque velit cum. Vitae dolorum omnis quibusdam maiores hic dignissimos! Eius dolorem quam totam quae dolor nemo laudantium suscipit nisi.
+                </p>
+            </div>
+            <div class="div5">
+                <h4>Div5</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet corrupti ad voluptatibus beatae omnis consequatur deserunt blanditiis nisi nihil, rem laboriosam magnam pariatur praesentium voluptates sit eos facilis dignissimos atque velit cum. Vitae dolorum omnis quibusdam maiores hic dignissimos! Eius dolorem quam totam quae dolor nemo laudantium suscipit nisi.
+                </p>
+            </div>
+            <div class="div6">
+                <h4>Div6</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet corrupti ad voluptatibus beatae omnis consequatur deserunt blanditiis nisi nihil, rem laboriosam magnam pariatur praesentium voluptates sit eos facilis dignissimos atque velit cum. Vitae dolorum omnis quibusdam maiores hic dignissimos! Eius dolorem quam totam quae dolor nemo laudantium suscipit nisi.
+                </p>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="div7">
+                <h4>Div7</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto amet corrupti ad voluptatibus beatae omnis consequatur deserunt blanditiis nisi nihil, rem laboriosam magnam pariatur praesentium voluptates sit eos facilis dignissimos atque velit cum. Vitae dolorum omnis quibusdam maiores hic dignissimos! Eius dolorem quam totam quae dolor nemo laudantium suscipit nisi.
+                </p>
+            </div>
+        </div>
     </body>
 </html>
