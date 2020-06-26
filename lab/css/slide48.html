@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            div {
+                position: relative;
+            }
+            .fromTo {
+                animation: anime1 10s linear 0s infinite alternate forwards;
+                height: 200px;
+            }
+            .hideAndSeek1 {
+                animation: anime11 3s ease 0s infinite alternate forwards;
+            }
+            .percent {
+                animation: anime2 10s linear 0s infinite alternate forwards;
+                height: 200px;
+            }
+            .hideAndSeek2 {
+                animation: anime22 3s ease 0s infinite alternate forwards;
+            }
+            @keyframes anime1 {
+                from {
+                    color: black;
+                    width: 200px;
+                    border: 1px solid salmon;
+                    background-color: skyblue;
+                    left: 0px;
+                }
+                to {
+                    color: thistle;
+                    width: 100px;
+                    border: 3px dotted dodgerblue;
+                    background-color: gainsboro;
+                    left: 300px;
+                }
+            }
+            @keyframes anime11 {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+            @keyframes anime2 {
+                0% {
+                    color: black;
+                    width: 200px;
+                    border: 1px solid salmon;
+                    background-color: skyblue;
+                    left: 0px;
+                }
+                50% {
+                    color: grey;
+                    width: 300px;
+                    border: 2px dashed yellow;
+                    background-color: green;
+                    left: -50px;
+                }
+                100% {
+                    color: thistle;
+                    width: 100px;
+                    border: 3px dotted dodgerblue;
+                    background-color: gainsboro;
+                    left: 300px;
+                }
+            } 
+            @keyframes anime22 {
+                0% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.2;
+                }
+                100% {
+                    opacity: 0;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>ลองกำหนด @keyframes แบบ from to</h1>
+            <div class="fromTo">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <p class="hideAndSeek1">This text plays hide and seek!</p>
+        </div>
+        <div>
+            <h1>ลองกำหนด @keyframes แบบ %</h1>
+            <div class="percent">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <p class="hideAndSeek2">This text plays hide and seek!</p>
+        </div>
+    </body>
+</html>
