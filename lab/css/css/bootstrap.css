@@ -1,3 +1,45 @@
+body {
+    font-family: radley,sans-serif;
+    color: #636363;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+.header-panel_about {
+    position: relative;
+    font-size: small;
+    border-top: 1px solid #979797;
+    cursor: pointer;
+    padding-top: 8px;
+    right: 50px;
+}
+.header-panel_about::before {
+    content: '';
+    background-color: #fc5424;
+    display: block;
+    height: 35px;
+    position: absolute;
+    top: -10px;
+    width: 47px;
+}
+.header-panel_about::after {
+    content: '';
+    background-color: #fff;
+    display: block;
+    height: 1px;
+    left: 2.5px;
+    position: absolute;
+    top: 16px;
+    width: 42px;
+}
+.header-panel_text {
+    position: absolute;
+    font-size: xx-small;
+    top: 50px;
+    right: 40px;
+}
+
 .Form_container.card-img-overlay {
     top: 110%;
     width: 85%;
@@ -14,6 +56,25 @@
 .Lower_container {
     position: relative;
 }
+
+.Nav_bottom::before {
+    content: '';
+    position: absolute;
+    background: black;
+    right: 0;
+    width: 90%;
+    height: 1px;
+}
+
+.nav-link {
+    display: inline;
+    color: #636363;
+    padding-left: 0;
+    padding-right: 0;
+}
+    .nav-link:hover {
+        color: #636363;
+    }
 
 @media only screen and (max-width: 600px) {
     .Lower_container {
