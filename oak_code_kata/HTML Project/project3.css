@@ -1,0 +1,229 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.4;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    display: block;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+p {
+    color: white;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+#navbar {
+    position: fixed;
+    display: flex;
+    /* flex-flow: row nowrap; */
+    justify-content: flex-end;
+    top: 0;
+    width: 100%;
+    background: #BE3144;
+    box-shadow: 2px 0 rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+}
+
+#navbar > ul {
+    display: flex;
+    margin: 0 2rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+#navbar li:hover {
+    background: #45567d;
+}
+#navbar a {
+    display: block;
+    font-weight: bolder;
+    font-size: 2.2rem;
+    padding: 2rem;
+}
+
+#welcome-section {
+    position: relative;
+    display: flex;
+    /* flex-flow: column wrap; */
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    width: 100%;
+    height: 100vh;
+}
+
+#welcome-section h1 {
+    font-size: 6rem;
+    margin: auto;
+}
+
+#welcome-section h5 {
+    color: #BE3144;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 3rem;
+    margin: auto;
+}
+
+#projects {
+    text-align: center;
+    padding: 10rem 2rem;
+    background: #45567d;
+}
+.projects_header h2 {
+    max-width: 640px;
+    color: white;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid;
+    font-size: 2.8rem;
+}
+.project-grid {
+    display: grid;
+    position: relative;
+    /* grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); */
+    /* grid-template-columns: auto, minmax(320px, 1fr); */
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+.project-tile {
+    display: block;
+    background: #303841;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+}
+.project-image {
+    height: calc(100% - 6.8rem);
+    
+    /* width: auto; */
+    /* object-fit: cover; */
+    /* width: auto; */
+}
+
+.project-title {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+}
+.code {
+    color: #303841;
+    transition: color 0.3s ease-out;
+}
+
+.btn-show-all {
+    font-size: 2rem;
+    background: #303841;
+    transition: background 0.3s ease-out;
+}
+.btn-show-all:hover {
+    background: #BE3144;
+}
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 80vh;
+    padding: 0 2rem;
+    background: #303841;
+}
+.contact_header > h2 {
+    font-size: 4rem;
+    margin-bottom: 0;
+}
+.contact_header > p {
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 0;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+.contact-links > a {
+    position: relative;
+}
+    .contact-links > a:hover {
+        top: 5px;
+    }
+
+footer {
+    font-weight: 300;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem;
+    background: #303841;
+    border-top: 4px solid #BE3144;
+}
+footer > p {
+    margin: 2rem;
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .project-grid {
+        grid-template-columns: auto auto;
+    }
+    .project-image {
+        height: 300px;
+        /* max-height: 400px; */
+    }
+}
+
+@media only screen and (min-width: 1020px) {
+    .project-grid {
+        grid-template-columns: auto auto auto;
+    }
+    .project-image {
+        height: 400px;
+        /* max-height: 400px; */
+    }
+}

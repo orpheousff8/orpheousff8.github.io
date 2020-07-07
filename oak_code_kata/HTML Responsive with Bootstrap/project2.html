@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="./project2.css">
+
+    <title>Project 2</title>
+</head>
+
+<body>
+    <section class="Top">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-danger fixed-top">
+            <div class="row w-100">
+                <div class="col-3 my-auto">
+                    <span class="Today_nav d-none d-lg-block text-white">32*c Bangkok, TH ><br>Tue, Jun 30, 2020</span>
+                    <span class="Logo_small_nav d-lg-none text-white h4">Newsweek</span>
+                </div>
+                <div class="col-1"></div>
+                <div class="Logo_large_nav col-4 d-none d-lg-block text-white display-3 font-weight-bold my-auto">
+                    Newsweek</div>
+                <div class="col-1 d-none d-lg-block"></div>
+                <div class="col-4 d-lg-none"></div>
+                <div class="col-1 my-auto">
+                    <span class="Man_nav d-lg-none">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M13 14s1 0 1-1-1-4-6-4-6 3-6 4 1 1 1 1h10zm-9.995-.944v-.002.002zM3.022 13h9.956a.274.274 0 0 0 .014-.002l.008-.002c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664a1.05 1.05 0 0 0 .022.004zm9.974.056v-.002.002zM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        </svg>
+                    </span>
+                    <span class="Login_nav d-none d-lg-block text-white">LOGIN</span>
+                </div>
+                <div class="Annoy_nav col-2 h-50 badge badge-warning text-center text-no-wrap my-auto">AD FREE TRIAL >
+                </div>
+                <div class="col-1 d-lg-none my-auto">
+                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        data-target="#navbarToggler" aria-expanded="false" aria-controls="#navbarToggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="collapse show bg-white" id="navbarToggler">
+            <!-- <div class="Links_nav d-none d-lg-block bg-white"> -->
+            <div class="Links_nav bg-white">
+                <!-- flex -->
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">U.S.</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">World</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Business</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Tech & Science</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Culture</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Newsgeek</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Sports</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Health</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">The Debate</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Vantage</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Default_link" href="#">Weather</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control w-50 h-50" type="text" placeholder="Search">
+                            <button type="button" class="btn btn-default" aria-label="Left Align">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
+                                    <path fill-rule="evenodd"
+                                        d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                </svg>
+                            </button>
+                        </form>
+                    </li>
+                </ul>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        TRENDING
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Alternate_link" href="#">DONALD TRUMP</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Alternate_link" href="#">JOE BIDEN</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Alternate_link" href="#">CHINA</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Alternate_link" href="#">CORONAVIRUS</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="Alternate_link" href="#">2020 ELECTION</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="Main_section">
+        <div class="container">
+            <div class="row">
+                <div class="Main_left col-12 col-md-6 col-lg-3">
+                    <article id="Feature_stories">
+                        <p class="h6">FEATURED STORIES</p>
+                        <div class="News_item">
+                            <a class="News_link" href="#">
+                                <div><img class="img-fluid" src="./img2/fs1.jpg" alt="Trump" title="Trump"></div>
+                                <p class="h5">SCOTUS Strikes Down Louisiana Abortion Law, Roberts Sides
+                                    with Liberals</p>
+                            </a>
+                            <p>It's the first major abortion ruling for the high court under its new majority of members
+                                who have track records opposing abortion rights and a potentially defining moment in
+                                President Donald Trump's presidency.
+                            </p>
+                        </div>
+                        <hr>
+                        <p class="h5"><a class="News_link" href="#">Trump, Biden, Others Weigh In After Supreme Court
+                                Upends Louisiana Abortion Law</a></p>
+                        <hr>
+                        <div class="News_item">
+                            <a class="News_link" href="#">
+                                <div><img class="img-fluid" src="./img2/fs2.jpg" alt="trump" title="Trump"></div>
+                                <p class="h5">Reddit Bans Some of the Largest Communities Supporting
+                                    Donald
+                                    Trump</p>
+                            </a>
+                            <p>"I have to admit that I've struggled with balancing my values as an American, and around
+                                free
+                                speech and free expression."</p>
+                        </div>
+                        <div class="News_item">
+                            <a class="News_link" href="#">
+                                <div><img class="img-fluid" src="./img2/fs3.jpg" alt="protesters" title="Protesters">
+                                </div>
+                                <p class="h5">St. Louis Man Who Aimed AR-15 at Protesters Says They
+                                    Threatened His Family</p>
+                            </a>
+                            <p>St. Louis attorney Mark McCloskey said the protesters who were angered by Mayor Lyda
+                                Krewson's "doxxing" of those demanding the police be defunded, threatened to kill him
+                                and
+                                his family.</p>
+                        </div>
+                        <div class="News_item">
+                            <a class="News_link" href="#">
+                                <div><img class="img-fluid" src="./img2/fs4.jpg" alt="India" title="India"></div>
+                                <p class="h5">India Bans TikTok and 58 Other Chinese Apps Amid Escalating
+                                    Tensions</p>
+                            </a>
+                            <p>The government said the apps were "engaged in activities which is prejudicial to
+                                sovereignty
+                                and integrity of India."</p>
+                        </div>
+                        <div class="News_item">
+                            <a class="News_link" href="#">
+                                <div>
+                                    <img class="img-fluid" src="./img2/fs5.jpg" alt="Dave Portnoy" title="Dave Portnoy">
+                                </div>
+                                <p class="h5">Dave Portnoy Says 'Cancel Culture' Will Only Make Barstool Sports Stronger
+                                </p>
+                            </a>
+                            <p>Portnoy is drawing a lot of criticism online after old videos that feature him making
+                                racially insensitive jokes resurfaced.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="Main_centre col-12 col-md-6 col-lg-5">
+                    <article id="Top_story .flex-sm-first">
+                        <p class="h6">TOP STORY</p>
+                        <div class="News_item">
+                            <a class="News_link" href="#">
+                                <div><img class="img-fluid" src="./img2/ts1.jpg" alt="Trump" title="Newsom May"></div>
+                                <p class="h5">Newsom May Rollback California's Reopening Amid Rising COVID-19 Cases</p>
+                            </a>
+                            <p>The state has had two of its all-time highest number of new cases two days in a row over
+                                the
+                                last week, prompting strict measures from the governor.
+                            </p>
+                        </div>
+                        <br>
+                    </article>
+                    <article id="My_turn">
+                        <p class="h6">MY TURN</p>
+                        <div class="row">
+                            <div class="Square_item col-12 col-md-4">
+                                <a class="Square_link" href="#">
+                                    <div><img class="img-fluid" src="./img2/mt1.jpg" alt="Dating, Lockdown"
+                                            title="Dating, Lockdown"></div>
+                                    <p class="h6">'I Met My Boyfriend on a Video Date During Lockdown'</p>
+                                </a>
+                            </div>
+                            <div class="Square_item col-12 col-md-4">
+                                <a class="Square_link" href="#">
+                                    <div><img class="img-fluid" src="./img2/mt2.jpg" alt="Lost weight"
+                                            title="Lost weight">
+                                    </div>
+                                    <p class="h6">'I Lost Nearly 300lbs in Less Than a Year'</p>
+                                </a>
+                            </div>
+                            <div class="Square_item col-12 col-md-4">
+                                <a class="Square_link" href="#">
+                                    <div><img class="img-fluid" src="./img2/mt3.jpg" alt="Prison, Rap"
+                                            title="Prison, Rap">
+                                    </div>
+                                    <p class="h6">'I Spent 11 Years In Prison—And Produced a Rap Album at San Quentin'
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                        <br>
+                    </article>
+                    <article id="Culture_and_travel">
+                        <p class="h6">CULTURE & TRAVEL</p>
+                        <div class="row">
+                            <div class="Square_item col-12 col-md-4">
+                                <a class="Square_link" href="#">
+                                    <div><img class="img-fluid" src="./img2/ct1.jpg" alt="Cultural Masks"
+                                            title="Cultural Masks"></div>
+                                    <p class="h6">A Look at Cultural Masks Around the World</p>
+                                </a>
+                            </div>
+                            <div class="Square_item col-12 col-md-4">
+                                <a class="Square_link" href="#">
+                                    <div><img class="img-fluid" src="./img2/ct2.jpg" alt="Black Lives Matter"
+                                            title="Black Lives Matter"></div>
+                                    <p class="h6">The Art of Protest: Artists Create Images in Support of Black Lives
+                                        Matter</p>
+                                </a>
+                            </div>
+                            <div class="Square_item col-12 col-md-4">
+                                <a class="Square_link" href="#">
+                                    <div><img class="img-fluid" src="./img2/ct3.jpg" alt="Italy Worries"
+                                            title="Italy Worries"></div>
+                                    <p class="h6">Coronavirus-Free Town in Italy Worries About European Visitors in
+                                        Reopening</p>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="More_stories">
+                        <p class="h6">MORE STORIES</p>
+                        <hr>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms1.JPG" alt="Amazon" title="Amazon">
+                                </div>
+                                <p class="font-weight-bold">At Least 2 Shot at Amazon Fulfillment Center in
+                                    Jacksonville, Sheriff Says</p>
+                            </a>
+                            <p>At Least 2 Shot at Amazon Fulfillment Center in Jacksonville, Sheriff Says</p>
+                        </div>
+                        <hr>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms2.JPG" alt="War Games"
+                                        title="War Games">
+                                </div>
+                                <p class="font-weight-bold">China Has War Games And India, Japan Team Up to Train At Sea
+                                </p>
+                            </a>
+                            <p>China practiced targeting islands near the contested waters of the South China Sea as
+                                India and Japan both drilled in the strategic Malacca Strait.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms3.JPG" alt="Obama" title="Obama">
+                                </div>
+                                <p class="font-weight-bold">Obama Rebukes Trump Over 'Kung Flu' Remark: 'Shocks and
+                                    Pisses Me Off'</p>
+                            </a>
+                            <p>Former President Barack Obama rebuked Trump over his "Kung flu" coronavirus remark
+                                recently, saying it "shocks and pisses me off."</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms4.JPG" alt="Shooting" title="Shooting">
+                                </div>
+                                <p class="font-weight-bold">CHOP Shooting Leaves One Dead in Second Fatal Attack at
+                                    Protest Zone</p>
+                            </a>
+                            <p>This is the fourth shooting in the Seattle area where people have been protesting for
+                                more than three weeks.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms5.JPG" alt="Petition" title="Petition">
+                                </div>
+                                <p class="font-weight-bold">Petition for St. Louis Mayor to Resign Over Address
+                                    Exposures Nears 50,000
+                                </p>
+                            </a>
+                            <p>Mayor Lyda Krewson read out the names and addresses of protesters backing calls to defund
+                                the police on a Facebook live broadcast.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms6.JPG" alt="Twitter" title="Twitter">
+                                </div>
+                                <p class="font-weight-bold">Facebook Boycott Is Now Hurting Twitter as Companies Pause
+                                    Paid Advertising
+                                </p>
+                            </a>
+                            <p>Shares in the Jack Dorsey-led platform plunged by roughly seven percent last week as news
+                                broke that Unilever was halting social media ad spending. Then, the situation quickly
+                                got worse.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms7.JPG" alt="California"
+                                        title="California">
+                                </div>
+                                <p class="font-weight-bold">7 Cali. Counties Re-Close Bars 2 Weeks After Reopening as
+                                    COVID-19 Spikes
+                                </p>
+                            </a>
+                            <p>California Governor Gavin Newsom ordered Fresno, Imperial, Kern, Kings, Los Angeles, San
+                                Joaquin, and Tulare counties to close bars again on Sunday, as state health officials
+                                continue to report a spike in cases of the novel coronavirus.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms8.JPG" alt="coronavirus"
+                                        title="coronavirus">
+                                </div>
+                                <p class="font-weight-bold">Florida Doctors Urge GOP to Postpone 'Medically
+                                    Disrespectful' Convention
+                                </p>
+                            </a>
+                            <p>The medical professionals said the event would increase coronavirus hospitalizations if
+                                it were to go ahead at full capacity.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms9.JPG" alt="Republicans"
+                                        title="Republicans">
+                                </div>
+                                <p class="font-weight-bold">Republicans Want Answers From Trump's White House About New
+                                    Russia Claims
+                                </p>
+                            </a>
+                            <p>Calls for clarity have mounted over suggestions a Russian military intelligence arm
+                                offered bounties for the killing of U.S. troops in Afghanistan.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms10.JPG" alt="Matt Gaetz Says"
+                                        title="Matt Gaetz Says">
+                                </div>
+                                <p class="font-weight-bold">Matt Gaetz Says Bolton Was Trump Admin's Mascot 'Used to
+                                    Troll Iran'
+                                </p>
+                            </a>
+                            <p>The GOP congressman added that the president's former national security adviser was
+                                "resentful" because his advice was ignored.</p>
+                        </div>
+                        <div class="Mini_item">
+                            <a class="News_link" href="#">
+                                <div class="float-left mr-3"><img src="./img2/ms11.JPG" alt="Matt Gaetz Says"
+                                        title="Matt Gaetz Says">
+                                </div>
+                                <p class="font-weight-bold">What Is Unit 29155? The Russia Intel Branch Accused of U.S.
+                                    Troop Bounties
+                                </p>
+                            </a>
+                            <p>The shadowy military intelligence group has been linked to multiple assassination efforts
+                                and other plots around Europe over the past decade.</p>
+                        </div>
+                    </article>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2</title>
+    <style>
+        h3 {
+            color: #3B1C81;
+            display: inline;
+        }
+        h5 {
+            color: #B3AAF1;
+            display: inline;
+        }
+        form {
+            width: fit-content;
+            padding: 1rem;
+        }
+        fieldset:last-of-type {
+            margin-bottom: 3px;
+        }
+        label, input[name="book"], span {
+            margin-left: 3rem;
+        }
+            label[for="quantity"] {
+                margin-left: 0 !important;
+            }
+    </style>
+</head>
+<body>
+    <h3>A Simple Form</h3><br>
+    <h5><em>Form Fundamentals</em></h5><br>
+
+    <form action="#" id="orderForm" autocomplete="on">
+        <fieldset>
+            <legend> Customer Info </legend>
+            <label for="name">Name: </label>
+            <input id="fullname" type="text" name="name" placeholder="Enter your name" autofocus="autofocus" required="required" size="50"><br><br>
+            <label for="tel">Telephone: </label>
+            <input id="telephone" type="tel" name="tel" placeholder="Pattern: 1-234-567-8910" pattern="([0-9]{1}(-[0-9]{3})(-[0-9]{3})(-[0-9]{4}))" required="required" size="50"><br><br>
+            <label for="email">Email address: </label>
+            <input id="email" type="email" name="mail" placeholder="Enter your email address" required="required" multiple="multiple" size="50"><br>
+        </fieldset>
+        <fieldset>
+            <legend> Books </legend>
+                <input type="text" name="book" list="books" size="45"/>
+                <datalist id="books">
+                    <option value="HTML5 Canvas by Steve Fulton & Jeff Fulton"></option>
+                    <option value="JavaScript: The Definitive Guide by David Flanagan"></option>
+                    <option value="HTML5 Geolocation by Anthony T. Holdener III"></option>
+                    <option value="Supercharged JavaScript Graphics by Raffaele Cecco"></option>
+                    <option value="HTML5: Up and Running by Mark Pilgrim"></option>
+                </datalist>
+                <label for="quantity">Quantity (Maximum 5): </label>
+                <input id="bookQuantity" type="number" name="quantity" min="1" max="5"><br>
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+    <span>&copy; 2011 Acme United, All rights reserved.</span>
+</body>
+</html>
