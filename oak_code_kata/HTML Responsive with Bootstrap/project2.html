@@ -48,9 +48,7 @@
             </div>
         </nav>
         <div class="collapse show bg-white" id="navbarToggler">
-            <!-- <div class="Links_nav d-none d-lg-block bg-white"> -->
             <div class="Links_nav bg-white">
-                <!-- flex -->
                 <ul class="list-inline">
                     <li class="list-inline-item">
                         <a class="Default_link" href="#">U.S.</a>
@@ -126,12 +124,13 @@
 
     <section class="Main_section">
         <div class="container">
-            <div class="row">
+            <div class="Main_div row">
                 <div class="Main_left col-12 col-md-6 col-lg-3">
-                    <!-- <div class="Flex_parent d-flex flex-column flex-md-row justify-content-center align-items-start flex-wrap"> -->
-                    <!-- <div class="LR_box order-1 order-md-0 flex-grow-0 flex-shrink-0"> -->
+
                     <article id="Feature_stories">
-                        <p class="h6">FEATURED STORIES</p>
+                        <a class="Square_link" href="#">
+                            <p class="h6">FEATURED STORIES</p>
+                        </a>
                         <div class="News_item">
                             <a class="News_link" href="#">
                                 <div><img class="img-fluid" src="./img2/fs1.jpg" alt="Trump" title="Trump"></div>
@@ -195,9 +194,10 @@
                 </div>
 
                 <div class="Main_centre col-12 col-md-6 col-lg-5">
-                    <!-- <div class="Center_box order-0 order-md-1 align-self-start flex-grow-0 flex-shrink-0 "> -->
                     <article id="Top_story">
-                        <p class="h6">TOP STORY</p>
+                        <a class="Square_link" href="#">
+                            <p class="h6">TOP STORY</p>
+                        </a>
                         <div class="News_item">
                             <a class="News_link" href="#">
                                 <div><img class="img-fluid" src="./img2/ts1.jpg" alt="Trump" title="Newsom May">
@@ -213,10 +213,11 @@
                         </div>
                         <br>
                     </article>
-                    <!-- </div> -->
-                    <!-- <div class="Center_box order-4 align-self-start flex-grow-0 flex-shrink-0"> -->
+
                     <article id="My_turn">
-                        <p class="h6">MY TURN</p>
+                        <a class="Square_link" href="#">
+                            <p class="h6">MY TURN</p>
+                        </a>
                         <div class="row">
                             <div class="Square_item col-12 col-md-4">
                                 <a class="Square_link" href="#">
@@ -246,8 +247,11 @@
                         </div>
                         <br>
                     </article>
+
                     <article id="Culture_and_travel">
-                        <p class="h6">CULTURE & TRAVEL</p>
+                        <a class="Square_link" href="#">
+                            <p class="h6">CULTURE & TRAVEL</p>
+                        </a>
                         <div class="row">
                             <div class="Square_item col-12 col-md-4">
                                 <a class="Square_link" href="#">
@@ -275,10 +279,11 @@
                             </div>
                         </div>
                     </article>
-                    <!-- </div> -->
-                    <!-- <div class="Center_box order-3  flex-grow-0 flex-shrink-0"> -->
-                    <article class="More_stories">
-                        <p class="h6">MORE STORIES</p>
+
+                    <article id="More_stories">
+                        <a class="Square_link" href="#">
+                            <p class="h6">MORE STORIES</p>
+                        </a>
                         <hr>
                         <div class="Mini_item">
                             <a class="News_link" href="#">
@@ -420,26 +425,127 @@
                     </article>
                 </div>
                 <div class="Main_right col-12 col-md-12 col-lg-3">
-                    <!-- <div class="LR_box order-2  flex-grow-0 flex-shrink-0"> -->
                     <article id="The_debate">
-                        <p class="h6">THE DEBATE</p>
-                        <div class="">
-                            <a class="" href="#">
-                                <div><img class="img-fluid" src="./img2/td1.jpg" alt="Trump" title="Newsom May">
+                        <a class="Square_link" href="#">
+                            <p class="h6">THE DEBATE</p>
+                        </a>
+                        <hr class="Hr_red">
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-left mr-3"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
                                 </div>
+                                <p class="font-weight-bold">Liberalism Has Failed</p>
+                            </a>
+                            <p>BY <strong>J. DENEEN</strong></p>
                         </div>
                         <br>
+                        <div class="d-flex justify-content-center">
+                            <div class=" badge badge-dark text-center text-no-wrap">VS</div>
+                        </div>
+                        <br>
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-right ml-1"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
+                                </div>
+                                <p class="font-weight-bold">Falling Birthrates Are No Big Deal</p>
+                            </a>
+                            <p>BY <strong>MARINA ADSHADE</strong></p>
+                        </div>
+                        <br>
+                        <hr class="Hr_blue">
                     </article>
                     <article id="Opinion">
-                        <p class="h6">OPINION</p>
-                        <div class="">
-                            <a class="" href="#">
-                                <div><img class="img-fluid" src="./img2/o1.jpg" alt="Trump" title="Newsom May">
+                        <a class="Square_link" href="#">
+                            <p class="h6">OPINION</p>
+                        </a>
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-left mr-3"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
                                 </div>
+                                <p class="font-weight-bold">Trump Failed to Deliver for Evangelicals in Supreme Court
+                                    Abortion Case</p>
+                            </a>
+                            <p class="text-secondary">BY JOSHUA C. WILSON</p>
                         </div>
-                        <br>
+                        <hr>
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-left mr-3"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
+                                </div>
+                                <p class="font-weight-bold">Responding to Russian Bounties on U.S. Troops in Afghanistan
+                                </p>
+                            </a>
+                            <p class="text-secondary">BY JAVED ALI AND JOSH KIRSHNER</p>
+                        </div>
+                        <hr>
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-left mr-3"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
+                                </div>
+                                <p class="font-weight-bold">The Propaganda Media's Polling Offensive</p>
+                            </a>
+                            <p class="text-secondary">BY NEWT GINGRICH</p>
+                        </div>
+                        <hr>
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-left mr-3"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
+                                </div>
+                                <p class="font-weight-bold">The Jewish Case for Abortion Rights</p>
+                            </a>
+                            <p class="text-secondary">BY SHEILA KATZ AND DANYA RUTTENBERG</p>
+                        </div>
+                        <hr>
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-left mr-3"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
+                                </div>
+                                <p class="font-weight-bold">Trump's Re-Election Playbook in 25 Steps</p>
+                            </a>
+                            <p class="text-secondary">BY ROBERT REICH</p>
+                        </div>
+                        <hr>
+                        <div class="Mini_item">
+                            <a class="Default_link"
+                                href="https://unsplash.com/s/photos/cat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">
+                                <div class="float-left mr-3"><img class="rounded-circle" src="./img2/cat.JPG" alt="Cat"
+                                        title="Photo by Manja Vitolic on Unsplash">
+                                </div>
+                                <p class="font-weight-bold">The Conservative Argument for Coronavirus Masks</p>
+                            </a>
+                            <p class="text-secondary">BY JASON RANTZ</p>
+                        </div>
                     </article>
-                    <!-- </div> -->
+
+                    <article id="Signup">
+                        <div class="bg-light px-3 py-3 mx-auto" style="width: fit-content;">
+                            <div class="mx-auto" style="width: fit-content;">
+                                <img class="mr-1" src="./img2/n.JPG" alt="N">
+                                <span class="font-weight-bold">START YOUR DAY WITH OUR TOP 5 ARTICLES</span>
+                                <br>
+                                <br>
+                                <form action="#">
+                                    <input type="email" placeholder="Email address" style="width: 100%;">
+                                    <br>
+                                    <button class="badge-danger rounded text-white" style="width: 100%;">FREE SIGN UP &gt;</button>
+                                </form>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
     </section>

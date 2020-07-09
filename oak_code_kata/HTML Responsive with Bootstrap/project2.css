@@ -35,56 +35,57 @@ a.Square_link:hover {
     text-decoration-color: gray;
 }
 
+hr.Hr_red {
+    background: red;
+    height: 3px;
+}
+hr.Hr_blue {
+    background: blue;
+    height: 3px;
+}
+
 @media only screen and (max-width: 768px) {
     section.Main_section {
         margin-top: 80px !important;
     }
-    /* .Center_box, .LR_box {
-        width: 80vw !important;
+    /* .Main_div {
+        grid-template-columns: auto;
     } */
-    article#Top_story {
-        order: 0 !important;
-    }
-    article#Feature_stories {
-        order: 1 !important;
-    }
-    article#The_debate {
-        order: 2 !important;
-    }
-    article#More_stories {
-        order: 3 !important;
-    }
-    article#My_turn {
-        order: 4 !important;
-    }
-    article#Culture_and_travel {
-        order: 5 !important;
-    }
-
+    /* article#Top_story {order: 1;}
+    article#Feature_stories {order: 2;}
+    article#The_debate {order: 3;}
+    article#Opinion {order: 4;}
+    article#More_stories {order: 5;}
+    article#My_turn {order: 6;}
+    article#Culture_and_travel {order: 7;} */
 }
 @media only screen and (min-width: 768px) {
     section.Main_section {
         margin-top: 80px !important;
     }
-    /* .Center_box {
-        width: 40vw !important;
-    }
-    .LR_box {
-        width: 40vw !important;
+    /* .Main_div {
+        grid-template-columns: auto auto;
     } */
-    article#Top_story {
-        order: 1;
-    }
-    article#Feature_stories {order: 0;}
+    /* article#Top_story {order: 2;}
+    article#Feature_stories {order: 1;}
+    article#The_debate {order: 6;}
+    article#Opinion {order: 7;;}
+    article#More_stories {order: 5;}
+    article#My_turn {order: 3;}
+    article#Culture_and_travel {order: 4;} */
 }
 @media only screen and (min-width: 1020px) {
     section.Main_section {
         margin-top: 30px !important;
     }
-    /* .Center_box {
-        width: 35vw !important;
-    }
-    .LR_box {
-        width: 25vw !important;
+    /* .Main_div {
+        grid-template-columns: auto auto auto;
     } */
+    /* article#Top_story {order: 2;}
+    article#Feature_stories {order: 1;}
+    article#The_debate {order: 3;}
+    article#Opinion {order: 5;}
+    article#More_stories {order: 7;}
+    article#My_turn {order: 4;}
+    article#Culture_and_travel {order: 6;} */
 }
