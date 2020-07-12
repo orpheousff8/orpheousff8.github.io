@@ -1,7 +1,15 @@
 
+body {
+    overflow-x: hidden;
+}
+
 .Links_nav {
     position: relative;
     margin-top: 100px !important;
+}
+
+.Not_a_link:hover {
+    cursor: pointer;
 }
 
 a.Default_link {
@@ -44,6 +52,67 @@ hr.Hr_blue {
     height: 3px;
 }
 
+a.See_all_feature {
+    color: black;
+    text-decoration: none;
+    font-weight: bolder;
+}
+p.See_all_feature:hover {
+    background: gray;
+}
+
+a.Red_normal {
+    color: red;
+    font-weight: bold;
+}
+a.Red_normal:hover {
+    text-decoration: none;
+}
+
+.Inline_ul {
+    display: inline-block;
+}
+
+a.Footer_link {
+    color: #6d6d6d;
+    text-decoration: none;
+}
+a.Footer_link:hover {
+    color: #121212;
+}
+
+.deco {
+    position: relative;
+}
+.deco::before {
+    top: calc(50% - 2px);
+}
+.deco::after {
+    top: 50%;
+}
+.deco::before, .deco::after {
+    content: "";
+    display: block;
+    background-color: #d9d9d9;
+    height: 1px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.c-vs {
+    position: relative;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    background-color: #000;
+    color: #d6d6d6;
+    border-radius: 50%;
+    font: bold 14px/32px "Roboto Condensed",sans-serif;
+    text-align: center;
+    margin: 6px auto;
+}
+
 @media only screen and (max-width: 768px) {
     section.Main_section {
         margin-top: 80px !important;
@@ -63,6 +132,13 @@ hr.Hr_blue {
     section.Main_section {
         margin-top: 80px !important;
     }
+    section.Footer p::before {
+        content: "| ";
+    }
+    /* section.Footer p:first-child::before {
+        content: "";
+    } */
+    
     /* .Main_div {
         grid-template-columns: auto auto;
     } */
