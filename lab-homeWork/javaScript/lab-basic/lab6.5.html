@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6.5</title>
+    <style>
+        ol > li {
+            margin-bottom: 1rem;
+        }
+        .bold {
+            color: orange;
+            text-decoration-line: underline;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>
+            Browser จะโชว์ข้อความ “Hello Codecamp #5” ไหม<br>
+            <img src="./img/6.5.1.JPG"><br>
+            โชว์<br>
+            <button onclick="fn651()">Click here</button>
+        </li>
+        <li>
+            ใช้ if else ในการเขียน<span class="bold">ถามชื่อ</span>ของคุณ
+            <ul>
+                <li>ถ้าตอบ<span class="bold">ถูก</span>ให้แสดงคำว่า “เก่งมาก”</li>
+                <li>ถ้าตอบ<span class="bold">ผิด</span>ให้แสดงคำว่า “คุณไม่รู้จักชื่อฉัน”</li>
+            </ul>
+            <button onclick="fn652()">Click here</button>
+        </li>
+        <li>
+            ใช้ prompt ในการรับคะแนนมาคำนวณเกรด<br>
+            ถ้าคะแนน <span class="bold">มากกว่าเท่ากับ 80</span> ได้ A<br>
+            ถ้าคะแนน <span class="bold">อยู่ระหว่าง 70 - 79</span> ได้ B<br>
+            ถ้าคะแนน <span class="bold">อยู่ระหว่าง 60 - 69</span> ได้ C<br>
+            ถ้าคะแนน <span class="bold">อยู่ระหว่าง 50 - 59</span> ได้ D<br>
+            ถ้าคะแนน <span class="bold">น้อยกว่า 50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ได้ F<br>
+            <button onclick="fn653()">Click here</button>
+        </li>
+        <li>
+            เปลี่ยน if-else ข้างล่างในอยู่ในรูปของ Ternary Operators<br>
+            <img src="./img/6.5.2.JPG"><br>
+            let age = prompt('How old are you?');<br>
+            let price = (age &lt; 18) ? 2000 : 3500;<br>
+            <button onclick="fn654()">Click here</button>
+        </li>
+    </ol>
+    <script src="./JS/lab6.5.js"></script>
+</body>
+</html>
