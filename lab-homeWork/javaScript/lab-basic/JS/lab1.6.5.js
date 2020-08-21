@@ -1,9 +1,9 @@
-function fn651() {
+function fn1651() {
     if ("0") {
         alert('Hello Codecamp #5');
     }
 }
-function fn652() {
+function fn1652() {
     let myName = prompt("ชื่อของคุณคือ", "Saracha");
 
     if (myName == 'Saracha')
@@ -11,7 +11,7 @@ function fn652() {
     else
         alert('คุณไม่รู้จักชื่อฉัน');
 }
-function fn653() {
+function fn1653() {
     let myScore = Number(prompt("คะแนนของคุณคือ"));
 
     if (myScore >= 80)
@@ -25,7 +25,7 @@ function fn653() {
     else
         alert('F');
 }
-function fn654() {
+function fn1654() {
     let age = prompt('How old are you?');
     let price = (age < 18) ? 2000 : 3500;
     alert(price);

@@ -1,0 +1,11 @@
+ol > li {
+    margin-bottom: 1rem;
+}
+.bold {
+    color: orange;
+    text-decoration-line: underline;
+}
+.answer {
+    background:papayawhip;
+    width: 30vw;
+}

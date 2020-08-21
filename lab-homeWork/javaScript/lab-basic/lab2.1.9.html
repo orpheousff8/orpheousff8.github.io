@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab1.9</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./CSS/lab.css">
+</head>
+<body>
+    <ol>
+        <li>
+            คำสั่งต่อไปนี้จะแสดงค่าเป็นอะไร
+            <ul>
+                <li>alert( null || 2 || undefined );</li>
+                <div class="answer">2</div>
+                <li>alert( alert(1) || 2 || alert(3) );</li>
+                <div class="answer">1<br>2</div>
+                <li>alert( 1 && null && 2 );</li>
+                <div class="answer">null</div>
+                <li>alert( alert(1) && alert(2) );</li>
+                <div class="answer">1<br>undefined</div>
+                <li>alert( null || 2 && 3 || 4 );</li>
+                <div class="answer">3</div>
+            </ul>
+        </li>
+        <li>
+            เขียนคำสั่ง if ที่เช็คอายุว่า<span class="bold">อยู่</span>ระหว่าง 18 - 60
+            <pre>
+                <code class="javascript">
+if ((age &gt; 18) && (age &lt; 60))
+    console.log(`yuu`);
+                </code>
+            </pre>
+        </li>
+        <li>
+            เขียนคำสั่ง if ที่เช็คอายุว่า<span class="bold">ไม่อยู่</span>ระหว่าง 18 - 60
+            <pre>
+                <code class="javascript">
+if ((age &lt;= 18) || (age &gt;= 60))
+    console.log(`mai yuu`);
+                </code>
+            </pre>
+        </li>
+        <li>
+            คำสั่ง alert ไหนที่จะถูกรันบ้าง
+            <ul>
+                <li>if (-1 || 0) alert( 'first' );&nbsp;&nbsp;&nbsp;&nbsp;<span class="answer">//รัน</span></li>
+                <li>if (-1 && 0) alert( 'second' );&nbsp;&nbsp;&nbsp;&nbsp;<span class="answer">//ไม่รัน</span></li>
+                <li>if (null || -1 && 0) alert( 'third' );&nbsp;&nbsp;&nbsp;&nbsp;<span class="answer">//ไม่รัน</span></li>
+            </ul>
+        </li>
+        <li>
+            ให้เขียนระบบ login
+            <ul>
+                <li>ให้ใช้ prompt ในการถามใครเป็นคน login</li>
+                <li>ถ้าผู้ใช้กรอกว่า “Admin” ให้ใช้ prompt ถาม password
+                    <ul>
+                        วิธีเช็ค Password
+                        <li>ถ้า string นั้นเป็น “codecamp#5” ให้ alert “ยินดีต้อนรับ”</li>
+                        <li>ถ้า string เป็นอย่างอื่นให้ alert เป็น “Wrong password”</li>
+                        <li>ถ้าเป็น string ว่าง หรือ กด cancel ให้ alert ว่า “ยกเลิก”</li>
+                    </ul>
+                </li>
+                <li>ถ้าผู้ใช้กรอกอย่างอื่นที่ไม่ใช่ “Admin” ให้ alert ว่า “ผมไม่รู้จักคุณ”</li>
+                <li>ถ้าผู้ใช้กรอก input เป็น string ว่าง หรือกด Esc ให้ alert ว่า “ยกเลิก”</li>
+                <img src="./img/2.1.9.5.JPG"><br>
+                <button onclick="fn2195()">Click here</button>
+            </ul>
+            <pre>
+                <code class="javascript">
+let username = prompt(`Please enter username:`, `Admin`);
+if (username == `` || username == null) {
+    alert(`ยกเลิก`);
+}
+else if (username != `Admin`) {
+    alert(`ผมไม่รู้จักคุณ`);
+}
+else {
+    let password = prompt(`Please enter password:`);
+    if (password == `` || password == null) {
+        alert(`ยกเลิก`);
+    }
+    else if (password == `codecamp#5`) {
+        alert(`ยินดีต้อนรับ`);
+    }
+    else {
+        alert(`รหัสผ่านผิด`);
+    }
+}
+                </code>
+            </pre>
+        </li>
+    </ol>
+    <script src="./JS/lab2.1.9.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2.5</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./CSS/lab.css">
+</head>
+<body>
+    <ol>
+        <li>
+            เลขที่ถูก alert เป็นลำดับสุดท้ายคือเลขอะไร<br>
+            <img src="./img/2.2.5.1.JPG"><br>
+            <div class="answer">1</div>
+        </li>
+        <li>
+            code ทั้งสองอันนี้จะแสดง alert ออกมาเหมือนกันทั้งหมดหรือไม่<br>
+            <img src="./img/2.2.5.2.JPG"><br>
+            <div class="answer">
+                ไม่เหมือน<br>
+                โค้ดแรก 1 2 3 4<br>
+                โค้ดสอง 1 2 3 4 5
+            </div>
+        </li>
+        <li>
+            code ทั้งสองอันนี้จะแสดง alert ออกมาเหมือนกันทั้งหมดหรือไม่<br>
+            <img src="./img/2.2.5.3.JPG"><br>
+            <div class="answer">
+                เหมือน<br>
+                ทั้งสองโค้ด 0 1 2 3 4
+            </div>
+        </li>
+        <li>
+            ให้เขียน loop ทั้งแสดงเลข 2 ถึง 10 ออกมา
+            <pre>
+                <code class="javascript">
+let txt;
+for (let i = 2; i &lt; 11; i++) {
+    txt += i + ` `;
+}
+alert(txt);
+                </code>
+            </pre>
+            <button onclick="fn2254()">Click here</button>
+        </li>
+        <li>เปลี่ยน code for loop ด้านล่างนี้ให้เป็น while loop โดยที่ผลลัพธ์ยังเหมือนเดิม<br>
+            <img src="./img/2.2.5.5.JPG"><br>
+            <pre>
+                <code>
+let i = 0;
+while (i &lt; 3)
+{
+    alert( `number ${i}!` );
+    i++;
+}
+                </code>
+            </pre>
+            <button onclick="fn2255()">Click here</button>
+        </li>
+        <li>
+            ให้เขียนเกมส์ทายตัวเลขสำหรับเล่นสองคน โดย<br>
+            <ul>
+                <li>ให้ผู้เล่น<span class="bold">คนแรกพิมพ์เลข</span>ใส่ใน prompt ที่อยู่ระหว่าง 1 ถึง 100 โดยไม่ให้ผู้เล่นคนที่สองรู้ว่าตัวเลขเป็นอะไร</li>
+                <li>และให้ผู้เล่น<span class="bold">คนที่สองทายเลข</span>โดยการพิมพ์เลขใส่ใน prompt <span class="bold">จนกว่าจะถูก ถ้าไม่ถูก จะต้องบอก</span>
+                    ด้วยว่าเลขที่ผู้เล่นคนที่สองพิมพ์เข้ามา <span class="bold">มากกว่า หรือ น้อยกว่า</span>คำตอบนั้น</li>
+            </ul>
+            <button onclick="fn2256()">Click here</button>
+        </li>
+    </ol>
+    <script src="./JS/lab2.2.5.js"></script>
+</body>
+</html>
