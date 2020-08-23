@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6.2</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./CSS/lab.css">
+</head>
+<body>
+    <ul>
+        <li>
+            แปลง function ข้างล่างให้อยู่ในรูป arrow function<br>
+            <img src="./img/2.6.2.JPG"><br>
+            <pre>
+                <code class="javascript">
+let ask = (question, yes, no) => confirm(question) ? yes() : no();
+ask("Do you agree?", function() {alert("You agreed.");}, function() {alert("You canceled the execution.");});
+                </code>
+            </pre>
+        </li>
+    </ul>
+</body>
+</html>
