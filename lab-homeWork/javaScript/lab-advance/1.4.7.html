@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด 4.7</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="../lab-basic/CSS/lab.css">
+</head>
+
+<body>
+    <ol>
+        <li>ให้เขียนโปรแกรมที่รับค่า key และ value ของ Properties ของ Object หนึ่ง 
+            จนกว่าจะเจอคำว่า stop และนำค่าเหล่านั้นมาสร้าง Object 
+            หลังจากนั้น console.log() object นั้นออกมา<br>
+            <pre>
+                <code>
+let tempKey = "";
+let object1 = {};
+
+while (true) {
+     tempKey = prompt("Please enter key", "stop");
+
+     if (tempKey === `stop`) break;
+
+     object1[tempKey] = prompt("Please enter value", "");
+}
+
+console.log(object1);
+                </code>
+            </pre>
+        </li>
+        <li>
+            ให้เขียนโปรแกรมที่รับค่า key และ value ของ Properties ของ Object หนึ่ง 
+            โดยให้ key เป็นชื่อของผลไม้ และ value เป็นจำนวนของผลไม้ (number) 
+            โดยถ้า ผลไม้ชนิดไหนที่มีมากกว่า 1 ผล ให้เติม s ไปหลัง key นั้นด้วย<br>
+            <pre>
+                <code>
+let fruit = "";
+let object1 = {};
+
+while (true) {
+    fruit = prompt("Please enter fruit name as a key", "stop");
+
+    if (fruit === `stop`)  break;
+
+    amount = +prompt("Please enter fruit amount as a value", "0");
+
+    if (amount &gt; 1) fruit += `s`;
+
+    object1[fruit] = amount;
+}
+
+console.log(object1);
+                </code>
+            </pre>
+        </li>
+    </ol>
+</body>
+
+</html>

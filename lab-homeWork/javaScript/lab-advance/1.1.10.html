@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>แบบฝึกหัด 1.10</title>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+	<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<link rel="stylesheet" href="../lab-basic/CSS/lab.css">
+</head>
+
+<body>
+	<ul>
+		<li>แก้ไขการเขียนโค้ดต่อไปนี้<br>
+			<img src="./img/1.1.10.1.PNG"><br>
+			<pre>
+            	<code>
+function pow(x, n) {
+
+  let result = 1;
+	
+  for ( let i = 0; i &lt; n; i++) {
+		result *= x;
+  }
+
+  return result;
+}
+
+let x = prompt("x?", '');
+let n = prompt("n?", '');
+
+if (n &lt;= 0)
+{
+  alert(`Power ${n} is not supported, 
+  please enter an integer number greater than zero`);
+} else {
+  alert( pow(x, n) );
+}
+
+            	</code>
+			</pre>
+		</li>
+	</ul>
+</body>
+
+</html>
