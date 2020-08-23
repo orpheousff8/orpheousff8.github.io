@@ -20,13 +20,13 @@ function fn2256() {
     while (true)
     {
         player1Int = validator(1);
-        if(player1Int>0)
+        if(player1Int!=undefined)
             break;
     }
     while (true)
     {
         player2Int = validator(2);
-        if(player2Int>0)
+        if(player2Int!=undefined)
         {
             if (player2Int == player1Int)
             {
@@ -49,14 +49,14 @@ function validator(player) {
     if (input == `` || input == null)
     {
         alert(`ไม่ใส่ข้อมูล`);
-        return 0;
+        return;
     }
-    let i = Number(input);
-    if ((i<1) || (i>100) || !Number.isInteger(i))
+    let n = Number(input);
+    if ((n<1) || (n>100) || !Number.isInteger(n))
     {
         alert(`ใส่เลขไม่ถูกต้อง`);
-        return 0;
+        return;
     }
     else
-        return i;
+        return n;
 }
