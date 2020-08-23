@@ -13,7 +13,7 @@ for(i=1;i<25;i++)
 function fn2extra1 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -26,7 +26,7 @@ function fn2extra1 ()
 function fn2extra2 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -43,7 +43,7 @@ function fn2extra2 ()
 function fn2extra3 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -60,7 +60,7 @@ function fn2extra3 ()
 function fn2extra4 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -77,7 +77,7 @@ function fn2extra4 ()
 function fn2extra5 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -94,7 +94,7 @@ function fn2extra5 ()
 function fn2extra6 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     let x=0;
@@ -112,7 +112,7 @@ function fn2extra6 ()
 function fn2extra7 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     let x=n*n;
@@ -130,7 +130,7 @@ function fn2extra7 ()
 function fn2extra8 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -143,7 +143,7 @@ function fn2extra8 ()
 function fn2extra9 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=1; i<=n; i++)
@@ -156,7 +156,7 @@ function fn2extra9 ()
 function fn2extra10 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=1; i<=n; i++)
@@ -173,7 +173,7 @@ function fn2extra10 ()
 function fn2extra11 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -193,7 +193,7 @@ function fn2extra11 ()
 function fn2extra12 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -213,7 +213,7 @@ function fn2extra12 ()
 function fn2extra13 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -234,7 +234,7 @@ function fn2extra13 ()
 function fn2extra14 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -255,7 +255,7 @@ function fn2extra14 ()
 function fn2extra15 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -288,7 +288,7 @@ function fn2extra15 ()
 function fn2extra17 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=n-1; i>-1; i--)
@@ -309,7 +309,7 @@ function fn2extra17 ()
 function fn2extra18 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=n-1; i>-1; i--)
@@ -330,7 +330,7 @@ function fn2extra18 ()
 function fn2extra19 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=n-1; i>-1; i--)
@@ -363,7 +363,7 @@ function fn2extra19 ()
 function fn2extra20 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     let k = 0;
@@ -397,7 +397,7 @@ function fn2extra20 ()
 function fn2extra21 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -422,7 +422,7 @@ function fn2extra21 ()
 function fn2extra22 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=n; i>0; i--)
@@ -447,7 +447,7 @@ function fn2extra22 ()
 function fn2extra23 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     for (i=0; i<n; i++)
@@ -488,7 +488,7 @@ function fn2extra23 ()
 function fn2extra24 () 
 {
     let n = validator();
-    if (n < 0)
+    if (n == undefined)
         return;
     let txt = ``;
     let k=0;
@@ -532,18 +532,23 @@ function validator() {
     if (input == ``)
     {
         alert(`Error: ไม่ใส่จำนวน`);
-        return -1;
+        return;
     }
     if (input == null)
     {
         // alert(`ยกเลิก`);
-        return -1;
+        return;
     }
     let n = Number(input);
     if (!Number.isInteger(n))
     {
         alert(`Error: ไม่ใส่จำนวนเต็ม`);
-        return -1;
+        return;
+    }
+    if (n < 0)
+    {
+        alert(`Error: n ต้องเป็นจำนวนเต็มบวก`);
+        return;
     }
     return n;
 }
