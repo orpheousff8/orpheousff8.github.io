@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab6.2</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./CSS/lab.css">
+</head>
+<body>
+    <ul>
+        <li>
+            แปลง Code ดังกล่าวเป็น if-else statement<br>
+            <img src="./img/2.3.3.1.JPG"><br>
+            <pre>
+                <code class="javascript">
+if (browser === 'edge')
+    alert( "You've got the Edge!" );
+else if (browser === 'Chrome' || browser === 'Firefox' || browser === 'Safari' || browser === 'Opera')
+    alert( 'Okay we support these browsers too' );
+else
+    alert( 'We hope that this page looks ok!' );
+                </code>
+            </pre>
+        </li>
+        <li>
+            แปลง Code ดังกล่าวเป็น Switch cases <br>
+            <img src="./img/2.3.3.2.JPG"><br>
+            <pre>
+                <code>
+let a = +prompt('a?', '');
+switch(a) {
+    case 0:
+        alert( 0 );
+        break;
+    case 1:
+        alert( 1 );
+        break;
+    case 2:
+    case 3:
+    alert( '2,3' );
+}
+                </code>
+            </pre>
+        </li>
+    </ul>
+</body>
+</html>
