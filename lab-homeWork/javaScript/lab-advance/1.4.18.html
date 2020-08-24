@@ -61,9 +61,62 @@ let isEmpty(obj) {
         <li>
             จงเขียนฟังก์ชัน sum(obj) ที่รับ obj ที่เก็บ properties 
             โดยมี key เป็นชื่อพนักงานและมี value เป็นเงินเดือน 
-            ให้ฟังก์ชันคืนค่าเป็นผลรวมของเงินเดือนพนักงานทั้งหมด<br>
+            ให้ฟังก์ชันคืนค่าเป็นผลรวมของเงินเดือนพนักงานทั้งหมด
+            <pre>
+                <code>
+let salaries = {
+    John: 100,
+    Ann: 160,
+    Pete: 130
+}
+
+console.log(`The salary summation is ${sum(salaries)}`);
+                      
+function sum(obj) {
+
+    let x = 0;
+
+    for (let o in obj) {
+
+        x += obj[o];
+    }
+
+    return x;
+}
+                </code>
+            </pre>
         </li>
-        <li></li>
+        <li>
+            จงเขียนฟังก์ชัน multiplyNumeric(obj, times) 
+            โดยถ้า properties นั้นมี value เป็น number 
+            ให้คุณ value นั้นด้วย times 
+            ถ้าข้อมูลเเป็นอย่างอื่นไม่ต้องทำอะไร
+            <pre>
+                <code>
+// before the call
+let menu = {
+    width: 200,
+    height: 300,
+    title: "My menu"
+};
+
+multiplyNumeric(menu, 2);
+
+//after the call
+console.log(menu);
+
+function multiplyNumeric(obj, times) {
+
+    for(let o in obj) {
+
+        if(typeof obj[o] !== "number") continue;
+
+        obj[o] *= times;
+    }
+}
+                </code>
+            </pre>
+        </li>
     </ol>
 </body>
 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด 7.4</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="../lab-basic/CSS/lab.css">
+    <style>
+        li > ul {
+            list-style-type: lower-alpha;
+        }
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li>
+            สร้าง constructor function ที่ใช้สำหรับสร้าง Calculator โดยต้องมี 3 Methods นี้
+            <ul>
+                <li>read(): รับค่าจาก propmt สองตัว</li>
+                <li>sum(): ให้คืนค่าจากการบวกกันของตัวแปรสองตัว</li>
+                <li>mul(): ให้คืนค่าจากการคูณกันของตัวแปรสองตัว</li>
+            </ul>
+            <pre>
+                <code>
+function Calculator() {
+
+    this.val1 = 0;
+    this.val2 = 0;
+
+    this.read = function() {
+        this.val1 = +prompt("Enter value1", "0");
+        this.val2 = +prompt("Enter value2", "0");
+    };
+
+    this.sum = () =&gt; this.val1 + this.val2;
+
+    this.mal = () =&gt; this.val1 * this.val2;
+}
+                </code>
+            </pre>
+        </li>
+        <li>
+            สร้าง constructor function Accumulator(startingValue)
+            <ul>
+                <li>โดยที่ Object ดังกล่าวควร เก็บผลรวมไว้ใน property ที่มี key ชื่อว่า value, 
+                    ค่าเริ่มต้นของ key ชื่อ value นี้ คือ startingValue</li>
+                <li>ฟังก์ชัน read() ควรอ่านค่าจาก propmt() และ เพิ่มค่าที่ใส่เข้ามาใน key ชื่อ value</li>
+            </ul>
+            พูดง่าย ๆ ก็คือ value คือผลรวมของ prompt โดยเริ่มจาก startingValue
+            <pre>
+                <code>
+function Accumulator(startingValue) {
+
+    this.value = startingValue;
+
+    this.read = function() {
+        this.value += +prompt("Enter value", "0");
+    };
+}
+                </code>
+            </pre>
+        </li>
+    </ol>
+</body>
+
+</html>

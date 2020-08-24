@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด 6.6</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="../lab-basic/CSS/lab.css">
+</head>
+
+<body>
+    <ol>
+        <li>
+            การทำงานของ code ดังกล่าวจะได้อะไรออกมา<br>
+            <img src="./img/1.6.6.1.PNG"><br>
+            <div class="answer">John</div>
+        </li>
+        <li>
+            การทำงานของ code ดังกล่าวจะได้อะไรออกมา<br>
+            <img src="./img/1.6.6.2.PNG"><br>
+            <div class="answer">"" (String ว่าง)</div>
+        </li>
+        <li>
+            สร้าง object calculator จาก 3 methods นี้:<br>
+            read() ใช้ prompts สำหรับรับค่ามา 2 ค่าและเก็บเป็น object properties.<br>
+            sum() คืนค่าผลบวกของ 2 ค่านั้น.<br>
+            mul() คืนค่าผลคูณของ 2 ค่านั้น.<br>
+            <img src="./img/1.6.6.3.PNG">
+            <pre>
+                <code>
+let calculator = {
+    val1: 0,
+    val2: 0,
+
+    read: function() {
+        this.val1 = +prompt("Please enter the first value", "0");
+        this.val2 = +prompt("Please enter the second value", "0");
+    },
+
+    sum: function() {
+        return this.val1 + this.val2;
+    },
+
+    mul: function() {
+        return this.val1 * this.val2;
+    }
+}
+
+calculator.read();
+alert( calculator.sum() );
+alert( calculator.mul() );
+                </code>
+            </pre>
+        </li>
+        <li>
+            ให้ Object ชื่อ ladder มี method ขึ้น และ ลง<br>
+            <img src="./img/1.6.6.4-1.PNG"><br>
+            Object ชื่อ ladder สามารถเรียก function แบบนี้ได้<br>
+            <img src="./img/1.6.6.4-2.PNG"><br>
+            ดัดแปลง Object ชื่อ ladder สามารถเรียก function แบบนี้ได้
+            <img src="./img/1.6.6.4-3.PNG">
+        </li>
+        <pre>
+            <code>
+let ladder = {
+    step: 0,
+    up: function() {
+        this.step++;
+        return this;
+    },
+    down: function() {
+        this.step--;
+        return this;
+    },
+    showStep: function() {
+        alert( this.step );
+        return this;
+    }
+};
+            </code>
+        </pre>
+    </ol>
+</body>
+
+</html>
