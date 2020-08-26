@@ -4,6 +4,9 @@ ol > li {
 li > img {
     vertical-align: top;
 }
+li > ul {
+    list-style-type: lower-alpha;
+}
 .bold {
     color: orange;
     text-decoration-line: underline;
@@ -11,4 +14,7 @@ li > img {
 .answer {
     background:papayawhip;
     width: 30vw;
+}
+.bluTxt {
+    color: blue;
 }

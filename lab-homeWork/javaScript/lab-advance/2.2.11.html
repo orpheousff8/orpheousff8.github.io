@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฝึกหัด 2.11</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="../CSS/lab.css">
+</head>
+
+<body>
+    <ol>
+        <li>
+            เขียนฟังก์ชัน ucFirst(string) โดยทำคืนค่าเป็น string เดิม แต่ตัวแรกของ string กลายเป็นพิมพ์ใหญ่
+            <pre>
+                <code>
+let ucFirst = (string) =&gt;  string.slice(0, 1).toUpperCase() + string.slice(1);
+                </code>
+            </pre>
+        </li>
+        <li>
+            เขียนฟังก์ชันที่ checkSpam โดยถ้าข้อความดังกล่าวมีคำว่า “xxx” หรือ “viagra” 
+            ให้คืนค่าเป็น true ถ้าไม่มีให้คืนค่าเป็น false
+            <pre>
+                <code>
+let checkSpam = (string) =&gt; string.indexOf(`xxx`) &gt; -1 || string.indexOf(`viagra`) &gt; -1;
+                </code>
+            </pre>
+        </li>
+        <li>
+            เขียนฟังก์ชันที่ truncate(str, maxlength) 
+            โดยฟังก์ชันดังกล่าวจะเช็คว่า string ที่ถูกส่งเข้ามามีความยาวเกิน maxlength ไหม 
+            ถ้าเกินให้แทน ข้อความต่อจากนั้นด้วย “...”<br>
+            <img src="./img/2.2.11.3.PNG" alt="Examples">
+            <pre>
+                <code>
+let truncate = (str, maxlength) =&gt; str.length &gt; maxlength ? str.slice(0, maxlength) + `...` : str;               
+                </code>
+            </pre>
+        </li>
+        <li>
+            เขียนฟังก์ชันที่ extractCurrencyValue(string, rate) 
+            โดยที่ฟังก์ชันดังกล่าวจะแปลง string ที่เป็นค่าเงิน dollar ให้เป็น number ที่มีค่าเป็นเงินบาทไทย 
+            โดยอ้างอิง  rate จาก parameters ตัวที่สอง ที่ส่งมาให้<br>
+            <img src="./img/2.2.11.4.PNG" alt="Example">
+            <pre>
+                <code>
+let extractCurrencyValue = (string, rate) =&gt; string.slice(1) * rate;
+                </code>
+            </pre>
+        </li>
+    </ol>
+</body>
+
+</html>
