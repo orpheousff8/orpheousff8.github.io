@@ -16,7 +16,7 @@
         <li>
             เขียนฟังก์ชัน ucFirst(string) โดยทำคืนค่าเป็น string เดิม แต่ตัวแรกของ string กลายเป็นพิมพ์ใหญ่
             <pre>
-                <code>
+                <code class="javascript">
 let ucFirst = (string) =&gt;  string.slice(0, 1).toUpperCase() + string.slice(1);
                 </code>
             </pre>
@@ -25,7 +25,7 @@ let ucFirst = (string) =&gt;  string.slice(0, 1).toUpperCase() + string.slice(1)
             เขียนฟังก์ชันที่ checkSpam โดยถ้าข้อความดังกล่าวมีคำว่า “xxx” หรือ “viagra” 
             ให้คืนค่าเป็น true ถ้าไม่มีให้คืนค่าเป็น false
             <pre>
-                <code>
+                <code class="javascript">
 let checkSpam = (string) =&gt; string.indexOf(`xxx`) &gt; -1 || string.indexOf(`viagra`) &gt; -1;
                 </code>
             </pre>
@@ -36,7 +36,7 @@ let checkSpam = (string) =&gt; string.indexOf(`xxx`) &gt; -1 || string.indexOf(`
             ถ้าเกินให้แทน ข้อความต่อจากนั้นด้วย “...”<br>
             <img src="./img/2.2.11.3.PNG" alt="Examples">
             <pre>
-                <code>
+                <code class="javascript">
 let truncate = (str, maxlength) =&gt; str.length &gt; maxlength ? str.slice(0, maxlength) + `...` : str;               
                 </code>
             </pre>
@@ -47,7 +47,7 @@ let truncate = (str, maxlength) =&gt; str.length &gt; maxlength ? str.slice(0, m
             โดยอ้างอิง  rate จาก parameters ตัวที่สอง ที่ส่งมาให้<br>
             <img src="./img/2.2.11.4.PNG" alt="Example">
             <pre>
-                <code>
+                <code class="javascript">
 let extractCurrencyValue = (string, rate) =&gt; string.slice(1) * rate;
                 </code>
             </pre>

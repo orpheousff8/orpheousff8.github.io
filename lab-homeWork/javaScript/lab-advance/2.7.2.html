@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>แบบฝึกหัด 3.11</title>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <link rel="stylesheet" href="../CSS/lab.css">
+    </head>
+
+<body>
+    <ol>
+        <li>
+            กำหนดให้ salaries เป็น Object
+            ให้เขียนฟังก์ชัน sumSalaries(salaries) ที่คืนค่าเป็นผลผมรวมของเงินเดือน 
+            ถ้า salaries ไม่มีสมาชิก ให้คืนค่าเป็น 0<br>
+            <img src="./img/2.7.2.1.PNG">
+            <pre>
+                <code class="javascript">
+function sumSalaries(salaries) {
+    
+    let sum = 0;
+
+    for(let s in salaries) {
+
+        sum += salaries[s];
+    }
+
+    return sum;
+}                     
+                </code>
+            </pre>
+        </li>
+        <li>
+            ให้เขียนฟังก์ชัน count(obj) ที่คืนค่าเป็นจำนวน properties ใน object<br>
+            <img src="./img/2.7.2.2.PNG">
+            <pre>
+                <code class="javascript">
+function count(user) {
+    
+    let sum = 0;
+
+    for(let u in user) {
+
+        sum++;
+    }
+
+    return sum;
+}                     
+                </code>
+            </pre>
+        </li>
+    </ol>
+</body>
+
+</html>

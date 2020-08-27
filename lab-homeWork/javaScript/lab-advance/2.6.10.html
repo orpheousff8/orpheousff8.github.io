@@ -18,19 +18,63 @@
             สร้าง function ชื่อ unique(arr) ให้คืนค่าเป็น unique items ของ arr<br>
             <img src="./img/2.6.10.1.PNG">
             <pre>
-                <code>
+                <code class="javascript">
 function unique(arr) {
     
     let set = new Set(arr);
     return Array.from(set);
 
-    /*
-    let set = new Set(arr);
-    let arr2 = [];
-    set.forEach((item) => testArr.push(item));
-    return arr2
-    */
 }
+                </code>
+            </pre>
+        </li>
+        <li>
+            Anagram เป็นตัวอักษรที่มีจำนวนตัวอักษรแต่ละตัวที่เท่ากัน แต่เรียงไม่เหมือนกัน ( <span style="color: red;">Optional</span> )<br>
+            <img src="./img/2.6.10.2.PNG">
+            <pre>
+                <code class="javascript">
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+alert( aclean(arr) );
+
+function aclean(arr) {
+
+    for(let i = 0; i &lt; arr.length ; i++) {
+
+        for(let j = i + 1; j &lt; arr.length; j++) {
+
+            if(arr[i].length != arr[j].length) continue;
+
+            if( getSortedString(arr[i]) === getSortedString(arr[j]) ) arr.splice(j--, 1);
+        }
+    }
+
+    return arr;
+}
+
+function getSortedString(str) {
+
+    return str.toLowerCase().split(``).sort().join(``);
+}
+                </code>
+            </pre>
+        </li>
+        <li>
+            เราได้ array จาก map.keys() แต่ไม่สามารถใช้ push ได้
+	        เราจะทำยังไงให้ keys.push สามารถทำงานได้<br>
+            <img src="./img/2.6.10.3.PNG">
+            <pre>
+                <code class="javascript">
+let map = new Map();
+
+map.set("name", "John");
+
+let keys = map.keys();
+
+keys.push("more"); // Error: keys.push is not a function
+
+//Code starts here.
+keys = Array.from(keys);
+keys.push("more"); //it works!
                 </code>
             </pre>
         </li>

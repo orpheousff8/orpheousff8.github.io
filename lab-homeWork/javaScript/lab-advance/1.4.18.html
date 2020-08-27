@@ -23,7 +23,7 @@
                 <li>ลบ properties name ออกจาก Object</li>
             </ul>
             <pre>
-                <code>
+                <code class="javascript">
 let object = {};
 object["name"] = "Sonter";
 object["surname"] = "Pakorn";
@@ -37,7 +37,7 @@ delete object["name"];
             ฟังก์ชันนี้จะเช็คว่า obj นี้มี properties ไหม 
             <span style="color: green;">ถ้ามีให้คืนค่า true ถ้าไม่มีให้คืนค่า false</span>
             <pre>
-                <code>
+                <code class="javascript">
 let isEmpty(obj) {
 
     for(let o in obj) {
@@ -58,7 +58,7 @@ let isEmpty(obj) {
             โดยมี key เป็นชื่อพนักงานและมี value เป็นเงินเดือน 
             ให้ฟังก์ชันคืนค่าเป็นผลรวมของเงินเดือนพนักงานทั้งหมด
             <pre>
-                <code>
+                <code class="javascript">
 let salaries = {
     John: 100,
     Ann: 160,
@@ -87,7 +87,7 @@ function sum(obj) {
             ให้คุณ value นั้นด้วย times 
             ถ้าข้อมูลเเป็นอย่างอื่นไม่ต้องทำอะไร
             <pre>
-                <code>
+                <code class="javascript">
 // before the call
 let menu = {
     width: 200,
