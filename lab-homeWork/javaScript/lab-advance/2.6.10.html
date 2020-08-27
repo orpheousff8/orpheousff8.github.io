@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>แบบฝึกหัด 3.11</title>
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+        <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <link rel="stylesheet" href="../CSS/lab.css">
+    </head>
+
+<body>
+    <ol>
+        <li>
+            ให้ arr เป็น Array
+            สร้าง function ชื่อ unique(arr) ให้คืนค่าเป็น unique items ของ arr<br>
+            <img src="./img/2.6.10.1.PNG">
+            <pre>
+                <code>
+function unique(arr) {
+    
+    let set = new Set(arr);
+    return Array.from(set);
+
+    /*
+    let set = new Set(arr);
+    let arr2 = [];
+    set.forEach((item) => testArr.push(item));
+    return arr2
+    */
+}
+                </code>
+            </pre>
+        </li>
+    </ol>
+</body>
+
+</html>
