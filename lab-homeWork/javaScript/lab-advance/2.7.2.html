@@ -22,14 +22,7 @@
                 <code class="javascript">
 function sumSalaries(salaries) {
     
-    let sum = 0;
-
-    for(let s in salaries) {
-
-        sum += salaries[s];
-    }
-
-    return sum;
+    return Object.values(salaries).reduce( (acc, cur) => acc + cur);
 }                     
                 </code>
             </pre>
@@ -41,14 +34,7 @@ function sumSalaries(salaries) {
                 <code class="javascript">
 function count(user) {
     
-    let sum = 0;
-
-    for(let u in user) {
-
-        sum++;
-    }
-
-    return sum;
+    return Object.keys(user).length;
 }                     
                 </code>
             </pre>
