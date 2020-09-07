@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5.2</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./css/lab.css">
+</head>
+<body>
+    <ol>
+        แบบฝึกหัด
+        <li>
+            มี Object Dictionary ที่สร้างจาก Object.create(null) เพื่อเก็บ key/value pairs
+            <ul>
+                <li>
+                    ให้เพิ่ม Method dictionary.toString() และคืนค่าเป็น key ทั้งหมดออกมาที่คั้นด้วย comma
+                </li>
+            </ul>
+            <img src="./img/2.5.2.1.PNG">
+            <pre>
+                <code class="javascript">
+let dictionary = Object.create(null, {
+    toString: {
+        value(){
+            return Object.keys(this).join();
+        }
+    }
+});
+
+// add some data
+dictionary.apple = "Apple";
+dictionary.__proto__ = "test"; // __proto__ is a regular property key here
+
+// only apple and __proto__ are in the loop
+for(let key in dictionary) {
+    alert(key); // "apple", then "__proto__"
+}
+
+// your toString in action
+alert(dictionary); // "apple,__proto__"
+                </code>
+            </pre>
+        </li>
+        <li>
+            สร้าง object rabbit ด้วย new keyword<br>
+            <img src="./img/2.5.2.2_1.PNG">
+            <ul>
+                <li>
+                    คำสั่งทั้งหมดนี้ทำงานเหมือนกันหรือไม่
+                </li>
+                <img src="./img/2.5.2.2_2.PNG">
+            </ul>
+            <div class="answer">
+                "Rabbit" เพราะเป็น name ของ object rabbit<br>
+                undefined เพราะ constructor ไม่มี name<br>
+                undefined เพราะ constructor ไม่มี name (= rabbit.prototype.sayHi())<br>
+                undefined เพราะ constructor ไม่มี name (= rabbit.prototype.sayHi())
+            </div>
+        </li>
+</body>
+</html>

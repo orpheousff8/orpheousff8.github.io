@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./css/lab.css">
+</head>
+<body>
+    <h3>lab  this มีค่าเป็นอะไร</h3>
+    <pre>
+        <code class="javascript">
+function f() {
+    alert( this ); // ?
+}
+let user = {
+    g: f.bind(null)
+};
+user.g();          
+        </code>
+    </pre>
+    คำตอบ
+    <div class="answer">[object Window]</div>
+    <br>
+    <h3>lab  ผลลัพธ์ที่ได้คืออะไร</h3>
+    <pre>
+        <code class="javascript">
+function f() {
+    alert(this.name);
+}
+
+f = f.bind( {name: "John"} ).bind( {name: "Ann" } );
+
+f();
+        </code>
+    </pre>
+    คำตอบ
+    <div class="answer">John</div>
+    <br>
+    <h3>lab  ค่าของ value ในฟังก์ชันจะเปลี่ยนไปไหมหลังจาก bind</h3>
+    <pre>
+        <code class="javascript">
+function sayHi() {
+    alert( this.name );
+}
+sayHi.test = 5;
+
+let bound = sayHi.bind({
+    name: "John"
+});  
+alert( bound.test ); // ผลลัพธ์คืออะไร แล้ว ทำไมจึงได้อย่างนั้น            
+        </code>
+    </pre>
+    <div class="answer">
+        undefined เนื่องจาก bound แค่สร้าง function ใหม่จาก sayHi และมี object ใน [[BoundThis]]<br>
+        แต่ไม่ได้ copy property ของ sayHi มาด้วย<br>
+        (ดูภาพด้านล่าง)
+    </div>
+    <br>
+    <img src="./img/4.2_3Ans.PNG">
+</body>
+</html>

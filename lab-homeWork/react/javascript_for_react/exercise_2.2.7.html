@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2.7</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./css/lab.css">
+</head>
+<body>
+    แบบฝึกหัด
+    <ol>
+        <li>
+            ในบรรทัดที่มีเลข 1 2 และ 3 จะได้ค่าออกมาเป็นอะไร<br>
+            <img src="./img/2.2.7.1.PNG">
+            <div class="answer">
+                true<br>
+                null<br>
+                undefined
+            </div>
+        </li>
+        <li>
+            ใช้ __proto__ ในการกำหนด prototype object ดังนี้<br>
+            pockets → bed → table → head.
+            <pre>
+                <code class="javascript">
+let head = {
+    glasses: 1
+};
+let table = {
+    pen: 3,
+    __proto__: head
+};
+let bed = {
+    sheet: 1,
+    pillow: 2,
+    __proto__: table
+};
+let pockets = {
+    money: 2000,
+    __proto__: bed
+};
+                </code>
+            </pre>
+        </li>
+        <li>
+            การเขียนโค๊ดแบบนี้ object ไหนจะเป็นตัวที่ได้ property full ไป<br>
+            <img src="./img/2.2.7.3.PNG">
+            <div class="answer">
+                rabbit
+            </div>
+        </li>
+        <li>
+            การเขียนโค๊ดแบบนี้ กระเพาะจะถูกแชร์กันจะแก้ไขยังไงดี<br>
+            <img src="./img/2.2.7.4.PNG">
+            <pre>
+                <code class="javascript">
+let hamster = {
+
+    eat(food) {
+
+        if(!this.stomach) this.stomach = [];
+
+        this.stomach.push(food);
+    }
+};                      
+                </code>
+            </pre>
+        </li>
+    </ol>
+</body>
+</html>

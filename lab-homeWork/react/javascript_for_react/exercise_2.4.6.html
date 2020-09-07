@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4.6</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./css/lab.css">
+</head>
+<body>
+    <ol>
+        แบบฝึกหัด
+        <li>
+            ให้เพิ่ม Method defer เข้าไปใน prototypes ของทุกฟังก์ชัน<br>
+            โดย Method นี้จะทำหน้าที่ alert ข้อความออกมาหลังจากผ่านไป ms<br>
+            <img src="./img/2.4.6.1.PNG">
+            <pre>
+                <code class="javascript">
+Function.prototype.defer = function(ms) {
+    setTimeout(this, ms);
+}
+                </code>
+            </pre>
+        </li>
+        <li>
+            ให้เพิ่ม Method defer เข้าไปใน prototypes ของทุกฟังก์ชัน<br>
+            โดย Method นี้จะทำหน้าที่ return Function ให้ alert(a+b) เมื่อผ่านไป ms<br>
+            <img src="./img/2.4.6.2.PNG">
+            <pre>
+                <code class="javascript">
+Function.prototype.defer = function(ms) {
+    
+    let callerFuncThis = this;
+
+    return function(a, b) {
+        setTimeout(() => callerFuncThis(a, b), ms);
+        
+        /*Alternative
+        setTimeout(function() {
+            callerFuncThis(a, b);
+        }, ms);
+        */
+    }
+}
+                </code>
+            </pre>
+        </li>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5.7</title>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.16.2/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./css/lab.css">
+</head>
+<body>
+    แบบฝึกหัด
+    <ol>
+        <li>
+            ถ้าเรามี Object<br>
+            <img src="./img/1.5.7.1.PNG"><br>
+            ให้เขียน Destrcutring assignment ที่ให้
+            <ol>
+                <li>property ที่ชื่อ name ไปอยู่ในตัวแปร name</li>
+                <li>property ที่ชื่อ years ไปอยู่ในตัวแปร age</li>
+                <li>property ที่ชื่อ isAdmin ไปอยู่ในตัวแปร isAdmin (ให้เป็น false ถ้าไม่มีค่าให้กำหนด)</li>
+            </ol>
+            <pre>
+                <code class="javascript">
+let {name, years:age, isAdmin=true} = user;
+                </code>
+            </pre>
+        </li>
+        <li>
+            ถ้าเรามี Object ชื่อ salaries<br>
+            <img src="./img/1.5.7.2.PNG"><br>
+            ให้สร้าง function topSalary(salaries) ที่คืนค่าชื่อคนที่มีเงินเดือนสูงสุด
+            <ol>
+                <li>ถ้า salaries ไม่มีข้อมูลให้คืนค่าเป็น null</li>
+                <li>ถ้าสูงสุดมีหลายคน ก็ให้คืนใครก็ได้สักคน</li>
+                <pre>
+                    <code class="javascript">
+function topSalary(salaries) {
+
+    let [...rest] = Object.entries(salaries);
+    let max = rest.map((arr) => arr[1]).reduce((acc, cur) => Math.max(acc, cur), -Infinity);
+
+    if (max === -Infinity) return null;
+
+    return Object.keys(salaries).find((key) => salaries[key] === max);
+}
+                    </code>
+                </pre>
+            </ol>
+        </li>
+    </ol>
+</body>
+</html>
