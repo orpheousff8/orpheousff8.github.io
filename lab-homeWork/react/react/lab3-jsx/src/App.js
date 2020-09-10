@@ -1,14 +1,6 @@
 import React from 'react';
 import './App.css';
 
-// const Saracha = {
-//   name: (props) => <div>{this.name='Saracha'}</div>,
-//   age: (pros) => <div>{this.age='6'}</div>,
-//   isMan: (props) => <div>{this.isMan}</div>,
-//   location: (prop) => <div>{this.location='[abc, def]'}</div>,
-//   education: (prop) => <div>{this.education = {"school":"St.Louis", "bachalor":"KU"}}</div>
-// }
-
 function Saracha(props) {
 
   let name = props.name;
