@@ -6,13 +6,13 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 
-let Person = (props) => {
+const Person = (props) => {
 
   return (
     <Container className="w-25 ml-0">
       <Row>
         <Col xs={4}>
-          <Image src={props.imageCaller} alt="Profile Picture" width={120} height={120} roundedCircle/>
+          <Image src={props.imageUrl} alt="Profile Picture" width={120} height={120} roundedCircle/>
         </Col>
         <Col xs="auto">
           <h4 className="text-primary">{props.displayName}</h4>
@@ -34,7 +34,8 @@ function App() {
           <img src={require('./Capture.PNG')} alt="example"/>
         </ul>
       </div>
-      <Person imageCaller={require('./dio.jpg')} displayName="Dio Brando" workPlace="School of Laws"/>
+      <hr/>
+      <Person imageUrl={require('./dio.jpg')} displayName="Dio Brando" workPlace="Laws company"/>
     </div>
   );
 }
