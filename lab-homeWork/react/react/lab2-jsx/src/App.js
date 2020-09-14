@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 
 const myComponent = {
   one: () => <div>1</div>,
