@@ -102,9 +102,9 @@ class App extends React.Component {
         <div>
           <fieldset>
             <legend>Add more people:</legend>
-            <label for="addFirstName">First name:</label>
+            <label htmlFor="addFirstName">First name:</label>
             <input type="text" id="addFirstName" placeholder="Joseph" defaultValue="Jotaro" ref={this.myInputFirstNameRef} />
-            <label for="addLastName">Last name:</label>
+            <label htmlFor="addLastName">Last name:</label>
             <input type="text" id="addLastName" placeholder="Joestar" defaultValue="Joestar" ref={this.myInputLastNameRef} />
             <br />
             <button onClick={this.handleAddPeople}>Add</button>
