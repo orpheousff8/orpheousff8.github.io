@@ -6,6 +6,15 @@ import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 // import Engine from './Engine';
 
+const PERIOD = 46;
+const LOWEST_DIGIT = 45;     //use Hyphen as signed operand
+const HYPHEN = 45;
+const HIGHEST_DIGIT = 57;
+const PLUS = 43;
+const MINUS = 8722;          //use minus symbol as operator
+const TIMES = 215;
+const DIVIDED = 247;
+
 class Calculator extends React.Component {
     constructor(props) {
         super(props);
@@ -13,36 +22,23 @@ class Calculator extends React.Component {
             monitor: '',
             inFix: []
         }
-        this.PERIOD = 46;
-        this.LOWEST_DIGIT = 45;     //use Hyphen as signed operand
-        this.HIGHEST_DIGIT = 57;
-        this.PLUS = 43;
-        this.MINUS = 8722;          //use minus symbol as operator
-        this.TIMES = 215;
-        this.DIVIDED = 247;
-        this.HYPHEN = 45;
+        this.handleDigit = this.handleDigit.bind(this);
+        this.handleOperator = this.handleOperator.bind(this);
+        this.handleDel = this.handleDel.bind(this);
+        this.handleClear = this.handleClear.bind(this);
+        this.handleEqual = this.handleEqual.bind(this);
     }
-
-    state;
-    PERIOD;
-    LOWEST_DIGIT;
-    HIGHEST_DIGIT;
-    PLUS;
-    MINUS;
-    TIMES;
-    DIVIDED;
-    HYPHEN;
 
     handleDigit = (e) => {
 
         const ch = parseInt(e.target.value);
         const lastMonitorCh = this.state.monitor.slice(-1).charCodeAt(0);
 
-        if (isNaN(lastMonitorCh) && ch === this.PERIOD) return;      //if monitor is empty, no '.' to be the first
+        if (isNaN(lastMonitorCh) && ch === PERIOD) return;      //if monitor is empty, no '.' to be the first
 
-        if (lastMonitorCh === this.PERIOD && ch === this.PERIOD) return;        //no double '.' allowed
+        if (lastMonitorCh === PERIOD && ch === PERIOD) return;        //no double '.' allowed
 
-        if (isNaN(lastMonitorCh) || lastMonitorCh < this.LOWEST_DIGIT || lastMonitorCh > this.HIGHEST_DIGIT) {      //monitor is empty or found operator
+        if (isNaN(lastMonitorCh) || lastMonitorCh < LOWEST_DIGIT || lastMonitorCh > HIGHEST_DIGIT) {      //monitor is empty or found operator
 
             this.setState((state, props) => {
                 return {
@@ -51,7 +47,7 @@ class Calculator extends React.Component {
                 };
             });
         }
-        if (lastMonitorCh >= this.LOWEST_DIGIT && lastMonitorCh <= this.HIGHEST_DIGIT) {     //digit and '.'
+        if (lastMonitorCh >= LOWEST_DIGIT && lastMonitorCh <= HIGHEST_DIGIT) {     //digit and '.'
 
             let tempInfix = [...this.state.inFix];
             const lastItemTempInFix = tempInfix.splice(-1);
@@ -72,7 +68,7 @@ class Calculator extends React.Component {
 
         if (isNaN(lastMonitorCh)) return;      //monitor is blank; no operator allowed to show first
 
-        if (lastMonitorCh < this.LOWEST_DIGIT || lastMonitorCh > this.HIGHEST_DIGIT) return;      //no double operators allowed
+        if (lastMonitorCh < LOWEST_DIGIT || lastMonitorCh > HIGHEST_DIGIT) return;      //no double operators allowed
 
         this.setState((state, props) => {
             return {
@@ -92,14 +88,13 @@ class Calculator extends React.Component {
         });
     }
 
-    handleDel = (e) => {
+    handleDel = () => {
 
-        const ch = parseInt(e.target.value);
         const lastMonitorCh = this.state.monitor.slice(-1).charCodeAt(0);
 
         if (isNaN(lastMonitorCh)) return;
 
-        if (lastMonitorCh < this.LOWEST_DIGIT || lastMonitorCh > this.HIGHEST_DIGIT) {      //found operator, delete whole item in inFix
+        if (lastMonitorCh < LOWEST_DIGIT || lastMonitorCh > HIGHEST_DIGIT) {      //found operator, delete whole item in inFix
 
             this.setState((state, props) => {
                 return {
@@ -127,7 +122,8 @@ class Calculator extends React.Component {
         this.setState((state, props) => {
 
             return {
-                monitor: String(result).replace(String.fromCharCode(this.HYPHEN), String.fromCharCode(this.MINUS)),
+                // monitor: String(result).replace(String.fromCharCode(HYPHEN), String.fromCharCode(MINUS)),
+                monitor: String(result),
                 inFix: [String(result)]
             };
         });
@@ -146,7 +142,7 @@ class Calculator extends React.Component {
 
             const ch = item.charCodeAt(0);      //as operators have only 1 character, so we check only 1 character
 
-            if (ch >= this.LOWEST_DIGIT && ch <= this.HIGHEST_DIGIT) {
+            if (ch >= LOWEST_DIGIT && ch <= HIGHEST_DIGIT) {
                 postFix.push(item);       //found digit, push to postfix queue
                 return;
             }
@@ -182,11 +178,11 @@ class Calculator extends React.Component {
     findPrecedence = (ch) => {
 
         switch (ch) {
-            case this.PLUS:
-            case this.MINUS:
+            case PLUS:
+            case MINUS:
                 return 1;       //Precedence of + or - is 1
-            case this.TIMES:
-            case this.DIVIDED:
+            case TIMES:
+            case DIVIDED:
                 return 2;       //Precedence of * or / is 2
             default:
                 return -1;
@@ -203,17 +199,17 @@ class Calculator extends React.Component {
             let tempDigit;
 
             switch (ch) {
-                case this.PLUS:
+                case PLUS:
                     calcStack.push(calcStack.pop() + calcStack.pop());
                     break;
-                case this.MINUS:
+                case MINUS:
                     tempDigit = calcStack.pop();
                     calcStack.push(calcStack.pop() - tempDigit);
                     break;
-                case this.TIMES:
+                case TIMES:
                     calcStack.push(calcStack.pop() * calcStack.pop());
                     break;
-                case this.DIVIDED:
+                case DIVIDED:
                     tempDigit = calcStack.pop();
                     calcStack.push(calcStack.pop() / tempDigit);
                     break;
@@ -249,7 +245,7 @@ class Calculator extends React.Component {
                                 <Col xs={4}><Button className="w-100 p-4 p-sm-5" size="lg" variant="dark" value={51} onClick={this.handleDigit}>3</Button></Col>
                             </Row>
                             <Row className="my-1">
-                                <Col xs={4}><Button className="w-100 p-4 p-sm-5" size="lg" variant="dark" value={this.PERIOD} onClick={this.handleDigit}>.</Button></Col>
+                                <Col xs={4}><Button className="w-100 p-4 p-sm-5" size="lg" variant="dark" value={PERIOD} onClick={this.handleDigit}>.</Button></Col>
                                 <Col xs={4}><Button className="w-100 p-4 p-sm-5" size="lg" variant="dark" value={48} onClick={this.handleDigit}>0</Button></Col>
                                 <Col xs={4}><Button className="w-100 p-4 p-sm-5" size="lg" variant="warning" onClick={this.handleEqual}>=</Button></Col>
                             </Row>
@@ -257,10 +253,10 @@ class Calculator extends React.Component {
                         <Col className="" xs={3}>
                             <Button className="w-100 p-2 p-sm-4 p-md-4 mt-2 mt-sm-2 my-1 my-sm-1" size="lg" variant="info" onClick={this.handleClear}>C</Button>
                             <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" onClick={this.handleDel}>DEL</Button>
-                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={this.DIVIDED} onClick={this.handleOperator}>&divide;</Button>
-                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={this.TIMES} onClick={this.handleOperator}>&times;</Button>
-                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={this.MINUS} onClick={this.handleOperator}>&minus;</Button>
-                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={this.PLUS} onClick={this.handleOperator}>+</Button>
+                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={DIVIDED} onClick={this.handleOperator}>&divide;</Button>
+                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={TIMES} onClick={this.handleOperator}>&times;</Button>
+                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={MINUS} onClick={this.handleOperator}>&minus;</Button>
+                            <Button className="w-100 p-2 p-sm-4 p-md-4 my-1 my-sm-1" size="lg" variant="dark" value={PLUS} onClick={this.handleOperator}>+</Button>
                         </Col>
                     </Row>
                 </Container>
