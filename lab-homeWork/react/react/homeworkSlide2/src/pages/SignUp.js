@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
-class Login extends Component {
+class SignUp extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,6 +22,17 @@ class Login extends Component {
                     touched: true,
                     error: { status: true, message: '' }
                 },
+                email: {
+                    type: 'email',
+                    value: '',
+                    validator: {
+                        required: true,
+                        pattern: 'email'
+                    },
+                    // touched: false,
+                    touched: true,
+                    error: { status: true, message: '' }
+                },
                 password: {
                     type: 'password',
                     value: '',
@@ -30,6 +40,17 @@ class Login extends Component {
                         required: true,
                         minLength: 8,
                         pattern: 'password'
+                    },
+                    // touched: false,
+                    touched: true,
+                    error: { status: true, message: '' }
+                },
+                confirmPassword: {
+                    type: 'confirmPassword',
+                    value: '',
+                    validator: {
+                        required: true,
+                        pattern: 'confirmPassword'
                     },
                     // touched: false,
                     touched: true,
@@ -64,9 +85,9 @@ class Login extends Component {
         this.setState((state, props) => {
             return (
                 {
-                ...state,
-                formElements: updatedForm,
-                formValid: formStatus
+                    ...state,
+                    formElements: updatedForm,
+                    formValid: formStatus
                 }
             );
         });
@@ -121,6 +142,12 @@ class Login extends Component {
                 message += ',Password must contain at least 1 digit.';
             }
         }
+        if (rule.pattern === 'confirmPassword' && valid) {
+            if (value !== this.state.formElements['password'].value) {
+                valid = false;
+                message = 'Must be the same as password.'
+            }
+        }
 
         return { status: !valid, message: message };
     }
@@ -169,15 +196,40 @@ class Login extends Component {
                                                 onChange={this.onFormChange}
                                             />
                                             <div className="invalid-feedback">
-                                                
+
                                                 {this.getErrorMessage('password').split(",").map((item, index) => {
                                                     return <div key={index}>{item}</div>;
                                                 })}
                                             </div>
                                         </div>
+                                        <div className="form-group">
+                                            <label htmlFor="confirmPassword">Confirm Password</label>
+                                            <input
+                                                type="password"
+                                                className={this.getInputClass('confirmPassword')}
+                                                id="confirmPassword"
+                                                name="confirmPassword"
+                                                onChange={this.onFormChange}
+                                            />
+                                            <div className="invalid-feedback">
+                                                {this.getErrorMessage('confirmPassword')}
+                                            </div>
+                                        </div>
+                                        <div className="form-group">
+                                            <label htmlFor="email">Email</label>
+                                            <input
+                                                type="email"
+                                                className={this.getInputClass('email')}
+                                                id="email"
+                                                name="email"
+                                                onChange={this.onFormChange}
+                                            />
+                                            <div className="invalid-feedback">
+                                                {this.getErrorMessage('email')}
+                                            </div>
+                                        </div>
                                         <div className="text-center">
-                                            <Link className="mr-3" to='/signup'>Register</Link>
-                                            <Button className="ml-3" type="submit" variant="primary" disabled={!this.state.formValid}>Login</Button>
+                                            <Button type="submit" variant="primary" disabled={!this.state.formValid}>Register</Button>
                                         </div>
                                     </form>
                                 </Card.Body>
@@ -190,4 +242,4 @@ class Login extends Component {
         )
     }
 }
-export default Login;
+export default SignUp;

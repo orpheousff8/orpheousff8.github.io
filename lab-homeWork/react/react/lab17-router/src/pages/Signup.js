@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 class Signup extends Component {
     constructor(props) {
@@ -85,9 +85,9 @@ class Signup extends Component {
         this.setState((state, props) => {
             return (
                 {
-                ...state,
-                formElements: updatedForm,
-                formValid: formStatus
+                    ...state,
+                    formElements: updatedForm,
+                    formValid: formStatus
                 }
             );
         });
@@ -143,7 +143,7 @@ class Signup extends Component {
             }
         }
         if (rule.pattern === 'confirmPassword' && valid) {
-            if(value !== this.state.formElements['password'].value) {
+            if (value !== this.state.formElements['password'].value) {
                 valid = false;
                 message = 'Must be the same as password.'
             }
@@ -163,13 +163,14 @@ class Signup extends Component {
 
     getErrorMessage = (name) => this.state.formElements[name].error.message;
 
+
     render() {
         return (
             <>
                 <Container fluid>
                     <Row>
-                        <Col sm-3 className="mt-5"></Col>
-                        <Col sm-6 className="mt-5">
+                        <Col sm="3" className="mt-5"></Col>
+                        <Col sm="6" className="mt-5">
                             <Card>
                                 <Card.Body className="ml-3 mr-3 mt-5 mb-1">
                                     <form onSubmit={this.onFormSubmit}>
@@ -196,9 +197,9 @@ class Signup extends Component {
                                                 onChange={this.onFormChange}
                                             />
                                             <div className="invalid-feedback">
-                                                
-                                                {this.getErrorMessage('password').split(",").map((item) => {
-                                                    return <div>{item}</div>;
+
+                                                {this.getErrorMessage('password').split(",").map((item, index) => {
+                                                    return <div key={index}>{item}</div>;
                                                 })}
                                             </div>
                                         </div>
@@ -235,7 +236,7 @@ class Signup extends Component {
                                 </Card.Body>
                             </Card>
                         </Col>
-                        <Col sm-3 className="mt-5"></Col>
+                        <Col sm="3" className="mt-5"></Col>
                     </Row>
                 </Container>
             </>

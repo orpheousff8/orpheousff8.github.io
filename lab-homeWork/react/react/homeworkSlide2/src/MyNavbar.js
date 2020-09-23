@@ -22,7 +22,6 @@ const MyNavbar = (props) => {
                     <Nav.Link as={Link} to='/'>Home</Nav.Link>
                     <Nav.Link as={Link} to='/signup'>Sign up</Nav.Link>
                     <Nav.Link as={Link} to='/login'>Login</Nav.Link>
-                    <Nav.Link as={Link} to='/signupTest'>Sign up Test</Nav.Link>
                 </Nav>
             </Navbar>
         </>
