@@ -38,9 +38,6 @@ class Login extends Component {
             },
             formValid: false
         }
-
-        this.onFormChange = this.onFormChange.bind(this);
-        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
     state;
 
@@ -153,9 +150,10 @@ class Login extends Component {
                                                 className={this.getInputClass('username')}
                                                 id="username"
                                                 name="username"
+                                                aria-describedby="validationFeedback1"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback1">
                                                 {this.getErrorMessage('username')}
                                             </div>
                                         </div>
@@ -166,9 +164,10 @@ class Login extends Component {
                                                 className={this.getInputClass('password')}
                                                 id="password"
                                                 name="password"
+                                                aria-describedby="validationFeedback2"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback2">
                                                 
                                                 {this.getErrorMessage('password').split(",").map((item, index) => {
                                                     return <div key={index}>{item}</div>;

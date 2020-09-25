@@ -4,20 +4,23 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Validator from '../Validator';
 
-class Signup extends Component {
+class SignupTest extends Component {
 
     constructor(props) {
         super(props);
-        this.state = require('../Validator').state;
-        this.onFormChange = require('../Validator').onFormChange;
-        this.onFormSubmit = require('../Validator').onFormSubmit;
-        this.getInputClass = require('../Validator').getInputClass;
-        this.getErrorMessage = require('../Validator').getErrorMessage;
 
-        this.getInputClass = this.getInputClass.bind(this);
+        this.validator = new Validator();
+
+        this.state = this.validator.state;
+        this.onFormChange = this.validator.onFormChange.bind(this);
+        this.onFormSubmit = this.validator.onFormSubmit.bind(this);
+        this.getInputClass = this.validator.getInputClass.bind(this);
+        this.getErrorMessage = this.validator.getErrorMessage.bind(this);
     }
 
+    validator;
     state;
     onFormChange;
     onFormSubmit;
@@ -41,9 +44,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('username')}
                                                 id="username"
                                                 name="username"
+                                                aria-describedby="validationFeedback1"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback1">
                                                 {this.getErrorMessage('username')}
                                             </div>
                                         </div>
@@ -54,9 +58,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('password')}
                                                 id="password"
                                                 name="password"
+                                                aria-describedby="validationFeedback2"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback2">
 
                                                 {this.getErrorMessage('password').split(",").map((item, index) => {
                                                     return <div key={index}>{item}</div>;
@@ -70,9 +75,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('confirmPassword')}
                                                 id="confirmPassword"
                                                 name="confirmPassword"
+                                                aria-describedby="validationFeedback3"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback3">
                                                 {this.getErrorMessage('confirmPassword')}
                                             </div>
                                         </div>
@@ -83,9 +89,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('email')}
                                                 id="email"
                                                 name="email"
+                                                aria-describedby="validationFeedback4"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback4">
                                                 {this.getErrorMessage('email')}
                                             </div>
                                         </div>
@@ -103,4 +110,4 @@ class Signup extends Component {
         )
     }
 }
-export default Signup;
+export default SignupTest;

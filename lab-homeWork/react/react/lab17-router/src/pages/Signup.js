@@ -181,9 +181,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('username')}
                                                 id="username"
                                                 name="username"
+                                                aria-describedby="validationFeedback1"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback1">
                                                 {this.getErrorMessage('username')}
                                             </div>
                                         </div>
@@ -194,9 +195,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('password')}
                                                 id="password"
                                                 name="password"
+                                                aria-describedby="validationFeedback2"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback2">
 
                                                 {this.getErrorMessage('password').split(",").map((item, index) => {
                                                     return <div key={index}>{item}</div>;
@@ -210,9 +212,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('confirmPassword')}
                                                 id="confirmPassword"
                                                 name="confirmPassword"
+                                                aria-describedby="validationFeedback3"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback3">
                                                 {this.getErrorMessage('confirmPassword')}
                                             </div>
                                         </div>
@@ -223,9 +226,10 @@ class Signup extends Component {
                                                 className={this.getInputClass('email')}
                                                 id="email"
                                                 name="email"
+                                                aria-describedby="validationFeedback4"
                                                 onChange={this.onFormChange}
                                             />
-                                            <div className="invalid-feedback">
+                                            <div className="invalid-feedback" id="validationFeedback4">
                                                 {this.getErrorMessage('email')}
                                             </div>
                                         </div>
