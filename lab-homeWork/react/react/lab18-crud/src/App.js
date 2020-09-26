@@ -15,11 +15,6 @@ class App extends React.Component {
       {
         foodName: '',
         foodCost: PRICE[0]
-      },
-      editFormElements:
-      {
-        editFoodName: '',
-        editFoodCost: PRICE[0]
       }
     }
   }
@@ -41,21 +36,6 @@ class App extends React.Component {
     );
   }
 
-  onEditFormChange = (e) => {
-
-    const name = e.target.id;
-    const value = e.target.value;
-
-    let updatedEditForm = { ...this.state.editFormElements };
-    updatedEditForm[name] = value;
-
-    this.setState(
-      {
-        editFormElements: updatedEditForm
-      }
-    );
-  }
-
   onFormSubmit = (e) => {
 
     e.preventDefault();
@@ -67,34 +47,29 @@ class App extends React.Component {
           counter: state.counter,
           foodName: state.formElements.foodName,
           foodCost: state.formElements.foodCost,
-          editFormChange: this.onEditFormChange,
-          editRow: this.editItemHandler.bind(this, state.counter),
-          deleteRow: this.deleteItemHandler.bind(this, state.counter)
+          editFoodName: state.formElements.foodName,
+          editFoodCost: state.formElements.foodCost,
+          editFormChange: this.onEditFormChange,    //must not bind here, call it with (e) at where button exists
+          editRow: this.editItemHandler.bind(this),    //will bind counter & return data later
+          deleteRow: this.deleteItemHandler.bind(this, state.counter)   //bind with this & an identical number, so we can know which row's button
         }],
         counter: state.counter++,
         formElements:
         {
           foodName: '',
           foodCost: PRICE[0]
-        },
-        editFormElements:
-        {
-          editFoodName: '',
-          editFoodCost: PRICE[0]
         }
       });
     });
   }
 
-  editItemHandler = (id) => {
+  editItemHandler = (id, data) => {
     
-    let table = this.state.list;
-    let row;
-    row = table.filter((item) => item.counter === id);
-    const deletedTable = table.filter((item) => item.counter !== id);
+    const row = this.state.list.filter((item) => item.counter === id);
+    const deletedTable = this.state.list.filter((item) => item.counter !== id);
 
-    row[0].foodName = this.state.editFormElements.editFoodName;
-    row[0].foodCost = this.state.editFormElements.editFoodCost;
+    row[0].foodName = data.editFoodName;
+    row[0].foodCost = data.editFoodCost;
 
     this.setState((state, props) => {
       return({

@@ -3,27 +3,34 @@ import EditForm from './EditForm';
 
 const Row = (props) => {
 
-    const [rowState, setRowState] = useState({
-        isEditing: false
-    })
+    const [rowEditState, setRowEditState] = useState({
+        isEditing: false,
+    });
+    const [rowValueState, setRowValueState] = useState({
+        editFormElements:
+        {
+            editFoodName: props.foodName,
+            editFoodCost: props.editFoodCost
+        }
+    });
 
     const onToggleForm = () => {
-        setRowState(
+        setRowEditState(
             {
-                isEditing: !rowState.isEditing
+                isEditing: !rowEditState.isEditing
             }
         );
     }
     const onConfirmEdit = () => {
-        props.editRow();
-        setRowState(
+        props.editRow(props.counter, rowValueState.editFormElements);
+        setRowEditState(
             {
                 isEditing: false
             }
         );
     }
     const onCancelEdit = () => {
-        setRowState(
+        setRowEditState(
             {
                 isEditing: false
             }
@@ -32,6 +39,21 @@ const Row = (props) => {
 
     const onDeleteRow = () => {
         props.deleteRow();
+    }
+
+    const onEditFormChange = (e) => {
+
+        const name = e.target.id;
+        const value = e.target.value;
+
+        const updatedEditForm = { ...rowValueState.editFormElements };
+        updatedEditForm[name] = value;
+
+        setRowValueState(
+            {
+                editFormElements: updatedEditForm
+            }
+        );
     }
 
     return (
@@ -48,8 +70,10 @@ const Row = (props) => {
                     </div>
                     <div className="text-center">
                         {
-                            rowState.isEditing &&
-                            <EditForm {...props} cancelEdit={onCancelEdit} confirmEdit={onConfirmEdit} />
+                            rowEditState.isEditing &&
+                            <EditForm {...props} {...rowValueState.editFormElements}
+                                editFormChange={onEditFormChange}
+                                cancelEdit={onCancelEdit} confirmEdit={onConfirmEdit} />
                         }
                     </div>
                 </td>
