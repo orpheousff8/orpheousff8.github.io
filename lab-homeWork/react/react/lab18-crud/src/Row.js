@@ -22,7 +22,7 @@ const Row = (props) => {
         );
     }
     const onConfirmEdit = () => {
-        props.editRow(props.counter, rowValueState.editFormElements);
+        props.editRow(rowValueState.editFormElements);
         setRowEditState(
             {
                 isEditing: false

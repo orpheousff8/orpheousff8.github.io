@@ -49,9 +49,9 @@ class App extends React.Component {
           foodCost: state.formElements.foodCost,
           editFoodName: state.formElements.foodName,
           editFoodCost: state.formElements.foodCost,
-          editFormChange: this.onEditFormChange,    //must not bind here, call it with (e) at where button exists
-          editRow: this.editItemHandler.bind(this),    //will bind counter & return data later
-          deleteRow: this.deleteItemHandler.bind(this, state.counter)   //bind with this & an identical number, so we can know which row's button
+          editFormChange: this.onEditFormChange,    //no need to bind, will call it with (e) at where button exists
+          editRow: this.editItemHandler.bind(this, state.counter),    //bind with this & counter. (Partially applied functions) will call it with an additional param
+          deleteRow: this.deleteItemHandler.bind(this, state.counter)   //bind with this & counter. (Partially applied functions)
         }],
         counter: state.counter++,
         formElements:
@@ -65,15 +65,20 @@ class App extends React.Component {
 
   editItemHandler = (id, data) => {
     
-    const row = this.state.list.filter((item) => item.counter === id);
-    const deletedTable = this.state.list.filter((item) => item.counter !== id);
+    const table = [...this.state.list];
 
+    const row = table.filter((item) => item.counter === id);
+    
     row[0].foodName = data.editFoodName;
     row[0].foodCost = data.editFoodCost;
 
+    const editIndex = table.findIndex((item) => item.counter === id);
+
+    table.splice(editIndex, 1, row[0]);
+    
     this.setState((state, props) => {
       return({
-        list: [...deletedTable, {...row[0]}]
+        list: table
       });
     })
   }
