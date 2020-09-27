@@ -37,10 +37,6 @@ const Row = (props) => {
         );
     }
 
-    const onDeleteRow = () => {
-        props.deleteRow();
-    }
-
     const onEditFormChange = (e) => {
 
         const name = e.target.id;
@@ -65,7 +61,7 @@ const Row = (props) => {
                 <td className="w-50">
                     <div className="text-center">
                         <button type="button" className="btn btn-primary mr-2" onClick={onToggleForm}>Edit</button>
-                        <button type="button" className="btn btn-danger mr-2" onClick={onDeleteRow}>Delete</button>
+                        <button type="button" className="btn btn-danger mr-2" onClick={props.deleteRow}>Delete</button>
                         <button type="button" className="btn btn-info">pending</button>
                     </div>
                     <div className="text-center">

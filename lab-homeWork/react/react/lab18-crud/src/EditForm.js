@@ -4,12 +4,6 @@ const EditForm = (props) => {
     const onEditFormChange = (e) => {
         props.editFormChange(e);
     }
-    const onCancelEdit = () => {
-        props.cancelEdit();
-    }
-    const onConfirmEdit = () => {
-        props.confirmEdit();
-    }
 
     return (
         <div className="row w-75">
@@ -19,9 +13,9 @@ const EditForm = (props) => {
                         <label htmlFor="editFoodName" id="basic-addon1">Food name</label>
                     </div>
                     <div className="col-8">
-                        <input type="text" className="form-control w-100" id="editFoodName"
-                            value={props.editFoodName} required aria-describedby="basic-addon1"
-                            onChange={onEditFormChange} />
+                        <input type="text" className="form-control w-100" id="editFoodName" aria-describedby="basic-addon1"
+                            value={props.editFoodName} onChange={onEditFormChange} 
+                            autoFocus required/>
                     </div>
                 </div>
                 <div className="row form-group w-75 mx-auto">
@@ -42,9 +36,9 @@ const EditForm = (props) => {
                 </div>
                 <div className="row w-100 mx-auto">
                     <div className="col-3"></div>
-                    <button className="col btn btn-outline-primary btn-sm" onClick={onCancelEdit}>Cancel</button>
+                    <button className="col btn btn-outline-primary btn-sm" onClick={props.cancelEdit}>Cancel</button>
                     <div className="col-1"></div>
-                    <button className="col btn btn-primary btn-sm" onClick={onConfirmEdit}>Confirm</button>
+                    <button className="col btn btn-primary btn-sm" onClick={props.confirmEdit}>Confirm</button>
                     <div className="col-3"></div>
                 </div>
             </div>
