@@ -1,9 +1,9 @@
 import React from 'react'
 
 const EditForm = (props) => {
-    const onEditFormChange = (e) => {
-        props.editFormChange(e);
-    }
+    // const onEditFormChange = (e) => {        //can called with arrow function with (e)
+    //     props.editFormChange(e);
+    // }
 
     return (
         <div className="row w-75">
@@ -14,7 +14,7 @@ const EditForm = (props) => {
                     </div>
                     <div className="col-8">
                         <input type="text" className="form-control w-100" id="editFoodName" aria-describedby="basic-addon1"
-                            value={props.editFoodName} onChange={onEditFormChange} 
+                            value={props.editFoodName} onChange={(e) => props.editFormChange(e)} 
                             autoFocus required/>
                     </div>
                 </div>
@@ -23,9 +23,8 @@ const EditForm = (props) => {
                         <label htmlFor="editFoodCost" id="basic-addon2">Food cost</label>
                     </div>
                     <div className="col-8">
-                        <select className="custom-select w-100" id="editFoodCost"
-                            value={props.editFoodCost} aria-describedby="basic-addon2"
-                            onChange={onEditFormChange} required>
+                        <select className="custom-select w-100" id="editFoodCost" aria-describedby="basic-addon2"
+                            value={props.editFoodCost} onChange={(e) => props.editFormChange(e)} required>
                             {props.PRICE.map((item) => {
                                 return (
                                     <option key={item} value={item}>{item}</option>

@@ -18,7 +18,7 @@ const App = () => {
   });
   useEffect(() => {
     document.querySelector("#foodName").value = formState.formElements.foodName;
-  });
+  }, [formState.formElements.foodName]);
 
   const listStateRef = useRef(listState);
   useEffect(() => {
