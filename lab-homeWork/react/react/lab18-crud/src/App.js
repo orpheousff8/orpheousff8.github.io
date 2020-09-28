@@ -24,7 +24,11 @@ const App = () => {
   useEffect(() => {
     listStateRef.current = listState
   }, [listState]);
-  
+
+  //no variable specified, so it runs on every componentDidMount & componentDidUpdate
+  useEffect(() => {
+    document.querySelector("#foodName").focus();
+  });
 
   const onFormChange = (e) => {
 
