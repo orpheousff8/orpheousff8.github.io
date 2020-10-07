@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -75,6 +75,8 @@ const WithValidator = (props) => {
     );
 
     const [authState, setAuthState] = useState(false);
+
+    const history = useHistory();
 
     const onFormChange = (e) => {
         const name = e.target.name;
@@ -185,10 +187,10 @@ const WithValidator = (props) => {
         switch (props.children) {
             case 'SignUp':
                 return (
-                    <form onSubmit={onFormSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="username">User Name</label>
-                            <input
+                    <Form onSubmit={onFormSubmit}>
+                        <Form.Group>
+                            <Form.Label htmlFor="username">User Name</Form.Label>
+                            <Form.Control
                                 type="text"
                                 className={getInputClass('username')}
                                 id="username"
@@ -198,10 +200,10 @@ const WithValidator = (props) => {
                             <div className="invalid-feedback">
                                 {getErrorMessage('username')}
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
-                            <input
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label htmlFor="password">Password</Form.Label>
+                            <Form.Control
                                 type="password"
                                 className={getInputClass('password')}
                                 id="password"
@@ -215,10 +217,10 @@ const WithValidator = (props) => {
                                     })
                                 }
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="confirmPassword">Confirm Password</label>
-                            <input
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label htmlFor="confirmPassword">Confirm Password</Form.Label>
+                            <Form.Control
                                 type="password"
                                 className={getInputClass('confirmPassword')}
                                 id="confirmPassword"
@@ -228,10 +230,10 @@ const WithValidator = (props) => {
                             <div className="invalid-feedback">
                                 {getErrorMessage('confirmPassword')}
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label htmlFor="email">Email</Form.Label>
+                            <Form.Control
                                 type="email"
                                 className={getInputClass('email')}
                                 id="email"
@@ -241,18 +243,18 @@ const WithValidator = (props) => {
                             <div className="invalid-feedback">
                                 {getErrorMessage('email')}
                             </div>
-                        </div>
+                        </Form.Group>
                         <div className="text-center">
                             <Button type="submit" variant="primary" disabled={!state.formValid}>Register</Button>
                         </div>
-                    </form>
+                    </Form>
                 );
             case 'Login':
                 return (
-                    <form onSubmit={onFormSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="username">User Name</label>
-                            <input
+                    <Form onSubmit={onFormSubmit}>
+                        <Form.Group>
+                            <Form.Label htmlFor="username">User Name</Form.Label>
+                            <Form.Control
                                 type="text"
                                 className={getInputClass('username')}
                                 id="username"
@@ -262,9 +264,9 @@ const WithValidator = (props) => {
                             <div className="invalid-feedback">
                                 {getErrorMessage('username')}
                             </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="password">Password</label>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label htmlFor="password">Password</Form.Label>
                             <input
                                 type="password"
                                 className={getInputClass('password')}
@@ -273,17 +275,16 @@ const WithValidator = (props) => {
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
-
                                 {getErrorMessage('password').split(",").map((item, index) => {
                                     return <div key={index}>{item}</div>;
                                 })}
                             </div>
-                        </div>
+                        </Form.Group>
                         <div className="text-center">
                             <Link className="mr-3" to='/signup'>Register</Link>
                             <Button className="ml-3" type="submit" variant="primary" disabled={!state.formValid}>Login</Button>
                         </div>
-                    </form>
+                    </Form>
                 );
             case 'CreatePikka':
                 return (
@@ -354,6 +355,24 @@ const WithValidator = (props) => {
                     const data = await response.text();
                     // console.log(response);
                     console.log(data);
+                }
+                catch (err) {
+                    console.log(`error: ${err}`);
+                }
+                break;
+            case 'CreatePikka':
+                try {
+                    const response = await fetch(socket + '/create', {
+                        method: 'post',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    const data = await response.text();
+                    // console.log(response);
+                    console.log(data);
+                    if (response.status === 201) {
+                        history.push('/');
+                    }
                 }
                 catch (err) {
                     console.log(`error: ${err}`);
