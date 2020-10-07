@@ -10,7 +10,9 @@ const Home = (props) => {
     const onFormChange = (e) => {
         const value = e.target.value;
 
-        setQueryState(value);
+        if (value !== queryState) {
+            setQueryState(value);
+        }
     }
 
     useEffect(() => {
@@ -26,8 +28,7 @@ const Home = (props) => {
 
         try {
             const response = await fetch(socket + '/search/' + caption);
-            if(response.status === 200)
-            {
+            if (response.status === 200) {
                 data = await response.json();
             }
             // console.log(response);
@@ -38,7 +39,6 @@ const Home = (props) => {
         }
         setResultState(data);
     }
-
 
     return (
         <>
@@ -52,13 +52,13 @@ const Home = (props) => {
                 </Form>
                 <br />
                 {   
-                    resultState &&
-                    (
+                    // resultState &&
+                    // (
                         <PikkaCardDeck {...resultState} />
                         // resultState.map((item) => {
                         //     return <PikkaCard {...item}/>
                         // })
-                    )
+                    // )
                     // <PikkaCard {...resultState} />
                 }
             {/* </Container> */}
