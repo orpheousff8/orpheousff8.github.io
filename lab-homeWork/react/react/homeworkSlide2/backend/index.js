@@ -1,11 +1,14 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const { uniqueId } = require('lodash');
+// const { uniqueId } = require('lodash');
+const pikkaListRoutes = require('./routes/pikkaList');
+const db = require('./models');
 
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+// app.use(express.urlencoded({ extended: false }));
 
 let pikka = [
     {id: uniqueId(), caption: "aaaaa", image: "a.jpg"}, {id: uniqueId(), caption: "bbbbb", image: "b1.jpg"}, 
@@ -50,7 +53,6 @@ app.get('/search/:caption', (req, res) => {
 
     const caption = req.params.caption;
 
-    // const pikkaResult = pikka.filter((item) => item.caption === caption);
     const pikkaResult = pikka.filter((item) => item.caption.includes(caption));
 
     if (pikkaResult) {
