@@ -60,7 +60,7 @@ const searchPikkaId = async (req, res) => {
     // res.status(204).send('not yet implemented.');
 }
 
-const searchPikkaCaption = async (req, res) => {
+const searchPikkaCaption = async (req, res) => {        //cannot get via params.caption which collide with searchPikkaId's params.id
     const caption = req.query.caption;
 
     // const pikkaResult = pikka.filter((item) => item.caption === caption);

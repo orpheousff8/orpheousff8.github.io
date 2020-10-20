@@ -1,20 +1,26 @@
 const db = require('../models');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 const signupUser = async (req, res) => {
-    const { email, password } = req.body;
-    console.log(email);
-    console.log(password);
+    console.log(req.body);
+    const { username, email, password } = req.body;
     try {
-        const targetUser = await db.User.findOne({ where: { email: email } });
+        const targetUser = await db.User.findOne({ 
+            where: {
+                [Op.or] : [{username: username}, {password: password}]
+            } 
+        });
         if (targetUser) {
-            res.status(400).send({ message: "Username already taken!" });
+            res.status(400).send({ message: "Username or Email already taken!" });
         } else {
             const salt = await bcrypt.genSalt(12);
             const hash = await bcrypt.hash(password, salt);
 
             await db.User.create({
+                username: username,
                 email: email,
                 password: hash
             });
@@ -27,16 +33,17 @@ const signupUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-    const { email, password } = req.body;
+    console.log(req.body);
+    const { username, password } = req.body;
     try {
-        const targetUser = await db.User.findOne({ where: { email: email } });
+        const targetUser = await db.User.findOne({ where: {username: username} });
         if (!targetUser) {
-            res.status(400).send({ message: "Email or password is wrong." });
+            res.status(400).send({ message: "Username or password is wrong." });
         } else {
             const isCorrectPassword = await bcrypt.compare(password, targetUser.password);
             if (isCorrectPassword) {
                 const payload = {
-                    email: targetUser.email,
+                    username: targetUser.username,
                     id: targetUser.id
                 };
                 const token = jwt.sign(payload, process.env.SECRET_OR_KEY, { expiresIn: 3600 });
@@ -45,7 +52,7 @@ const loginUser = async (req, res) => {
                     message: "Login successful."
                 });
             } else {
-                res.status(400).send({ message: "Email or password is wrong." });
+                res.status(400).send({ message: "Username or password is wrong." });
             }
             res.status(200).send(`Logged in!`);
         }
