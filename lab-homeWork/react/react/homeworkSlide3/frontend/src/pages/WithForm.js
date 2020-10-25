@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,7 +11,7 @@ import action from '../redux/action';
 
 const WithValidator = (props) => {
 
-    const SOCKET = 'http://localhost:3001'
+    const SOCKET = 'http://localhost:3001';
 
     const history = useHistory();       //use to push page back to '/'
 
@@ -333,22 +333,6 @@ const WithValidator = (props) => {
 
         switch (props.children) {
             case 'Login':
-                // try {
-                //     const response = await fetch(SOCKET + '/users/login', {
-                //         method: 'post',
-                //         headers: { 'content-type': 'application/json' },
-                //         body: JSON.stringify(formData)
-                //     });
-                //     const data = await response.text();
-                //     // console.log(response);
-                //     if (response.status === 200) {
-                //         // setAuthState(true);
-                //     }
-                //     console.log(data);
-                // }
-                // catch (err) {
-                //     console.log(`error: ${err}`);
-                // }
 
                 dispatch(action.login(formData));       //use redux instead of above
                 history.push('/');

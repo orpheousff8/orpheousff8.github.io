@@ -8,14 +8,6 @@ const createPikka = async (req, res) => {
     const pieces = req.body.image.split('\\');
     const piece = pieces[pieces.length - 1];
 
-    // const item = {
-    //     id: uniqueId(),
-    //     caption: req.body.username,
-    //     image: piece
-    // };
-
-    // pikka.push(item);
-
     try {
         const newPikka = await db.Pikka.create({
             caption: req.body.username,
@@ -28,10 +20,10 @@ const createPikka = async (req, res) => {
     }
 };
 
-const showPikka = async (req, res) => {     //req.body comes from DB by passport after checked the token though the method is GET.
-    //console.log(req.body);
+const showPikka = async (req, res) => {     //req comes from DB by passport after checked the token though the method is GET.
+    // console.log(req.user.dataValues.id);
     try {
-        const pikkaList = await db.Pikka.findAll();
+        const pikkaList = await db.Pikka.findAll({ limit: 25 });        //limit at 25 rows
         res.status(201).send(pikkaList);
     } catch (err) {
         console.log(err);
@@ -49,7 +41,7 @@ const searchPikkaId = async (req, res) => {
             }
         });
         if (pikkaList) {
-            res.status(201).send(JSON.stringify(pikkaList));
+            res.status(200).send(JSON.stringify(pikkaList));
         } else {
             res.status(204).send('Not found Pikka');
         }
@@ -57,21 +49,10 @@ const searchPikkaId = async (req, res) => {
         console.log(err);
         res.status(400).send({ message: "Error" });
     }
-    // res.status(204).send('not yet implemented.');
 }
 
 const searchPikkaCaption = async (req, res) => {        //cannot get via params.caption which collide with searchPikkaId's params.id
     const caption = req.query.caption;
-
-    // const pikkaResult = pikka.filter((item) => item.caption === caption);
-    // const pikkaResult = pikka.filter((item) => item.caption.includes(caption));
-
-    // if (pikkaResult) {
-    //     res.send(JSON.stringify(pikkaResult));
-    // }
-    // else {
-    //     res.status(204).send('Not found Pikka');
-    // }
 
     try {
         const pikkaList = await db.Pikka.findAll({
@@ -82,7 +63,7 @@ const searchPikkaCaption = async (req, res) => {        //cannot get via params.
             }
         });
         if (pikkaList) {
-            res.status(201).send(JSON.stringify(pikkaList));
+            res.status(200).send(JSON.stringify(pikkaList));
         } else {
             res.status(204).send('Not found Pikka');
         }

@@ -15,6 +15,7 @@ const MyNavbar = (props) => {
     const logoutUser = () => {
         dispatch(action.logoff());
     }
+
     return (
         <>
             <Navbar bg="dark" variant="dark" sticky="top">
@@ -36,10 +37,12 @@ const MyNavbar = (props) => {
                 </Nav>
                 <Navbar.Toggle />
                 <Navbar.Collapse className="justify-content-end">
-                    <Navbar.Text>{userSelector !== "guest" ? "Signed in as:" : ""} {userSelector}</Navbar.Text>
-                    {userSelector !== "guest" ?
-                        <Nav.Link as={Link} to='/login' onClick={() => logoutUser()} >Log Off</Nav.Link> :
-                        <></>}
+                    <Navbar.Text>{userSelector !== "guest" ? `Signed in as: ${userSelector}` : 
+                    `Hello guest. please`}</Navbar.Text>
+                    {
+                        userSelector !== "guest" ? <Nav.Link as={Link} to='/login' onClick={() => logoutUser()} >logoff</Nav.Link> : 
+                        <Nav.Link as={Link} to='/login'>login</Nav.Link>
+                    }
                 </Navbar.Collapse>
             </Navbar>
         </>

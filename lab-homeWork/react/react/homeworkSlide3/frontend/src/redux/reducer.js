@@ -1,5 +1,25 @@
+import localStorageService from '../services/localStorageService';
+
+const getUserFromToken = () => {
+    const now = new Date();
+    const exp = localStorageService.getExp();
+    if (exp === 0) {        //no token exists
+        return "guest";
+    }
+    const expTime = new Date(exp * 1000);  //Javascript time unit is millisecond, whilst JWT time unit is second since 1 Jan 1970
+
+    if (now >= expTime) {        //token expired
+        localStorageService.removeToken();
+        // console.log(now);
+        // console.log(expTime);
+        return "guest";
+    }
+
+    return localStorageService.getUser();
+};
+
 const initialState = {
-    user: 'guest',
+    user: getUserFromToken()
     // token: ''
 };
 
@@ -7,7 +27,7 @@ const reducer = (state = initialState, action) => {
 
     let newState;
 
-    switch(action.type) {
+    switch (action.type) {
         case 'LOGIN':
             newState = {
                 ...state,

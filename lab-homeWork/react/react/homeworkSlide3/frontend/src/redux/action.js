@@ -36,7 +36,32 @@ const logoff = () => {
     }
 }
 
+// const validateUser = () => {
+//     return (dispatch) => {
+//         const now = new Date();
+//         const expTime = new Date(localStorageService.getExp());
+//         console.log(now);
+//         console.log(expTime);
+//         console.log(now > expTime);
+        
+//         if (now > expTime) {
+//             localStorageService.removeToken();
+//             dispatch({
+//                 type: 'LOGOFF',
+//                 payload: null
+//             });
+//         } else {
+//             const username = localStorageService.getUser();
+//             dispatch({
+//                 type: 'VALIDATE_USER',
+//                 payload: username
+//             });
+//         }
+//     }
+// }
+
 export default {
     login,
-    logoff
+    logoff,
+    // validateUser
 };
