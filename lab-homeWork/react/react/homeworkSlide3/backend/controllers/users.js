@@ -5,7 +5,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 const signupUser = async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const { username, email, password } = req.body;
     try {
         const targetUser = await db.User.findOne({ 
@@ -33,7 +33,7 @@ const signupUser = async (req, res) => {
 };
 
 const loginUser = async (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
     const { username, password } = req.body;
     try {
         const targetUser = await db.User.findOne({ where: {username: username} });
@@ -62,7 +62,28 @@ const loginUser = async (req, res) => {
     }
 };
 
+const forgotPassword = async (req, res) => {
+    // console.log(req.body);
+    const { username, email } = req.body;
+    try {
+        const targetUser = await db.User.findOne({ 
+            where: {
+                [Op.and]: [{ username: username }, { email: email }]
+            } 
+        });
+        if (!targetUser) {
+            res.status(400).send({ message: "Username or email is wrong." });
+        } else {
+            res.status(200).send({ message: "Found username and email!" });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(400).send({ message: "Error" });
+    }
+};
+
 module.exports = {
     signupUser,
-    loginUser
+    loginUser,
+    forgotPassword
 };

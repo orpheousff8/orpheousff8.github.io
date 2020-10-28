@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -13,12 +13,21 @@ const WithValidator = (props) => {
 
     const SOCKET = 'http://localhost:3001';
 
-    const history = useHistory();       //use to push page back to '/'
+    const history = useHistory();       //will be used to push page back to '/'
+
+    const errorSelector = useSelector(state => state.error);        //seems doesn't refresh automatically, so I hook it to useEffect + useState
+    const [errorState, setErrorState] = useState(false);
+
+    useEffect(() => {
+        if (errorSelector.status) {
+            setErrorState(true);
+        } else {
+            setErrorState(false);
+        }
+    }, [errorSelector.status]);
 
     const dispatch = useDispatch();
-    // const getRole = useSelector(state => state.role);
-    // const getToken = useSelector(state => state.token);
-    
+
     const [withFormState, setWithFormState] = useState(
         {
             formElements: {
@@ -38,7 +47,7 @@ const WithValidator = (props) => {
                     type: 'email',
                     value: '',
                     validator: {
-                        required: props.children === 'SignUp' ? true : false,
+                        required: props.children === 'SignUp' || props.children === 'ForgotPassword' ? true : false,
                         pattern: 'email'
                     },
                     // touched: false,
@@ -49,7 +58,7 @@ const WithValidator = (props) => {
                     type: 'password',
                     value: '',
                     validator: {
-                        required: props.children === 'CreatePikka' ? false : true,
+                        required: props.children === 'CreatePikka' || props.children === 'EditPikka' || props.children === 'ForgotPassword' ? false : true,
                         minLength: 8,
                         pattern: 'password'
                     },
@@ -72,7 +81,7 @@ const WithValidator = (props) => {
                     type: 'image',
                     value: '',
                     validator: {
-                        require: props.children === 'CreatePikka' ? true : false,
+                        require: props.children === 'CreatePikka' || props.children === 'EditPikka' ? true : false,
                         pattern: 'image'
                     },
                     // touched: false,
@@ -201,6 +210,7 @@ const WithValidator = (props) => {
                                 className={getInputClass('username')}
                                 id="username"
                                 name="username"
+                                value={withFormState.formElements.username.value}
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
@@ -214,6 +224,7 @@ const WithValidator = (props) => {
                                 className={getInputClass('password')}
                                 id="password"
                                 name="password"
+                                value={withFormState.formElements.password.value}
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
@@ -231,6 +242,7 @@ const WithValidator = (props) => {
                                 className={getInputClass('confirmPassword')}
                                 id="confirmPassword"
                                 name="confirmPassword"
+                                value={withFormState.formElements.confirmPassword.value}
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
@@ -244,6 +256,7 @@ const WithValidator = (props) => {
                                 className={getInputClass('email')}
                                 id="email"
                                 name="email"
+                                value={withFormState.formElements.email.value}
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
@@ -265,6 +278,7 @@ const WithValidator = (props) => {
                                 className={getInputClass('username')}
                                 id="username"
                                 name="username"
+                                value={withFormState.formElements.username.value}
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
@@ -278,6 +292,7 @@ const WithValidator = (props) => {
                                 className={getInputClass('password')}
                                 id="password"
                                 name="password"
+                                value={withFormState.formElements.password.value}
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
@@ -289,6 +304,9 @@ const WithValidator = (props) => {
                         <div className="text-center">
                             <Link className="mr-3" to='/signup'>Register</Link>
                             <Button className="ml-3" type="submit" variant="primary" disabled={!withFormState.formValid}>Login</Button>
+                        </div>
+                        <div className="text-center mt-2">
+                            <Link className="mx-auto" to='/forgotPassword'>Forgot Password</Link>
                         </div>
                     </Form>
                 );
@@ -302,6 +320,7 @@ const WithValidator = (props) => {
                                 className={getInputClass('username')}
                                 id="username"
                                 name="username"
+                                value={withFormState.formElements.username.value}
                                 onChange={onFormChange}
                             />
                             <div className="invalid-feedback">
@@ -315,12 +334,86 @@ const WithValidator = (props) => {
                                 className={getInputClass('image')}
                                 id="image"
                                 name="image"
+                                value={withFormState.formElements.image.value}
                                 onChange={onFormChange}
                             />
                         </Form.Group>
-                        <br/>
+                        <br />
                         <div className="text-center">
                             <Button className="ml-3" type="submit" variant="primary" disabled={!withFormState.formValid}>Create</Button>
+                        </div>
+                    </Form>
+                );
+            case 'ForgotPassword':
+                return (
+                    <Form onSubmit={onFormSubmit}>
+                        <Form.Group>
+                            <Form.Label htmlFor="username">Username</Form.Label>
+                            <Form.Control
+                                type="text"
+                                className={getInputClass('username')}
+                                id="username"
+                                name="username"
+                                value={withFormState.formElements.username.value}
+                                onChange={onFormChange}
+                            />
+                            <div className="invalid-feedback">
+                                {getErrorMessage('username')}
+                            </div>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label htmlFor="email">Email</Form.Label>
+                            <Form.Control
+                                type="email"
+                                className={getInputClass('email')}
+                                id="email"
+                                name="email"
+                                value={withFormState.formElements.email.value}
+                                onChange={onFormChange}
+                            />
+                            <div className="invalid-feedback">
+                                {getErrorMessage('email')}
+                            </div>
+                        </Form.Group>
+                        <div className="text-center">
+                            <Button className="ml-3" type="submit" variant="primary" disabled={!withFormState.formValid}>Request password reset</Button>
+                        </div>
+                    </Form>
+                );
+            case 'EditPikka':
+                return (
+                    <Form onSubmit={onFormSubmit}>
+                        <Form.Group>
+                            <Form.Label htmlFor="pikkaID">Pikka ID: {props.queryId}</Form.Label>
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Label htmlFor="username">Caption</Form.Label>
+                            <Form.Control
+                                type="text"
+                                className={getInputClass('username')}
+                                id="username"
+                                name="username"
+                                value={withFormState.formElements.username.value}
+                                onChange={onFormChange}
+                            />
+                            <div className="invalid-feedback">
+                                {getErrorMessage('username')}
+                            </div>
+                        </Form.Group>
+
+                        <Form.Group>
+                            <Form.File
+                                label="Select Pikka image"
+                                className={getInputClass('image')}
+                                id="image"
+                                name="image"
+                                value={withFormState.formElements.image.value}
+                                onChange={onFormChange}
+                            />
+                        </Form.Group>
+                        <br />
+                        <div className="text-center">
+                            <Button className="ml-3" type="submit" variant="primary" disabled={!withFormState.formValid}>Edit</Button>
                         </div>
                     </Form>
                 );
@@ -329,13 +422,53 @@ const WithValidator = (props) => {
         }
     }
 
+    const clearForm = () => {
+        let updatedForm = { ...withFormState.formElements };
+
+        let formStatus;
+
+        for (let name in updatedForm) {
+            updatedForm[name].value = "";
+            updatedForm[name].touched = true;
+
+            const validatorObject = checkValidator("", updatedForm[name].validator);
+            updatedForm[name].error = {
+                status: validatorObject.status,
+                message: validatorObject.message
+            }
+
+            formStatus = true;
+
+            if (updatedForm[name].validator.required) {
+                formStatus = !updatedForm[name].error.status && formStatus;
+            }
+        }
+
+        setWithFormState((withFormState, props) => {
+            return (
+                {
+                    ...withFormState,
+                    formElements: updatedForm,
+                    formValid: formStatus
+                }
+            );
+        });
+    };
+
     const submit = async (formData) => {
 
         switch (props.children) {
             case 'Login':
 
-                dispatch(action.login(formData));       //use redux instead of above
-                history.push('/');
+                dispatch(action.login(formData));       //use Redux, whilst below cases don't use Redux (for studying)
+
+                if (errorState) {
+                    // console.log("hey");
+                    history.push('/');
+                }
+                else {
+                    clearForm();
+                }
                 break;
             case 'SignUp':
                 try {
@@ -368,6 +501,34 @@ const WithValidator = (props) => {
                 }
                 catch (err) {
                     console.log(`error: ${err}`);
+                }
+                break;
+            case 'EditPikka':
+                try {
+                    const response = await fetch(SOCKET + `/pikkas/update/${props.queryId}`, {
+                        method: 'put',
+                        headers: { 'content-type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    const data = await response.text();
+                    // console.log(response);
+                    console.log(data);
+                    if (response.status === 200) {
+                        history.push('/');
+                    }
+                }
+                catch (err) {
+                    console.log(`error: ${err}`);
+                }
+                break;
+            case 'ForgotPassword':        //use Redux, whilst below cases don't use Redux (for studying)
+                dispatch(action.forgotPassword(formData));
+
+                if (!errorState) {
+                    history.push('/');
+                }
+                else {
+                    clearForm();
                 }
                 break;
             default:

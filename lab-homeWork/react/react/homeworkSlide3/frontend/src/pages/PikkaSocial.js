@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useSelector } from 'react-redux';
+import { Link, useHistory } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -12,10 +13,13 @@ const PikkaSocial = (props) => {
 
     const SOCKET = 'http://localhost:3001';
 
+    const history = useHistory();       //will be used to push page back to '/'
+
     const userSelector = useSelector(state => state.user);
 
     const [comments, setComments] = useState([]);
-    const [queryState, setQueryState] = useState("");
+
+    const [queryCommentState, setQueryCommentState] = useState("");
     const [likeState, setLikeState] = useState(false);
 
     const commentBoxRef = useRef(null);
@@ -35,7 +39,7 @@ const PikkaSocial = (props) => {
     }, [props.queryId]);
 
     useEffect(() => {
-        if(props.id) queryPikkaComments();
+        if (props.id) queryPikkaComments();
         // commentBoxRef.current.focus();       //doesn't work, don't know why
     }, [props.id, queryPikkaComments]);
 
@@ -67,31 +71,31 @@ const PikkaSocial = (props) => {
     }, [props.queryId]);
 
     useEffect(() => {
-        if(props.id) queryLike();
+        if (props.id) queryLike();
     }, [props.id, queryLike]);
 
     const onFormChange = (e) => {
         const value = e.target.value;
 
-        if (value !== queryState) {
-            setQueryState(value);
+        if (value !== queryCommentState) {
+            setQueryCommentState(value);
         }
     }
 
-    const onFormSubmit = (e) => {
+    const onCommentFormSubmit = (e) => {
 
         e.preventDefault();
         const formData = {
-            comment: queryState,
+            comment: queryCommentState,
             pikkaId: props.queryId
             //userId will be retrieved from passport
         };
 
         // console.log(formData);
-        submit(formData);
+        submitComment(formData);
     }
 
-    const submit = async (formData) => {
+    const submitComment = async (formData) => {
         try {
             const response = await fetch(SOCKET + '/comments/create', {
                 method: 'post',
@@ -105,7 +109,7 @@ const PikkaSocial = (props) => {
             // console.log(response);
             // console.log(data);
 
-            setQueryState("");
+            setQueryCommentState("");
             queryPikkaComments();   //reQuery all comments
             commentBoxRef.current.focus();
         }
@@ -132,26 +136,52 @@ const PikkaSocial = (props) => {
         }
     }
 
+    const deletePikka = async () => {
+        let data = "";
+        try {
+            const response = await fetch(SOCKET + `/pikkas/delete/${props.queryId}`, {
+                method: 'delete',
+            });
+            if (response.status === 200) {
+                data = await response.json();       //if found nothing will return [] with code 200 anyway
+            }
+            // console.log(response);
+            console.log(data);
+            history.push('/');
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <>
             {
                 props.id &&
                 <Card className="mt-3 mx-auto" style={{ width: '18rem' }}>
+                    {/* Like section */}
                     <PikkaLike isLike={likeState} updateLike={() => updateLike()} />
+
+                    {/* Pikka card section */}
                     <Card.Img variant="top" src={image} />
-                    {/* <Card.Img variant="top" src={props.image} /> */}
                     <Card.Body>
                         <Card.Title>Caption: {props.caption}</Card.Title>
                         <Card.Text>ID: {props.id}</Card.Text>
                         <Card.Text>Image src: {props.imgSrc}</Card.Text>
                     </Card.Body>
+
+                    {/* Edit / Delete links section */}
+
+                    <div className="d-flex justify-content-around">
+                        <Link to={`/edit/${props.queryId}`}>Edit Pikka</Link>
+                        <a className="text-primary" href="#" onClick={()=>window.confirm(`Do you really want to delete this Pikka (ID = ${props.queryId})`) ? deletePikka() : {}}>Delete Pikka</a>
+                    </div>
+
+                    {/* Comment section */}
                     <Card.Body>
-                        {
-                            comments.map((item) => <PikkaComment key={item.id} {...item} />)
-                        }
+                        {comments.map((item) => <PikkaComment key={item.id} {...item} />)}
                     </Card.Body>
                     <Card.Body>
-                        <Form onSubmit={onFormSubmit}>
+                        <Form onSubmit={onCommentFormSubmit}>
                             <Form.Group>
                                 <Form.Label htmlFor="comment">Add a new comment</Form.Label>
                                 {
@@ -171,7 +201,7 @@ const PikkaSocial = (props) => {
                                         type="text"
                                         id="comment"
                                         name="comment"
-                                        value={queryState}
+                                        value={queryCommentState}
                                         autoFocus={true}        //seems doesn't work
                                         ref={commentBoxRef}     //this works
                                         onChange={onFormChange}
@@ -181,14 +211,14 @@ const PikkaSocial = (props) => {
 
                             <br />
                             <div className="text-right">
-                                <Button className="ml-3" type="submit" variant="primary" disabled={userSelector === "guest" || queryState === ""}>Comment</Button>
+                                <Button className="ml-3" type="submit" variant="primary" disabled={userSelector === "guest" || queryCommentState === ""}>Comment</Button>
                             </div>
                         </Form>
                     </Card.Body>
                 </Card>
             }
             {
-                !props.id && 
+                !props.id &&
                 <div className="h3 text-warning text-center">There is no Pikka whose id is {props.queryId}.</div>
             }
         </>

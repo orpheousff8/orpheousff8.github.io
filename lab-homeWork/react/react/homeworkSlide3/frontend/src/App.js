@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import MyNavbar from './MyNavbar'
 import Main from './Main'
+import ErrorToast from './ErrorToast';
+import NotificationToast from './NotificationToast';
 import logo from './logo.svg';
 import './App.css';
 
@@ -14,9 +16,16 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <MyNavbar />
+
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <div className="w-25"></div>
+          <img src={logo} className="App-logo mx-auto" alt="logo" />
+          <div className="w-25" >
+            <ErrorToast />
+            <NotificationToast />
+          </div>
         </header>
+
         <Main />
       </div>
     </Provider>

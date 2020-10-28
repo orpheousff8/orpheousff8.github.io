@@ -72,7 +72,7 @@ const searchLike = async (req, res) => {
     //     res.status(400).send({ message: "Error" });
     // }
 
-    //same as above, but automatically create new rows and return [{isLike: false},{isCreated}] if there are is no existing row
+    //not just find as above, but also automatically creates new rows and returns [{isLike: false},{isCreated}] if there are is no existing row
     try {
         result = await db.like.findOrCreate({
             attributes: ['isLike'],

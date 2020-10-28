@@ -19,8 +19,15 @@ const getUserFromToken = () => {
 };
 
 const initialState = {
-    user: getUserFromToken()
-    // token: ''
+    user: getUserFromToken(),
+    error: {
+        status: false,
+        message: ""
+    },
+    notification: {
+        status: false,
+        message: ""
+    }
 };
 
 const reducer = (state = initialState, action) => {
@@ -32,6 +39,10 @@ const reducer = (state = initialState, action) => {
             newState = {
                 ...state,
                 user: action.payload,
+                error: {
+                    status: false,
+                    message: ""
+                }
                 // token: action.payload
             }
             return newState;
@@ -39,7 +50,33 @@ const reducer = (state = initialState, action) => {
             newState = {
                 ...state,
                 user: "guest",
+                error: {
+                    status: false,
+                    message: ""
+                }
                 // token: null
+            }
+            return newState;
+        case 'ERROR':
+            newState = {
+                ...state,
+                error: {
+                    status: true,
+                    message: action.payload
+                }
+            }
+            return newState;
+        case 'FORGOT_PASSWORD':
+            newState = {
+                ...state,
+                error: {
+                    status: false,
+                    message: ""
+                },
+                notification: {
+                    status: true,
+                    message: action.payload
+                }
             }
             return newState;
         default:

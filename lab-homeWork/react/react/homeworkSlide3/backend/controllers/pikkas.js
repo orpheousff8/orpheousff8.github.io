@@ -81,7 +81,7 @@ const deletePikkaId = async (req, res) => {
         if (targetPikka) {
             // await db.Pikka.destroy({ where: { id: targetId } });
             await targetPikka.destroy();     //same as above
-            res.status(204).send();
+            res.status(204).send({ message: "Pikka deleted" });
         } else {
             res.status(404).send({ message: "Pikka not found." });
         }
