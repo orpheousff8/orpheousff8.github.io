@@ -1,9 +1,9 @@
 module.exports = (sequelize, dataTypes) => {
-    const be = sequelize.define('be', {
+    const texted = sequelize.define('texted', {
 
     }, {
         timestamp: false
     });
 
-    return be;
+    return texted;
 }

@@ -19,15 +19,15 @@ module.exports = (sequelize, DataTypes) => {
         timestamp: true
     });
 
-    User.associate = models => {
-        User.hasMany(models.Interest, {through: models.prefer, foreignKey: 'user_id'});
+    User.associate = (models) => {
+        User.hasMany(models.Interest, {foreignKey: 'user_id'});
         User.belongsToMany(models.Interest, {through: models.prefer, foreignKey: 'user_id'});
 
-        User.hasMany(models.User, {through: models.be, foreignKey: 'user_id'});
-        User.belongsToMany(models.User, {through: models.be, foreignKey: 'user_id'});
+        User.hasOne(models.ITEM_BE);
+        User.belongsTo(models.ITEM_BE)
 
-        User.hasMany(models.User, {through: models.text, foreignKey: 'user_id'});
-        User.belongsToMany(models.User, {through: models.text, foreignKey: 'user_id'});
+        User.hasOne(models.ITEM_TEXT);
+        User.belongsTo(models.ITEM_TEXT)
     };
 
     return User;
