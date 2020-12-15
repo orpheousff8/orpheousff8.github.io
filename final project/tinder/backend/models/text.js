@@ -1,14 +1,14 @@
 module.exports = (sequelize, dataTypes) => {
-    const be = sequelize.define('be', {
-        likes: {
+    const text = sequelize.define('text', {
+        isRead: {
             type: dataTypes.BOOLEAN
         },
-        blocks: {
-            type: dataTypes.BOOLEAN
+        message: {
+            type: dataTypes.STRING(255)
         }
     }, {
         timestamp: true
     });
 
-    return be;
+    return text;
 }

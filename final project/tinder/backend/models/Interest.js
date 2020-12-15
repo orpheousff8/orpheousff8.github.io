@@ -10,7 +10,6 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     Interest.associate = (models) => {
-        Interest.hasMany(models.User, {foreignKey: 'interest_id'});
         Interest.belongsToMany(models.User, {through: models.prefer, foreignKey: 'interest_id'});
     };
 

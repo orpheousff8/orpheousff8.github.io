@@ -20,14 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     User.associate = (models) => {
-        User.hasMany(models.Interest, {foreignKey: 'user_id'});
-        User.belongsToMany(models.Interest, {through: models.prefer, foreignKey: 'user_id'});
+        User.belongsToMany(models.Interest, {through: models.prefer, as: 'user_id' ,foreignKey: 'user_id'});
 
-        User.hasOne(models.ITEM_BE);
-        User.belongsTo(models.ITEM_BE)
+        User.belongsToMany(models.User, {through: models.be, as: 'user_id_be' ,foreignKey: 'user_id'});
+        User.belongsToMany(models.User, {through: models.be, as: 'user_id_been' ,foreignKey: 'user_id'});
 
-        User.hasOne(models.ITEM_TEXT);
-        User.belongsTo(models.ITEM_TEXT)
+        User.belongsToMany(models.User, {through: models.text, as: 'user_id_sender' ,foreignKey: 'user_id'});
+        User.belongsToMany(models.User, {through: models.text, as: 'user_id_receiver' ,foreignKey: 'user_id'});
     };
 
     return User;
