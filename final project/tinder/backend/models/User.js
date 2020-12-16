@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('User', {
-        fullName: {
+        name: {
             type: DataTypes.STRING(128),
             unique: true
         },
@@ -20,13 +20,24 @@ module.exports = (sequelize, DataTypes) => {
     });
 
     User.associate = (models) => {
-        User.belongsToMany(models.Interest, {through: models.prefer, as: 'user_id' ,foreignKey: 'user_id'});
 
-        User.belongsToMany(models.User, {through: models.be, as: 'user_id_be' ,foreignKey: 'user_id'});
-        User.belongsToMany(models.User, {through: models.be, as: 'user_id_been' ,foreignKey: 'user_id'});
+        User.hasOne(models.Image);
 
-        User.belongsToMany(models.User, {through: models.text, as: 'user_id_sender' ,foreignKey: 'user_id'});
-        User.belongsToMany(models.User, {through: models.text, as: 'user_id_receiver' ,foreignKey: 'user_id'});
+        User.belongsToMany(models.Interest, {through: models.prefer, foreignKey: 'userId'});
+
+        User.belongsToMany(models.User, {through: models.be, as: 'userIdBe' ,foreignKey: 'userIdBe'});
+        User.belongsToMany(models.User, {through: models.be, as: 'userIdBeen' ,foreignKey: 'userIdBeen'});
+
+        User.belongsToMany(models.User, {through: models.text, as: 'userIdTexts' ,foreignKey: 'userIdTexts'});
+        User.belongsToMany(models.User, {through: models.text, as: 'userIdTexted' ,foreignKey: 'userIdTexted'});
+
+        //Used with belongsTo on be.js and text.js. the result is the same as User.belongsToMany
+
+        // User.hasMany(models.be, {foreignKey: 'userId', as: 'userIdBe'});
+        // User.hasMany(models.be, {foreignKey: 'userId', as: 'userIdBeen'});
+
+        // User.hasMany(models.text, {foreignKey: 'userId', as: 'userIdTexts'});
+        // User.hasMany(models.text, {foreignKey: 'userId', as: 'userIdTexted'});
     };
 
     return User;

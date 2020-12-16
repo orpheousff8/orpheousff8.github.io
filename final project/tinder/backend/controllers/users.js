@@ -6,21 +6,21 @@ const Op = Sequelize.Op;
 
 const signupUser = async (req, res) => {
     // console.log(req.body);
-    const { username, email, password } = req.body;
+    const { name, email, password } = req.body;
     try {
         const targetUser = await db.User.findOne({ 
             where: {
-                [Op.or] : [{username: username}, {password: password}]
+                [Op.or] : [{name: name}, {password: password}]
             } 
         });
         if (targetUser) {
-            res.status(400).send({ message: "Username or Email already taken!" });
+            res.status(400).send({ message: "name or Email already taken!" });
         } else {
             const salt = await bcrypt.genSalt(12);
             const hash = await bcrypt.hash(password, salt);
 
             await db.User.create({
-                username: username,
+                name: name,
                 email: email,
                 password: hash
             });
@@ -34,16 +34,16 @@ const signupUser = async (req, res) => {
 
 const loginUser = async (req, res) => {
     // console.log(req.body);
-    const { username, password } = req.body;
+    const { name, password } = req.body;
     try {
-        const targetUser = await db.User.findOne({ where: {username: username} });
+        const targetUser = await db.User.findOne({ where: {name: name} });
         if (!targetUser) {
-            res.status(400).send({ message: "Username or password is wrong." });
+            res.status(400).send({ message: "name or password is wrong." });
         } else {
             const isCorrectPassword = await bcrypt.compare(password, targetUser.password);
             if (isCorrectPassword) {
                 const payload = {
-                    username: targetUser.username,
+                    name: targetUser.name,
                     id: targetUser.id
                 };
                 const token = jwt.sign(payload, process.env.SECRET_OR_KEY, { expiresIn: 3600 });
@@ -52,7 +52,7 @@ const loginUser = async (req, res) => {
                     message: "Login successful."
                 });
             } else {
-                res.status(400).send({ message: "Username or password is wrong." });
+                res.status(400).send({ message: "name or password is wrong." });
             }
             res.status(200).send(`Logged in!`);
         }
@@ -64,17 +64,17 @@ const loginUser = async (req, res) => {
 
 // const forgotPassword = async (req, res) => {
 //     // console.log(req.body);
-//     const { username, email } = req.body;
+//     const { name, email } = req.body;
 //     try {
 //         const targetUser = await db.User.findOne({ 
 //             where: {
-//                 [Op.and]: [{ username: username }, { email: email }]
+//                 [Op.and]: [{ name: name }, { email: email }]
 //             } 
 //         });
 //         if (!targetUser) {
-//             res.status(400).send({ message: "Username or email is wrong." });
+//             res.status(400).send({ message: "name or email is wrong." });
 //         } else {
-//             res.status(200).send({ message: "Found username and email!" });
+//             res.status(200).send({ message: "Found name and email!" });
 //         }
 //     } catch (err) {
 //         console.log(err);

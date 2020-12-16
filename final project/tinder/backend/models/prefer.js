@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
     const prefer = sequelize.define('prefer', {
-        prefers: {
+        isPrefer: {
             type: dataTypes.BOOLEAN
         }
     }, {
