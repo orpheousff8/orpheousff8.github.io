@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { Alert, Form, Input, Row, Col, Checkbox, Button } from 'antd';
+import { Form, Input, Row, Col, Checkbox, Button, message } from 'antd';
 import axios from 'axios';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:3001";
@@ -45,11 +45,6 @@ const tailFormItemLayout = {
 const CreateAccount = (props) => {
     const [form] = Form.useForm();
 
-    const [message, setMessage] = useState({
-        isVisible: false,
-        text: ""
-    });
-
     const history = useHistory();
 
     const onFinish = async (values) => {
@@ -58,16 +53,18 @@ const CreateAccount = (props) => {
         try {
             res = await axios.post(BACKEND_URL + "/users/signup", values);
             if (res.status === 201) {
-                console.log(res.data);
+                // console.log(res.data);
                 history.push("/preferences");
+            } else if (res.status === 204){
+                message.error("User or Email has already been taken.");
+                form.resetFields();
             } else {
-                console.log(res.status);
-                setMessage({ ...message, isVisible: true, text: res.data });
+                message.error("Error.")
                 form.resetFields();
             }
         } catch (err) {
             console.log(err);
-            setMessage({ ...message, isVisible: true, text: err.message });
+            message.error(err.message);
             form.resetFields();
         }
     };
@@ -75,13 +72,13 @@ const CreateAccount = (props) => {
     return (
         <div className="CreateAccount">
             {
-                message.isVisible &&
-                <Alert
-                    message={message.text}
-                    banner
-                    closable
-                    onClose={()=>setMessage({...message, isVisible:false, text:""})}
-                />
+                // message.isVisible &&
+                // <Alert
+                //     message={message.text}
+                //     banner
+                //     closable
+                //     onClose={()=>setMessage({...message, isVisible:false, text:""})}
+                // />
             }
             <Row justify="center">
                 <Col></Col>
@@ -108,7 +105,7 @@ const CreateAccount = (props) => {
                                 }
                             ]}
                         >
-                            <Input placeholder="Name" />
+                            <Input className="input" placeholder="Name" />
                         </Form.Item>
 
                         <Form.Item
@@ -125,7 +122,7 @@ const CreateAccount = (props) => {
                                 },
                             ]}
                         >
-                            <Input placeholder="Email" />
+                            <Input className="input" placeholder="Email" />
                         </Form.Item>
 
                         <Form.Item
@@ -142,7 +139,7 @@ const CreateAccount = (props) => {
                             ]}
                             hasFeedback
                         >
-                            <Input.Password placeholder="Password" />
+                            <Input.Password className="input" placeholder="Password" />
                         </Form.Item>
 
                         <Form.Item
@@ -165,7 +162,7 @@ const CreateAccount = (props) => {
                                 }),
                             ]}
                         >
-                            <Input.Password placeholder="Confirm Password" />
+                            <Input.Password className="input" placeholder="Confirm Password" />
                         </Form.Item>
 
                         <Form.Item

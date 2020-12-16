@@ -6,18 +6,46 @@ form {
   height: 85vh;
 }
 
+.input:hover {
+  border-color: #F34360 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #F34360 !important;
+  border-color: white !important;
+}
+
 button {
   display: block !important;
   margin: 0 auto 0 auto !important;
+}
+
+.button:hover {
+  color: #F34360 !important;
+  border-color: #F34360 !important;
+}
+
+.ant-radio-inner:after {
+  background: #F34360 !important;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-checked:hover .ant-checkbox-inner, .ant-checkbox:hover .ant-checkbox-inner, .ant-checkbox-wrapper:hover, .ant-checkbox-input:focus .ant-checkbox-inner {
+  border-color: #F34360 !important;
 }
 
 .logo {
   color: white !important;
   font-size: 10rem;
 }
+
 .logo.text {
   font-family: 'Archivo Black', sans-serif;
   font-weight: 400;
+}
+
+.avatar-uploader {
+  display: inline;
+  text-align: center;
 }
 
 .badgeBox {
@@ -26,12 +54,25 @@ button {
   align-items: center;
   margin: 0 1rem 0 1rem;
 }
+
+.badgeBox:hover {
+  /* color: #F34360 !important; */
+  box-shadow: 0 5px 15px rgba(231, 116, 235, 0.4);
+  padding: 2px 2px 2px 2px;
+}
+
+.badgeBox.selected {
+  color: #F34360 !important;
+}
+
 .badge.icon {
   font-size: 2.5rem;
 }
+
 .badge.text {
   font-size: 1rem;
   font-weight: 600;
+  margin: auto 0 0 0;
 }
 
 .badgeContainer {
